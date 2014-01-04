@@ -1,0 +1,8 @@
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+<Limit GET>
+order allow,deny
+deny from 94.102.52.147
+allow from all
+</Limit>
