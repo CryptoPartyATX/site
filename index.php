@@ -121,8 +121,8 @@ else if ($pageid==3){
         
 <!-- BEGIN copyright notice -->
 <p class="copyleft" xmlns:dct="http://purl.org/dc/terms/" xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#">
-	<a rel="license" href="http://creativecommons.org/publicdomain/zero/1.0/"><img src="http://i.creativecommons.org/p/zero/1.0/80x15.png" style="border-style: none;" alt="CC0" /></a>
-	To the extent possible under law,  <a rel="dct:publisher" href="https://cryptopartyatx.org">CryptoPartyATX.org</a> has waived all copyright and related or neighboring rights to <span property="dct:title">CryptoPartyATX.org</span>.<br />
+	<a rel="license" href="http://creativecommons.org/publicdomain/zero/1.0/"><img src="/images/cc0.png" style="border-style: none;" alt="CC0" /></a>
+	&nbsp;To the extent possible under law,  <a rel="dct:publisher" href="https://cryptopartyatx.org">CryptoPartyATX.org</a> has waived all copyright and related or neighboring rights to <span property="dct:title">CryptoPartyATX.org</span>.<br />
  	The applications referenced on this site are open-source unless otherwise noted and can be obtained at the creators' websites, listed when used. Please consult application documentation for specific licenses. We have no affiliation with any linked site unless otherwise noted.</p>
 <!-- END copyright notice -->
 
