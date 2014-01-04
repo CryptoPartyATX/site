@@ -1,0 +1,196 @@
+
+<!-- BEGIN PAGE-SPECIFIC CONTENT -->
+<style>
+.page-icon {
+		width:150px;
+		height:150px;
+		display:inline-block;
+		float:right;
+		clear:right;
+		background:url("/images/keys-selected.png");
+}
+div.sshot-right, div.sshot-wide {
+	border: 2px solid #DDD;
+	padding: .25em;
+}
+.sshot-right {
+	width:20em;
+	float:right;
+	clear:right;
+}
+.sshot-wide {
+	width:100%;
+	text-align:center;
+}
+.sshot-sm {
+	width:100%;
+}
+.sshot-wd {
+	width:45%;
+	margin:0 .5em 0 .5em;
+}
+</style>
+	   <div class="page-icon">&nbsp;</div>
+	   
+<?php
+
+$pageid = $_GET['page'];
+$os = $_GET['os'];
+if(!$os){$os="win";}
+
+if($os=="win"){
+	echo "<style>.HideOSX {display:none;}</style>";
+	echo "<a href=\"?page=$pageid&os=osx\"><div class=\"osSelect\">Select Your OS: <br /><img src=\"/images/os_button_win.png\" /></div></a>\n";
+}
+else {
+	echo "<style>.HideWin {display:none;}</style>";
+	echo "<a href=\"?page=$pageid&os=win\"><div class=\"osSelect\">Select Your OS: <br /><img src=\"/images/os_button_osx.png\" /></div></a>\n";
+}
+?>
+       <h1>Keysigning and Keyservers</h1>
+          <h3><i>A guide to signing PGP keys and using keyservers</i></h3>
+          <p><strong>Purpose:</strong> This guide attempts to explain the purpose and process of keysigning and using keyservers to distribute public keys. If you do not already have a PGP key, please refer to Part II of our <a href="?page=1.1">Email Encryption guide</a> to get started.</p>
+
+          <p><strong>Software:</strong> The following software is used in this guide:</p>
+
+          <div class="list-group">
+            <span class="HideOSX"><a href="https://gpgtools.org/" class="list-group-item">
+              <h3 class="list-group-item-heading">GPG Suite (OS X)</h3>
+              <p class="list-group-item-text">Open-source GPG key manager for Mac OS X computers</p>
+            </a></span>
+            <span class="HideWin"><a href="http://www.gpg4win.org/" class="list-group-item">
+              <h3 class="list-group-item-heading">Gpg4Win (Windows)</h3>
+              <p class="list-group-item-text">Open-source GPG key manager for Windows computers</p>
+            </a></span>
+          </div>
+
+          <h2>Nutshell</h2>
+          <p>First, we are going to explain what a keyserver is, and talk about what keysigning is.</p>
+          <p>Second, we will show how to sign keys.</p>
+          <p>Finally, we will show how to use a keyserver.</p>
+
+
+          <h2>Part I: Intro to Keysigning and Keyservers</h2>
+          <h3>Keyservers</h3>
+          	<p>Keeping in mind that you need someone's Public Key in order to send them an encrypted message, we need an easy way to find someone's Public Key. If you want to make it easy for anyone to send you an encrypted message, it's a good idea to store a copy of your Public Key online. That's all a keyserver does; it basically stores a copy of your Public Key "in the cloud" so anyone can look up your key in much the same way that someone could look up a phone number in a phone book or directory. Keyservers have the added benefit of making it easy to see the signatures on a key. There are a number of different public keyservers, but they all typically copy each other, so it does not really matter which one you use.</p>
+          	<p>We'll go through the process in detail below in Part IV, but if you want to take a peek right now, go to <a href="http://keys.gnupg.net">http://keys.gnupg.net</a> and type <em>plexiglass@riseup.net</em> in the Search String box, then press the Submit button. You should be able to see my public key. (To view the signatures, you will need to select the "verbose" option before clicking Submit.)</p>
+          <h3>Keysigning</h3>
+          	<p>The basic idea behind key pairs is that anything encrypted with the pair's Public Key can only be decrypted by the Private Key of the same pair. This means that it is extremely important to make sure you that encrypt your messages with the right Public Key, otherwise your intended recipient will not be able to decrypt the message. Worse than that, if some third party has the Private Key for the (wrong) Public Key you used, that third party will be able to decrypt the message instead.</p>          
+            <p>So how can you be sure that the Public Key with which you are encrypting the message will allow only the intended recipient to decrypt it? The easiest way would be to physically get a copy each Public Key directly from the people you want to contact. This would virtually guarantee that you are using the right key, but it can be very impractical to get the public keys of all your contacts in this way.</p>
+            <p>Since we don't want to have to go to each person directly, and sometimes we need to get keys for people we have never met, we can use a keyserver to look up the key for the person you want to contact. Alternatively, we could have that person email us their key, or if they save a copy on a webserver (<a href="/content/FE0E7924.asc">like this</a>), we could download it from there. Because we did not get the key directly from the person with these methods, we need some way to make sure it's the right key. So how do we make sure it's the right key, and that it has not been altered in transit?</p>
+          	<p>This is where <strong>keysigning</strong> comes into play. Any time you get a Public Key through any indirect method you will want to check the signatures. Indirect methods include email, chat, or anything that goes across the Internet, since there is <em>some</em> chance that it could be intercepted and altered before it gets to you. Although in general this is not very likely, we want to be absolutely sure that it doesn't happen. To be sure, we can look at the signatures on the key. The signatures tell us who else trusts that key. If we know and trust some of the people who have signed the key, we can trust that the key genuinely belongs to the person it claims to. Keyservers have the advantage of showing the signatures before you even download the key.</p>
+          	<p>Let's take a second to talk about what a key signature is with an analogy. Suppose Antoine and Betty are getting married. When they sign the marriage license, they have to have a witness (whom we'll call William) sign the license. When William the witness signs the document, he is giving his word that he was there and saw Antoine and Betty sign the license as well. If William is a good witness, he has also carefully checked to make sure that Antoine really is Antoine and Betty really is Betty, and that Antoine and Betty signed the very same document that he is now signing. Having the signature of a witness helps prove that the document is valid; if there is any doubt that the license was altered, one could always contact William and ask him if the document in question is the same as the one he signed. William's signature helps demonstrate the authenticity of the license.</p>
+          	<p>In the same way that a witness' signature can attest to the validity of the marriage license, a <strong>key signature</strong> can attest to the validity of a Public Key. A key signature is like a statement from a witness that says, "I have verified that this key belongs to its purported owner, and it could not have possibly been modified in transit." In order for the signature to be useful to others, you should re-upload the key to the keyserver after you sign it. This is like filing the marriage license so it becomes part of public record. Now anyone can see the signature you added, and someone who trusts you can trust the key you signed.</p>
+          	<p>Just like being a good witness, you should carefully check a Public Key before you sign it. Fortunately, you do not have to compare every last character of the key. Instead, you can look at the key's fingerprint. The fingerprint is mathematically determined by the key, but it is much shorter, so you can easily compare it to the known correct fingerprint. Before signing any key, you should obtain the fingerprint <em>directly</em> from your contact and check if it matches the fingerprint of the key in question. If there is <em>any difference at all</em> in the fingerprint, then you cannot trust the key in question. But be careful! It is just as dangerous to check it against a fingerprint that you did not receive directly from the contact. If someone could alter your contact's key while it travels across the Internet, they could just as easily alter the fingerprint that your contact later provides. So it is not a good idea to ask for the fingerprint through email or chat. You should verify the fingerprint in person, over the phone, or through some form of already-secure communication.</p>
+          	<p>With that understanding, the basic process of keysigning is this:
+          		<ol>
+          			<li>Obtain a Public Key</li>
+          			<li>Verify the fingerprint of the public key</li>
+          			<li>Sign the Key</li>
+          			<li>Upload the key to a keyserver to record your signature for others to see</li>
+          		</ol>
+          	</p>
+          	<p>So let's see how to do it!</p>
+          	
+		  
+          <h2>Part II: How to Sign Keys</h2>
+<span class="HideOSX">
+          <h3>OS X (GPG Keychain Access)</h3>
+          <ol>
+            <li>First, you will need to obtain someone else's public key. You can do this through email, by downloading it from a keyserver, in person, or by any other method.</li>
+            <li>Run <strong>GPG Keychain Access</strong> from your <strong>Applications</strong> folder.</li>
+            <div class="sshot-wide"><img class="sshot-wd" src="/content/screenshots/HT-KEYS-Import.jpg"></img><img class="sshot-wd" src="/content/screenshots/HT-KEYS-ImportSuccess.jpg"></img></div>
+            <li>Click the <strong>Import</strong> button or select <strong>Import...</strong> from the <strong>File</strong> menu. Select the public key and press <strong>OK</strong> to import it.</li>
+            <li>You should see a small window that says you successfully imported a key. If it says that 0 keys were imported, check to make sure the file you selected has not been altered, and that you do not already have the key in your list.</li>
+            <li>Now that you have imported your contact's key, right-click it and go to <strong>Show Info</strong>. A window should pop up showing more detailed information.</li>
+            <div class="sshot-right"><img class="sshot-sm" src="/content/screenshots/HT-KEYS-CheckPrint.jpg"></img></div>
+            <li><strong>This is the most important step:</strong> In the Key Inspector window, you should see the Fingerprint item on the Key tab. You will need to verify the fingerprint by asking your contact to confirm it. For security reasons, you should not ask your contact to confirm it by email, chat, or any other unsecured communication. Anything that travels across the Internet could potentially be altered before it gets to you. You should not sign a key unless you are completely sure that it has not been altered. Because of this, the best way to verify a fingerprint is in person. You can read the fingerprint off of this screen and ask your contact to confirm it. Alternatively, if you can recognize your contact's voice, the next best alternative is to call your contact and verify the fingerprint over the phone. Remember, <strong>if the fingerprint does not <u>exactly</u> match what your contact says, you should not sign the key!</strong> Once you have checked and confirmed the fingerprint, you can close the Key Inspector window. </li>
+          	<div class="sshot-right"><img class="sshot-sm" src="/content/screenshots/HT-KEYS-HowSure.jpg"></img></div>
+          	<li>Right-click your contact's key again, and click <strong>Sign...</strong> A window will open asking you how confident you are that the key belongs to the person named at the top of that window. If you have verified the fingerprint in person or over the phone, you can safely select "I have done very careful checking". If you used any indirect method, the highest confidence you should select is "I have done casual checking". If you have not checked the fingerprint, you shouldn't be signing the key in the first place. (Note: If you have more than one personal private key, you will need to select which of your keys to do the signing with under "Secret key for sign".)</li>
+			<div class="sshot-right"><img class="sshot-sm" src="/content/screenshots/HT-KEYS-EnterPass.jpg"></img></div>
+			<li>Ask yourself one more time if you are sure the key belongs to the person it says, then click <strong>Generate Signature</strong>. A window will open asking you to type the password for your private key. This is necessary because the act of signing involves performing some math based on your private key and your contact's public key in order to generate a unique result. This ensures that your signature no longer counts if the public key is altered, and that no one can sign a key while pretending to be you. Type in your password and press <strong>OK</strong>.</li>
+			<li>You have now successfully signed your contact's public key. Now that you have signed it, you should upload it to a keyserver. Otherwise, you are the only person who can see the signature. Continue to Part III to see how to use a keyserver.</li>
+          </ol>
+          <p><strong>Note:</strong> to view a key's current signatures, right click the key and click <strong>Show Info</strong>. You can review the signatures listed on the bottom half of the "User IDs" tab.</p>
+</span>
+<span class="HideWin">
+          <h3>Windows (GPA - GNU Privacy Assistant)</h3>
+          <ol>
+            <li>First, you will need to obtain someone else's public key. You can do this through email, by downloading it from a keyserver, in person, or by any other method.</li>
+            <li>Run <strong>GPA</strong> by clicking the <strong>Start Menu</strong>, then clicking <strong>All Programs</strong>, <strong>Gpg4win</strong>, and finally <strong>GPA</strong>.</li>
+            <div class="sshot-wide"><img class="sshot-wd" src="/content/screenshots/HT-KEYS-GPAImport.jpg"></img><img class="sshot-wd" src="/content/screenshots/HT-KEYS-GPAImportSuccess.jpg"></img></div>
+            <li>Click the <strong>Import</strong> button or select <strong>Import Keys...</strong> from the <strong>Keys</strong> menu. Select the public key and press <strong>OK</strong> to import it.</li>
+            <li>You should see a small window that says you successfully imported a key. If it says that 0 keys were imported, check to make sure the file you selected has not been altered, and that you do not already have the key in your list.</li>
+            <li>Now that you have imported your contact's key, click it in the main GPA window. In the bottom half of the window, under the Details tab, you should see additional information about that key.</li>
+            <div class="sshot-right"><img class="sshot-sm" src="/content/screenshots/HT-KEYS-GPACheckPrint.jpg"></img></div>
+            <li><strong>This is the most important step:</strong> On the details tab, you should see an entry for "Fingerprint". You will need to verify the fingerprint by asking your contact to confirm it. For security reasons, you should not ask your contact to confirm it by email, chat, or any other unsecured communication. Anything that travels across the Internet could potentially be altered before it gets to you. You should not sign a key unless you are completely sure that it has not been altered. Because of this, the best way to verify a fingerprint is in person. You can read the fingerprint off of this screen and ask your contact to confirm it. Alternatively, if you can recognize your contact's voice, the next best alternative is to call your contact and verify the fingerprint over the phone. Remember, <strong>if the fingerprint does not <u>exactly</u> match what your contact says, you should not sign the key!</strong> Once you have checked and confirmed the fingerprint, you can continue. </li>
+          	<div class="sshot-right"><img class="sshot-sm" src="/content/screenshots/HT-KEYS-GPASign.jpg"></img></div>
+          	<li>Right-click your contact's key, and click <strong>Sign Keys...</strong> A window will open asking you to verify the fingerprint before signing. Ask yourself one more time if you are sure the key belongs to the person it says, then click <strong>Yes</strong>.</li>
+			<div class="sshot-right"><img class="sshot-sm" src="/content/screenshots/HT-KEYS-GPAEnterPass.jpg"></img></div>
+			<li>A window will open asking you to type the password for your private key. This is necessary because the act of signing involves performing some math based on your private key and your contact's public key in order to generate a unique result. This ensures that your signature no longer counts if the public key is altered, and that no one can sign a key while pretending to be you. Type in your password and press <strong>OK</strong>.</li>
+			<li>You have now successfully signed your contact's public key. Now that you have signed it, you should upload it to a keyserver. Otherwise, you are the only person who can see the signature. Continue to Part III to see how to use a keyserver.</li>
+          </ol>
+          <p><strong>Note:</strong> to view a key's current signatures, just click the key. You can review the signatures on the "Signatures" tab at the bottom of the main window.</p>
+</span>
+
+          <h2>Part III: How to use Keyservers</h2>
+          <p>Keyservers can be used in four main ways: 
+          	<ul>
+          	  <li>Obtaining a key you don't already have</li>
+          	  <li>Updating a key you do have to see the latest signatures</li>
+          	  <li>Sending a key that the keyserver does not have yet so others can find it there</li>
+          	  <li>Updating the keyserver's copy of a key, in order to publish the latest signatures</li>
+            </ul>
+          </p>
+          
+          <h3>Obtaining a Key from a Keyserver - Any Operating System</h3>
+          <ol>
+            <li>To obtain a key that you don't already have from a keyserver, first go to the website of a keyserver like <a href="http://keys.gnupg.net/">http://keys.gnupg.net/</a>. Please note that this website may look different every time you load it. The index is hosted by many different servers, and it may load the page from a different server to help distribute the server load. For this reason, the labels in the process below may be slightly different, but it should work basically the same on every server.</li>
+            <li>Type in the email address, name, or Key ID of the person you want to contact in the "String" or "Search String" box.</li>
+            <li>If you would like to see signatures in addition to the public keys, select the "verbose index" option.</li>
+            <li>Click the <strong>Search</strong> or <strong>Submit</strong> button.</li>
+            <li>When the Search Results page appears, review the results. If there is only one, that's probably the one you're looking for. If there is more than one, see if you can tell which one is correct by looking at the User ID or the signatures. If you know your contact, it can be easy to figure out which key is correct.
+            	<ul><li>Note: A Key ID is an even shorter version of the key's fingerprint. It's not secret information; it just provides a quick way to find public keys. So if you searched by Key ID, you should only see one result. If you did not, and you can't tell which result is correct, ask your contact for their Key ID and you should be able to find it easily if it is on the keyserver.</li></ul>
+            </li>
+            <li>Once you have determined which result is correct, click the link in the "pub" row next to your contact's name. (The link you are clicking should match the KeyID of the public key for your contact.)</li>
+            <li>Highlight the entire key, including dashes, from the point where it says "-----BEGIN PGP PUBLIC KEY BLOCK-----" to the point where it says "-----END PGP PUBLIC KEY BLOCK-----". Copy and paste this into a text file using Notepad, TextEdit, or any other plain text software. Do not use an application such as Microsoft Word, as this will add extra formatting information that could keep your key manager program from recognizing the key. Save the key with any file name, with the extension ".txt" or ".asc"</li>
+          </ol>
+                    
+<span class="HideOSX">
+          <h3>Obtaining a Key from a Keyserver - Alternate Method (OS X)</h3>
+          <ol>
+          	<li>Open <strong>GPG Keychain Access</strong> in your Applications folder</li>
+          	<li>Press <strong>Command + F</strong> or select <strong>Search for key...</strong> from the <strong>Key</strong> menu at the top of the screen.</li>
+          	<li>Type in the name, email address, or Key ID of the person you want to contact and press <strong>Search key</strong>.</li>
+          	<li>Review the results as in the previous method. Check the box next to the key you want to import, then press <strong>Retrieve key</strong></li>
+          </ol>
+</span>
+          
+          <h3>Updating a Key from a Keyserver</h3>
+          <ul>
+          	<span class="HideOSX"><li><strong>OS X</strong> - To retrieve the latest version of a key from the keyserver, simply open up <strong>GPG Keychain Access</strong>, right click the key you want to update, and click <strong>Update from keyserver</strong>. That's it, you can now see all of the latest signatures for that key that have been sent to the keyserver!</li></span>
+            <span class="HideWin"><li><strong>Windows</strong> - To retrieve the latest version of a key from the keyserver, open up <strong>GPA</strong> and click <strong>Retrieve Keys...</strong> in the <strong>Server</strong> menu. Type in the Key ID you see next to your contact's key in the main window, and press <strong>OK</strong>. That's it, you can now see all of the latest signatures for that key that have been sent to the keyserver!</li></span>
+          </ul>
+
+		  <h3>Sending a Key to a Keyserver</h3>
+          <ul>
+          	<span class="HideOSX"><li><strong>OS X</strong> - To send a key to the keyserver in the first place, simply open up <strong>GPG Keychain Access</strong>, right click the key you want to update, and click <strong>Send public key to keyserver</strong>. That's it, now others can search for your public key and get it from the keyserver!</li></span>
+          	<span class="HideWin"><li><strong>Windows</strong> - To send a key to the keyserver in the first place, simply open up <strong>GPA</strong>, right click the key you want to update, and click <strong>Send keys...</strong>. A box will open asking you to confirm you want to send it to the keyserver. Click <strong>OK</strong>. That's it, now others can search for your public key and get it from the keyserver!</li></span>
+          </ul>
+          
+          <h3>Updating the Keyserver's Copy</h3>
+          <p>You only need to update the keyserver's copy if you have added a signature. There is no difference between sending a key in the first place and updating it. Just follow the previous instructions for sending a key and the keyserver will be updated with the signature you added! Remember to be careful about which keys you sign.</p>
+
+        
+        
+          
+          <h3>Suggested links for further information</h3>
+          <ul>
+            <li><a href="http://www.cryptnet.net/fdp/crypto/keysigning_party/en/keysigning_party.html">Keysigning Party How-To (Intro to Keysigning, Keyservers, and Webs of Trust)</a></li>
+          </ul>
+
+<!-- END PAGE-SPECIFIC CONTENT -->
+
+
+
+

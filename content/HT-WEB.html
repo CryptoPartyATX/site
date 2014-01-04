@@ -1,0 +1,138 @@
+
+<!-- BEGIN PAGE-SPECIFIC CONTENT -->
+<style>
+.page-icon {
+		width:150px;
+		height:150px;
+		display:inline-block;
+		float:right;
+		clear:right;
+		background:url("/images/web-selected.png");
+}
+div.sshot-right, div.sshot-wide {
+	border: 2px solid #DDD;
+	padding: .25em;
+}
+.sshot-right {
+	width:20em;
+	float:right;
+	clear:right;
+}
+.sshot-wide {
+	width:80%;
+}
+.sshot-sm, .sshot-wd {
+	width:100%;
+}
+</style>
+	   <div class="page-icon">&nbsp;</div>
+	   
+<?php
+
+$pageid = $_GET['page'];
+$os = $_GET['os'];
+if(!$os){$os="win";}
+
+if($os=="win"){
+	echo "<style>.HideOSX {display:none;}</style>";
+	echo "<a href=\"?page=$pageid&os=osx\"><div class=\"osSelect\">Select Your OS: <br /><img src=\"/images/os_button_win.png\" /></div></a>\n";
+}
+else {
+	echo "<style>.HideWin {display:none;}</style>";
+	echo "<a href=\"?page=$pageid&os=win\"><div class=\"osSelect\">Select Your OS: <br /><img src=\"/images/os_button_osx.png\" /></div></a>\n";
+}
+?>
+       <h1>Encrypted Web Browsing</h1>
+          <h3><i>A guide to encrypting your web browsing traffic with Tor</i></h3>
+          <p><strong>Purpose:</strong>This guide attempts to explain how to install and use TorBrowser to more securely access the Internet through the TOR (The Onion Router) network. TOR encrypts your web requests and transmits them through a web of relays. This helps to hide your IP address from the website you visit and make it more difficult for third parties to track your activity.</p>
+          <p><strong>Software:</strong>The only software needed for this guide is TorBrowser. TorBrowser is a bundle including Vidalia, the back-end TOR client, and a custom version of Firefox preconfigured to connect to Vidalia. It also includes various add-ons to help keep your session secure. TorBrowser is available from the Tor Project website:</p>
+
+          <div class="list-group">
+            <a href="https://torproject.org" class="list-group-item">
+              <h3 class="list-group-item-heading">TorBrowser</h3>
+              <p class="list-group-item-text">Browser bundle that encrypts your web traffic to help protect your anonymity only.<br /><em>https://torproject.org</em></p>
+            </a>
+          </div>
+
+
+        <h2>Nutshell</h2>
+			<p>First, we install TorBrowser.</p>
+			<p>Second, we open up TorBrowser to see if it worked. That's it, this is a quick one!</p>
+			<p>Finally, we talk about safe browsing habits and the limitations of TOR.</p>
+
+
+        <h2>Part I: Install TorBrowser</h2>
+          <ol>
+			<li>Obtain TorBrowser from the <a href="https://www.torproject.org/download/download">TorProject download page</a> We always recommend downloading the latest copy of the installation file from the website and verifying the checksum.</li>
+<span class="HideWin">
+			<h3>Windows</h3>
+			<ol>
+				<li>Extract TorBrowser by double-clicking the downloaded installation file and choosing a directory. TorBrowser is self-contained, so there is no further installation. It is ready to go.</li>
+				<li>Any time you need to run TorBrowser, you run it from this folder. You can move this folder any time when TorBrowser isn't running, and you may want to create a shortcut on your start menu, toolbar, or desktop.</li>
+			</ol>
+</span>	
+<span class="HideOSX">		
+			<h3>OS X</h3>
+			Extract TorBrowser by double-clicking the downloaded installation zip file. After it finishes, you should see the <strong>TorBrowser_en-US</strong> application. Drag it to your Applications or any other folder if you would like.
+</span>
+          </ol>
+
+
+		<h2>Part II: Test TorBrowser</h2>
+		  <ol>
+			<li>Open TorBrowser by navigating to the location you downloaded it (Windows), or your Applications folder (OS X).</li>
+			<li>You should see the Vidalia window pop up. Vidalia does all the work of connecting to the Tor Network, and should be left running while you use TorBrowser.</li>
+			<li>After Vidalia connects, you should see a TorBrowser window that looks similar to Firefox (because it is a version of Firefox). That window should start on the TorCheck page: (https://check.torproject.org/?lang=en-US). If everything is working properly, you should see the following screen:</li>
+		  	<div class="sshot-wide"><img class="sshot-wd" src="/content/screenshots/HT-WEB-TorSuccess.jpg"></img></div>
+		  </ol>
+		  
+		  
+		<h2>Part III: Browsing habits and the limits of TorBrowser and Tor</h2>
+			<p>The purpose of TorBrowser is to encrypt the transmission of your internet requests. This hides the actual connections you are making from your ISP or anyone monitoring your connection. TorBrowser hides your actual IP address from the websites you visit so it is virtually impossible for them to be certain where you are actually connecting from.</p>
+			<p><strong>THIS DOES NOT MEAN EVERYTHING YOU DO WHILE USING TOR IS PRIVATE<strong></p>
+			<p>If you open up TorBrowser, and then log into Facebook, Facebook knows who you are, even though they can't tell your actual IP address. You still had to log in, so Facebook still knows it is you. They often even notice that you have connected from an unusual IP address and may ask for further verification of your identity. So if you want to use TorBrowser to send private Facebook messages, tweets, or instaphotosnapgramterests, you're out of luck.</p>
+			<p>Some of the best uses for TorBrowser is researching topics you aren't willing to share with your ISP or government, or logging into non-identifying websites privately (e.g. a “throw-away” reddit account).</p>
+			<p>Always keep in mind that any information you transmit directly to a website can still be read by that website (otherwise web browsing wouldn't work). TorBrowser only protects it while it is being transmitted. The site you connect to can store and share information about what IP address connected, what account they logged into, and what the user did on the website. As long as you are masking your IP with TorBrowser and using a throw-away account, it can be difficult to track back to you.</p>
+			<p>Data mining techniques could allow people with powerful enough computers and access to enough data to find correlations between your throw-away account and your actual account. For this reason, it is recommended that you change throw-away accounts regularly and <strong>absolutely do not post anything remotely identifying when using TorBrowser</strong>. Your worst enemy is yourself on this. TorBrowser keeps it safe in transit, but it is up to you to make sure you don't leave a trail on the websites you visit.</p>
+			
+			<p>For futher information on installing TorBrowser and using it safely, we recommend reading the warnings listed on the download page, and referring to the links below:</p>
+			
+		  <div class="list-group">
+<span class="HideWin">
+            <a href="http://www.torproject.org/docs/tor-doc-windows.html.en" class="list-group-item">
+              <h3 class="list-group-item-heading">Tor Install Guide for Windows [Official]</h3>
+              <p class="list-group-item-text"><em>http://www.torproject.org/docs/tor-doc-windows.html.en</em></p>
+            </a>
+</span>
+<span class="HideOSX">
+            <a href="https://www.torproject.org/docs/tor-doc-osx.html.en" class="list-group-item">
+              <h3 class="list-group-item-heading">Tor Install Guide for OS X [Official]</h3>
+              <p class="list-group-item-text"><em>https://www.torproject.org/docs/tor-doc-osx.html.en</em></p>
+            </a>
+</span>
+            <a href="https://www.torproject.org/dist/manual/short-user-manual_en.xhtml" class="list-group-item">
+              <h3 class="list-group-item-heading">Tor Short User Manual [Official]</h3>
+              <p class="list-group-item-text"><em>https://www.torproject.org/dist/manual/short-user-manual_en.xhtml</em></p>
+            </a>
+            <a href="https://www.eff.org/document/tor-myths-and-facts" class="list-group-item">
+              <h3 class="list-group-item-heading">Tor: Myths and Facts [via EFF]</h3>
+              <p class="list-group-item-text"><em>https://www.eff.org/document/tor-myths-and-facts</em></p>
+            </a>
+
+
+            <a href="https://www.youtube.com/watch?v=B38zx7TPDC4" class="list-group-item">
+              <h3 class="list-group-item-heading">Freedom House Video Tutorial</h3>
+              <p class="list-group-item-text"><em>https://www.youtube.com/watch?v=B38zx7TPDC4</em></p>
+            </a>
+            <a href="http://www.blackhatlibrary.net/Tor" class="list-group-item">
+              <h3 class="list-group-item-heading">Blackhat Tor Wiki Article</h3>
+              <p class="list-group-item-text"><em>http://www.blackhatlibrary.net/Tor</em></p>
+            </a>
+          </div>
+
+          
+<!-- END PAGE-SPECIFIC CONTENT -->
+
+
+
+

@@ -1,0 +1,258 @@
+<!-- BEGIN PAGE-SPECIFIC CONTENT -->
+<style>
+.page-icon {
+		width:150px;
+		height:150px;
+		display:inline-block;
+		float:right;
+		clear:right;
+		background:url("/images/email-selected.png");
+}
+div.sshot-right, div.sshot-wide {
+	border: 2px solid #DDD;
+	padding: .25em;
+}
+.sshot-right {
+	width:20em;
+	float:right;
+	clear:right;
+}
+.sshot-wide {
+	width:80%;
+	clear:both;
+}
+.sshot-sm, .sshot-wd {
+	width:100%;
+}
+
+
+</style>
+
+
+	   <div class="page-icon">&nbsp;</div>
+	   
+	   
+<?php
+
+$pageid = $_GET['page'];
+$os = $_GET['os'];
+if(!$os){$os="win";}
+
+if($os=="win"){
+	echo "<style>.HideOSX {display:none;}</style>";
+	echo "<a href=\"?page=$pageid&os=osx\"><div class=\"osSelect\">Select Your OS: <br /><img src=\"/images/os_button_win.png\" /></div></a>\n";
+}
+else {
+	echo "<style>.HideWin {display:none;}</style>";
+	echo "<a href=\"?page=$pageid&os=win\"><div class=\"osSelect\">Select Your OS: <br /><img src=\"/images/os_button_osx.png\" /></div></a>\n";
+}
+?>
+	   
+       <h1>Email Encryption with Thunderbird</h1>
+          <h3><i>A guide to setting up PGP-encrypted email on Windows and OS X</i></h3>
+          <p><strong>Purpose:</strong> This guide attempts to explain how to implement PGP email encryption to enhance security and privacy. This guide is a recipe, not an encyclopedia. Its primary goal is to demonstrate how it is done, not to explain why (although there is some explanation at the end). For further information, we recommend consulting the Ars Technica article on setting up email encryption. The Ars guide uses the same method described below, but we have no affiliation with Ars Technica. The article can be found <a href="http://arstechnica.com/security/2013/06/encrypted-e-mail-how-much-annoyance-will-you-tolerate-to-keep-the-nsa-away/">here at Ars Technica.</a></p>
+
+		  <p><strong>Powerpoint Presentation</strong>: <a href="https://cryptopartyatx.org/misc/EmailPresentation.pptx">Here</a> is the PowerPoint presentation created for our December 2013 party in case you couldn't make it or want a copy.</p>
+
+          <p><strong>Software:</strong> The following software is used in this guide. For best security, always download the files from the original source and verify the checksum.</p>
+
+          <div class="list-group">
+            <a href="https://www.mozilla.org/en-US/thunderbird/" class="list-group-item">
+              <h3 class="list-group-item-heading">Mozilla Thunderbird</h3>
+              <p class="list-group-item-text">Open-source email client, works similarly to Outlook</p>
+            </a>
+            <span class="HideOSX"><a href="https://gpgtools.org/" class="list-group-item">
+              <h3 class="list-group-item-heading">GPG Suite (OS X)</h3>
+              <p class="list-group-item-text">Open-source GPG key manager for Mac OS X computers</p>
+            </a></span>
+            <span class="HideWin"><a href="http://www.gpg4win.org/" class="list-group-item">
+              <h3 class="list-group-item-heading">Gpg4Win (Windows)</h3>
+              <p class="list-group-item-text">Open-source GPG key manager for Windows computers</p>
+            </a></span>
+            <a href="http://www.truecrypt.org/" class="list-group-item">
+              <h3 class="list-group-item-heading">TrueCrypt</h3>
+              <p class="list-group-item-text">TrueCrypt is not necessary for email encryption, but it allows you to create encrypted “containers” that work like password-protected folders. You can fill these containers with the files you want to encrypt, and send them as email attachments as one way to encrypt attachments. You can also use them to keep your keys and personal data more secure on your own computer.</p>
+            </a>
+          </div>
+
+          <h2>Nutshell</h2>
+          <p>First, we are going to install Thunderbird. This will be your new way to access your existing email account (or you can create a new account if you'd like). If you have used an email program like Outlook, you should know what to expect.</p>
+
+          <p>Second, we install a GPG key manager. GPG is an open source implementation of PGP encryption. This program will allow you to keep track of your Private Keys and all of your contacts' Public Keys. It will also allow you to create a key pair if you do not have one yet.</p>
+
+          <p>Third, we will install Enigmail, an Add-On for Thunderbird that encrypts your emails using your keys. It works sort of like a bridge between Thunderbird and the key manager.</p>
+
+          <p>Finally, we test it to make sure it works. I'll also outline how to use TrueCrypt to securely backup your private key and briefly mention a few other relevant topics.</p>
+
+          <p>The Appendix has some general information on keys, keysigning, keyservers, and how TrueCrypt can come into play, as well as some suggestions for further reading.</p>
+
+
+          <h2>Part I: Install Thunderbird</h2>
+          <ol>
+            <li>
+              Obtain the Thunderbird installation file
+              <ul>
+                <li>Visit <a href="https://www.mozilla.org/en-US/thunderbird/">Mozilla Thunderbird's site</a> and download the latest version</li>
+              </ul>
+            </li>
+            <li>
+              Install Thunderbird
+              <ul>
+                <li>Double-click the installation file in your download folder</li>
+                <span class="HideOSX"><li>OS X – Drag Thunderbird to your Applications folder</li></span>
+                <span class="HideWin"><li>Windows – Allow the program to run and click Next until the installation program finishes. The standard options are okay.</li></span>
+              </ul>
+            </li>
+            <li>
+              Run Thunderbird
+              <ul>
+                <span class="HideOSX"><li>OS X – Double-click Thunderbird in your Applications folder</li></span>
+                <span class="HideWin"><li>Windows – Thunderbird should run after installation. If it does not, click the Start menu, select Programs or “All Programs”, and click Mozilla Thunderbird.</li></span>
+              </ul>
+            </li>
+            <li>
+              Configure Thunderbird to use your current email account
+              <ul><div class="sshot-right"><img class="sshot-sm" src="/content/screenshots/HT-EMAIL-AcctSetup.jpg"></img></div>
+                <li>
+                  Thunderbird should automatically begin to setup your email account. If it does not, click “Create a new account”
+                  <ul>
+                    <li>Click “Skip this and use my existing email” to setup Thunderbird using an email account you already have</li>
+                    <li>Type your display name, current email address, and your email password and click “Continue”</li>
+                    <li>If you typed your information correctly, you will now have the option to select between IMAP and POP3. Select IMAP if it is not already selected, and press “Done”. Your emails should begin to load. [Note: POP3 will work, but it may require additional configuration not covered in this guide.]</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>Done! You can now access your email account using Thunderbird. You may want to customize the appearance of Thunderbird or enable other Add-Ons, but those topics are not covered in this guide. It may take some time to load all of your emails, but you should be able to continue with this guide in the meantime.</li>
+          </ol>
+
+          <h2>Part II: Install GPGSuite or Gpg4Win (GPA) and Create Your Key Pair</h2>
+<span class="HideOSX">
+          <h3>OS X (GPG Suite)</h3>
+          <div class="sshot-right"><img class="sshot-sm" src="/content/screenshots/HT-EMAIL-GPGGen.jpg"></img></div>
+          <ol>
+            <li>
+              Obtain the GPG Suite installation file
+              <ul>
+                <li>Download the GPG Suite or <a href="https://gpgtools.org/">here</a>.</li>
+              </ul>
+            </li>
+            <li>
+              Install GPG Suite
+              <ul>
+                <li>Double-click GPG Suite – 2013.08.06.dmg in your download folder</li>
+                <li>Double-click Install.pkg</li>
+                <li>Click Continue until the installation completes. The default options are okay.</li>
+              </ul>
+            </li>
+            <li>
+              Run GPG Keychain Access and Create Your Key Pair
+              <ul>
+                <li>Double-click GPG Keychain Access in your Applications folders</li>
+                <li>Click New to create a key pair. Enter your name and the email address you want to use with encryption. You can select from the advanced options if you would like to increase security by making your key longer or having it expire.</li>
+            	<div class="sshot-wide"><img class='sshot-wd' src="/content/screenshots/HT-EMAIL-GPGSetPass.jpg"></img></div>
+                <li>When the you see the prompt that says “Enter passphrase”, wait for a second. Read the text in the box that's probably hidden behind the passphrase box. It basically says to do some stuff on your computer like copy large files and type some things for a bit to make your key more random. (The more random it is, the harder it is to crack.)</li>
+                <li>Then, type a passphrase and press OK. You will use this passphrase to access your private key when you need to send an email or decrypt an email sent to you. It should be as long and complex as you can possibly tolerate typing on a regular basis.</li>
+                <li>Done! You now have a key pair; a Public PGP Key and a Private PGP Key. Do you know what that means? If you don't, now is a good time to go read the Appendix.</li>
+              </ul>
+            </li>
+          </ol>
+</span>
+<span class="HideWin">
+          <h3>Windows (Gpg4Win with GPA)</h3>
+          <ol>
+            <li>
+              Obtain the Gpg4Win Installation file
+              <ul>
+                <li>Download the latest version <a href="http://www.gpg4win.org/">here</a>.</li>
+              </ul>
+            </li>
+            <li>
+              Install Gpg4Win
+              <ul>
+                <li>Double-click gpg4win-2.2.0.exe</li>
+                <li>Click next until you reach the “Choose Components” page. Check the box next to GPA (GNU Privacy Assistant)</li>
+                <li>Click next until the installation completes. Default options are okay. Uncheck the box next to View README and click “Finish”.</li>
+              </ul>
+            </li>
+            <li>
+              Run GPA and Create your Key Pair
+              <ul>
+                <li><strong>IMPORTANT:</strong> See Appendix for general information about key pairs and how the whole process works. This won't make much sense otherwise.</li>
+                <li>Click Start, then Programs, then Gpg4win, and run GPA. This is your key manager program.</li>
+                <li>GPA should prompt you to create a key the first time you run it, if you do not see the prompt, you can create a key by clicking the “Keys” menu, then “New Key...”, or by pressing Control + N.</li>
+                <li>Enter your name and the email address you will be using with this key. Create a backup copy later, unless you already have a safe location to store it. Storing private keys can be one use for TrueCrypt, see Appendix for more information.</li>
+                <li>Enter a password. This is what you will type whenever you want to sign a message you are sending, or when you want to decrypt a message sent to you. You should now see your key on the list in the GPA window.</li>
+                <li>[Optional] Now that you have created this key, it is a good time to upload your public key to the keyserver. You can do this by clicking the key you created, then the “Server” menu, then “Send Keys...”. For more information on why keyservers are used, see Appendix.</li>
+              </ul>
+            </li>
+            <li>Done! You now have a key pair; a Public PGP Key and a Private PGP Key. Do you know what that means? If you don't, now is a good time to go read the Appendix.</li>
+          </ol>
+</span>
+          <h2>Part III: Install Enigmail</h2>
+
+          <ol>
+            <li>Run Thunderbird, if it is not still open.</li>
+            <li>Open “Add-Ons”, located in the “Tools” menu or in the menu launched by the button with 3 horizontal bars near the top right of Thunderbird.</li>
+            <div class="sshot-wide"><img class="sshot-wd" src="/content/screenshots/HT-EMAIL-Enig.jpg"></img></div>
+            <li>Search for Enigmail using the search box on the Add-Ons page. Click install, and then restart Thunderbird to enable the add-on.</li>
+            <span class="HideWin"><li>WINDOWS ONLY: check Enigmail In the “Tools” menu or button, select OpenPGP >> Preferences. If you see an error message, or if the Preferences box shows “Could not find GnuPG” under “Basic Settings” and “Files and Directories”, check the box “Override with”. Then, press “Browse...”. Navigate to and select “C:\Program Files\GNU\GnuPG\gpg2.exe”. (On some systems, you may need to use “C:\Program Files (x86)\GNU\GnuPG\gpg2.exe”.)</li></span>
+            <div class="sshot-right"><img class="sshot-sm" src="/content/screenshots/HT-EMAIL-EnigSetup.jpg"></img></div>
+            <li>Configure Enigmail for your email account. Click the menu button and go to “Options” or “Preferences” and then “Account Settings”. On the left side, select OpenPGP Security. Check the box at the top of the right side to enable Enigmail. If you entered your email address when you made your private key,  the “Use email address of this identity...” option is fine. Otherwise, click the specific key option and press “Select Key”. Select the key you made and press OK.</li>
+            <li>Done! You can now send and received encrypted emails.</li>
+          </ol>
+
+          <h2>Part IV: Send and Receive a test email</h2>
+
+          <p>Basics of Keys: In order to send someone an encrypted message, you will need their public key. For example, to send a message that only John can decrypt, you must encrypt it with John's public key. John then uses his private key to decrypt the message. Never give out your private key for any reason. Whoever has your private key can decrypt any encrypted message sent to you using your paired public key. For further information on how key pairs work, now is a really good time to read the Appendix or see the suggested links on that.</p>
+
+          <ol>
+            <li>Obtain a public key from someone you want to email. If you don't have anyone's public key, download <a href="/content/FE0E7924.asc"">the public key</a> for <a href="mailto:plexiglass@riseup.net">plexiglass@riseup.net</a> and attach your public key when you send me an email. I'll try to answer you ASAP by sending you an encrypted email back. Please do not send any sensitive information, this is for testing purposes only.</li>
+            <li>
+              Import the recipient's public key. 
+              <div class="sshot-right"><img class="sshot-sm" src="/content/screenshots/HT-EMAIL-GPGImport.jpg"></img></div>
+              <ul>
+                <span class="HideWin"><li>Windows - Open up GPA and click the Import button. Find the file and select it, then click OK.</li></span>
+                <span class="HideOSX"><li>OS X – open up GPG Keychain Access and click Import. Find and select the key file, then click Open. </li></span>
+              </ul>
+            </li>
+            <li>Type a test email. Open Thunderbird and address an email to the owner of a public key you imported. Type something in the body to be encrypted. Please note that the subject line will not be encrypted.</li>
+            <div class="sshot-right"><img class="sshot-sm" src="/content/screenshots/HT-EMAIL-GPGSend.jpg"></img></div>
+            <li>
+              Encrypt and send the message. Press the key icon in the bottom right of the Compose window, or select “Encrypt this message” under the OpenPGP menu. Press Send to send the email. You should see your message turn into what looks like garbage text right before it gets sent out. It may ask you to enter the passphrase for your private key. If so, type the passphrase you typed when you created the key pair.
+              <ul>
+                <li>Note: It also may give you a warning about HTML. To avoid possible problems, I recommend using only plain text for encrypted messages. To compose in plain text, hold shift when you press the Write or Reply button. You can turn off HTML by default in Tools > Account Settings. Select “Composition &amp; Addressing” on the left, and uncheck the first box on the right, “Compose messages in HTML format”.</li>
+              </ul>
+            </li>
+            <li>
+              That's it, you've sent an encrypted message! If you sent it to plexiglass@riseup.net, I will send you a reply as soon as I can letting you know if it worked. If you send me your public key as a file or in the text of your email, I will send you an encrypted response.
+            </li>
+          </ol>
+          
+          <p><strong>Receiving Encrypted Messages:</strong> When you receive an encrypted message, just click it. A box will pop up asking for your passphrase. Enter it and the message should now be decrypted.</p>
+
+
+          <h2>Appendix</h2>
+          <h3><strong>How do key pairs work?</strong></h3>
+          <p>Imagine you are in a room full of people. Maybe a party, like...a CryptoParty. Each person has a box with two locks on it, and each lock uses a different key. Opening the top lock will allow someone to slip a message into the box. Opening the bottom lock will allow you to take messages out to read them. Since you want all of your new friends to be able to drop a message in your box, you make copies of the key to the top lock for everyone. So anyone with your top key can drop in a note, but only you have the bottom key to take the notes out.</p>
+          <p>As you may have guessed, the above example is a lot like how our key pairs function. The key you copied and gave out to everyone is like your Public Key. Someone can use your Public Key to encrypt a message so that it can only be decrypted with your Private Key. So as long as you don't give your Private Key to anyone else, only you can decrypt the message.</p>
+
+          <h3><strong>What is keysigning, and why does it matter? What is a keyserver?</strong></h3>
+		  <p>Please see our <a href="?page=1.7">guide to Keysigning and Keyservers</a> for more information.</p>
+
+          <h3><strong>How do I use TrueCrypt? Why?</strong></h3>
+          <p>Please see <a href="#">our TrueCrypt guide</a> for information on how to setup and use TrueCrypt. For more information, TrueCrypt has an informative guide on their website: <a href="http://www.truecrypt.org/docs/tutorial">http://www.truecrypt.org/docs/tutorial</a>.</p>
+          <p>Why use TrueCrypt? You private key is very important to keep private. Keeping it private has two parts, the first of which is keeping it. Since your private key is the only way to decrypt messages sent using your public key, your emails will be gone forever if you lose your private key. After following this guide, you will have your private key stored on your computer by the keymanager program (GPA or GPGKeychainAccess). But if your computer hard drive fails then you have lost your private key. There will be no way to recreate it, and anything you could previously use it to decrypt will now be forever lost to the winds of randomness. Long story short, you absolutely need to create a backup. You should use an external device like a USB thumb drive that you can store in a safe and secure location.</p>
+          <p>To make sure you keep it private, you should use TrueCrypt to encrypt the backup copy. If you have a spare flash drive that you can use for just this and other private files you want to keep (the keys will only take a few KB of space), I recommend selecting the “Create a volume within a partition/drive” option and using the whole USB drive. Then you can mount the drive using TrueCrypt and make your backup copy there. I also recommend the “Hidden TrueCrypt volume” option if you don't mind the hassle. You may want to keep more than one backup copy in a separate location. You could give one to your friend or your mother or anyone who won't lose it, they won't be able to read anything on it without your password.</p>
+          
+          <h3>Suggested links for further information</h3>
+          <ul>
+            <li><a href="http://arstechnica.com/security/2013/06/encrypted-e-mail-how-much-annoyance-will-you-tolerate-to-">Ars Technica Email Encryption Guide</a></li>
+            <li><a href="http://www.truecrypt.org/docs/tutorial">TrueCrypt Tutorial (Official)</a></li>
+          </ul>
+
+<!-- END PAGE-SPECIFIC CONTENT -->
+
+
+
+

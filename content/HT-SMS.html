@@ -1,0 +1,91 @@
+
+<!-- BEGIN PAGE-SPECIFIC CONTENT -->
+<style>
+.page-icon {
+		width:150px;
+		height:150px;
+		display:inline-block;
+		float:right;
+		clear:right;
+		background:url("/images/sms-selected.png");
+}
+div.sshot-right, div.sshot-wide {
+	border: 2px solid #DDD;
+	padding: .25em;
+}
+.sshot-right {
+	width:20em;
+	float:right;
+	clear:right;
+}
+.sshot-wide {
+	width:80%;
+	text-align:center;
+}
+.sshot-sm {
+	width:100%;
+}
+.sshot-wd {
+	width:30%;
+	margin:0 .5em 0 .5em;
+}
+</style>
+       <div class="page-icon">&nbsp;</div>
+       <h1>Text Message (SMS) Encryption with TextSecure</h1>
+          <h3><i>A guide to encrypting text messages on Android phones</i></h3>
+          <p><strong>Purpose:</strong>This guide attempts to explain how to install and use the Android application TextSecure to send and receive encrypted text messages (SMS). TextSecure provides two main advantages over the built-in Android text message app. First, it encrypts the messages on your device, so they are private if your phone is lost or stolen. Second, it allows you to send encrypted text messages to other people who have the TextSecure software. Apart from these benefits, TextSecure also handles normal unencrypted text messages well; I personally prefer it to the built-in Android app even without the encryption.</p>
+		  <p>Please note that when using TextSecure, <strong>only the body of the message is encrypted</strong>. Your phone carrier or anyone with access to their data can still see the metadata. That is, they can tell that a message was sent, to whom and from whom, when, etc. They will not be able to read the message body if it is encrypted. (Normally your carrier can read the body of your texts.)</p>
+          <p><strong>Software:</strong> The only software needed for this guide is TextSecure. It is available on the Google Play Store. You will need an Android phone. The developer, Open WhisperSystems, is currently working on an iOS version, and it should be available soon.</p>
+
+          <div class="list-group">
+            <a href="https://play.google.com/store/apps/details?id=org.thoughtcrime.securesms&hl=en" class="list-group-item">
+              <h3 class="list-group-item-heading">TextSecure (Google Play Store Link)</h3>
+              <p class="list-group-item-text">Open-source text encryption app for Android.<br /><em>https://play.google.com/store/apps/details?id=org.thoughtcrime.securesms&hl=en</em></p>
+            </a>
+            <a href="https://whispersystems.org/" class="list-group-item">
+              <h3 class="list-group-item-heading">Open WhisperSystems (Developer Website)</h3>
+              <p class="list-group-item-text">Developer of TextSecure.<br /><em>https://whispersystems.org/</em></p>
+            </a>
+          </div>
+
+
+        <h2>Nutshell</h2>
+			<p>First, install TextSecure from the Google Play Store.</p>
+			<p>Second, set a passphrase and (<em>optional</em>) import your current text messages.</p>
+			<p>Third, send an encrypted message to test the app.</p>
+
+
+        <h2>Part I: Install TextSecure</h2>
+          <ol>
+          	<div class="sshot-wide"><img class="sshot-wd" src="/content/screenshots/HT-SMS-Perm.jpg"></img><img class="sshot-wd" src="/content/screenshots/HT-SMS-Install.jpg"></img></div>
+			<li>Search for TextSecure in the Google Play Store app on your phone. Click the <strong>INSTALL</strong> button.</li>
+			<li>Review the <strong>App permissions</strong> screen. Since you will be using this software to handle your text messages, it will need to have access to them. If you agree to the permissions, press <strong>ACCEPT</strong>.</li>
+			<li>The app will now download and install on your phone. When the installation is finished, you will see two buttons, <strong>OPEN</strong> and <strong>UNINSTALL</strong>, where the <strong>INSTALL</strong> button was previously. Click the <strong>OPEN</strong> button to launch the app.</li>
+          </ol>
+
+
+		<h2>Part II: Configure TextSecure</h2>
+		  <ol>
+		  	<div class="sshot-wide"><img class="sshot-wd" src="/content/screenshots/HT-SMS-Pass.jpg"></img><img class="sshot-wd" src="/content/screenshots/HT-SMS-Import.jpg"></img></div>
+		  	<li>The first time you run TextSecure, it will ask you to create a passphrase. Choose a passphrase that is as long and complex as you can possibly tolerate typing on a regular basis. You will need to type this passphrase every time you need to unlock TextSecure to read your messages. You can change this passphrase at any time, and you will be able to set how often you have to enter it. Type your passphrase and click <strong>Continue</strong>.</li>
+			<li>On the Import screen, you have the option to copy all of your current text messages to the encrypted database. I recommend doing this now, so you can start using TextSecure as your text messaging program just like normal. You can always do it later if you want, and importing it does not delete the original. This also means that <strong>your original text messages are still stored unencrypted in your normal text message app</strong>. You may want to delete the originals after you have verified that the encrypted copies work. All future messages will be delivered to the TextSecure program and will be stored encrypted, whether or not the conversation was encrypted.</li>
+			<li>That's all it takes. Now it's time to test.</li>
+		  </ol>
+		  
+		  
+		<h2>Part III: Test TextSecure</h2>
+		  <ol>
+		  	<div class="sshot-wide"><img class="sshot-wd" src="/content/screenshots/HT-SMS-Start.jpg"></img><img class="sshot-wd" src="/content/screenshots/HT-SMS-StartConfirm.jpg"></img><img class="sshot-wd" src="/content/screenshots/HT-SMS-Exchange.jpg"></img></div>
+		  	<li><strong>The hard part:</strong> find someone else who has TextSecure. The application is currently only available on Android, and in order to have an encrypted conversation both parties will need to have TextSecure installed. Please note that you will always be able to send unencrypted messages to anyone, just like normal. So find someone else and get them to install TextSecure. Then continue. </li>
+			<li>Press the Add Message icon at the bottom left of the screen, or open the conversation you already have with the person you want to text. If it is a new conversation, type the phone number you want to contact in the top box.</li>
+			<li>Before sending a message, click the lock at the top of the screen, and select <strong>Start Secure Session</strong>. A box will pop up asking you to confirm. Click Yes.</li>
+			<li>TextSecure will send a key exchange message to the recipient. If the recipient is using TextSecure, you will receive a key exchange message in return. At that point, the arrow next to the “Type message” field will show a lock, and the conversation will now be encrypted.</li>
+			<li>After that is complete, you can send and receive texts just like normal, and as long as the lock is still there on the send arrow, the contents will be encrypted!</li>
+		  </ol>
+
+          
+<!-- END PAGE-SPECIFIC CONTENT -->
+
+
+
+

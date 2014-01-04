@@ -1,0 +1,179 @@
+
+<!-- BEGIN PAGE-SPECIFIC CONTENT -->
+<style>
+.page-icon {
+		width:150px;
+		height:150px;
+		display:inline-block;
+		float:right;
+		clear:right;
+		background:url("/images/delete-selected.png");
+}
+div.sshot-right, div.sshot-wide {
+	border: 2px solid #DDD;
+	padding: .25em;
+}
+.sshot-right {
+	width:20em;
+	float:right;
+	clear:right;
+}
+.sshot-wide {
+	width:80%;
+	clear:both;
+}
+.sshot-sm, .sshot-wd {
+	width:100%;
+}
+</style>
+	   <div class="page-icon">&nbsp;</div>
+	   
+<?php
+
+$pageid = $_GET['page'];
+$os = $_GET['os'];
+if(!$os){$os="win";}
+
+if($os=="win"){
+	echo "<style>.HideOSX {display:none;}</style>";
+	echo "<a href=\"?page=$pageid&os=osx\"><div class=\"osSelect\">Select Your OS: <br /><img src=\"/images/os_button_win.png\" /></div></a>\n";
+}
+else {
+	echo "<style>.HideWin {display:none;}</style>";
+	echo "<a href=\"?page=$pageid&os=win\"><div class=\"osSelect\">Select Your OS: <br /><img src=\"/images/os_button_osx.png\" /></div></a>\n";
+}
+?>
+	   
+       <h1>Securely Delete Data</h1>
+          <h3><i>A guide to securely deleting files and folders, as well as wiping entire drives.</i></h3>
+          <p><strong>Purpose:</strong> This guide attempts to explain how to install and use various applications to securely delete your data by erasing it and then writing over it multiple times. This makes it much more difficult to recover the data.</p>
+
+          <p><strong>Software:</strong> The following software is used in this guide:</p>
+
+          <div class="list-group">
+            <span class="HideWin"><a href="http://eraser.heidi.ie/" class="list-group-item">
+              <h3 class="list-group-item-heading">Eraser (Windows)</h3>
+              <p class="list-group-item-text">Open-source program to securely delete files, free space, and entire drives.<br /><em>http://eraser.heidi.ie/</em></p>
+            </a></span>
+            <a href="http://www.dban.org/" class="list-group-item">
+              <h3 class="list-group-item-heading">DBAN: Darik's Boot And Nuke (OS-independent)</h3>
+              <p class="list-group-item-text">Open-source, self-contained boot disk to securely erase entire drives.<br /><em>http://www.dban.org/</em></p>
+            </a>
+          </div>
+
+          <h2>Nutshell</h2>
+			<p>First, we are going to give an explanation and extended disclaimer to make it as clear as possible that <strong>you don't want to do any of this to any file you ever want to see again</strong>.</p>
+
+			<p>Second, we show how to securely erase data on OS X. No additional software is required for OS X users.</p>
+
+			<p>Third, we show how to use Eraser to securely erase data on Windows.</p>
+
+			<p>Last, we will show how to use DBAN to securely erase entire drives, regardless of operating system.</p>
+
+
+<!-- <div class="sshot-wide"><img class='sshot-wd' src="/content/screenshots/HT-FILE-CreateVolume.jpg" /></div> -->
+          <h2>Part I: Intro to Securely Erasing Data</h2>
+		  <p>Once you delete a file it's gone forever, right? Nope! If that were true, this page wouldn't exist, and neither would <a href="http://www.ehow.com/how_5952030_recover-deleted-files.html">pages like this</a>. There are many software options available to recover deleted files, and these can be very useful when you accidentally hit that delete key. </p>
+		  <p>But sometimes, you <em>don't</em> want to be able to get a file back. If you can recover a file, then anyone with access to your computer, portable hard drive, etc could do the same thing. Some adversaries may have access to even more powerful software and hardware than you do, meaning it could be even easier for them to retrieve the files you thought were gone!</p>
+		  <p>In order to truly get rid of those bank statements, journals, silly photos, and other personal files, you will need to take an extra step. Let's take a minute to understand why.</p>
+		  
+		  <h3>How do computers store files?</h3>
+		  <p>To understand what happens when you delete a file, we'll have to take a look at how computers keep track of files in the first place. Operating systems (like Windows or OS X) separate hard drive into different sections and store a table of where each file is located. It works like a table of contents for a book. The table of contents shows what page each chapter starts on and what it is called. Similarly, the file table shows where each file (or part thereof) starts and ends, along with other information. Computers do not store everything in order, so the file table actually shows where each chunk starts and ends, and what order they go in. This is as if the pages in your book didn't go order, so the table of contents would have to list each page number that goes with the chapter, instead of just the first page. This would be an inconvenient book to read, but the computer doesn't mind skipping around.</p>
+		  
+		  <h3>What happens when I delete a file?</h3>
+		  <p>When you put a file in the Trash or Recycle Bin on your computer, the operating system essentially just marks the file as deleted. This does not change anything else about the file. It's a lot like if you created a folder called "Trash" and just moved the file there. When you empty the Trash, the file is "really" deleted. But "really" deleted in this context just means that it is removed from the file table. It's like if you took the randomly ordered book above and crossed out a chapter in the table of contents. The pages didn't go anywhere, but the chapter might as well be gone because it will be difficult to figure out which pages belong to it, and what order they go in. Since computers re-use space, eventually the pages <em>do</em> go somewhere. When the space is needed, the computer will eventually write over the parts that are not listed in the file table, since it can assume those parts aren't needed. But until that space gets written over again, all of the original data is still there.</p>
+		  
+		  <h3>How can files be recovered?</h3>
+		  <p>File recovery software takes a look at the actual data remaining on the drive, and tries to reconstruct the files that are no longer listed in the file table. It's like flipping through the book and making your own table of contents for the chapters that aren't listed. This can work very well, since the data is still there until the space is needed for something else. But since the computer writes over any space listed as "free" in the file table, you will often end up with missing chunks. If you're writing over some pages in your book, you won't always be able to reconstruct the chapters completely.</p>
+		  
+		  <h3>How can I prevent a file from being recovered?</h3>
+		  <p>Keeping in mind the above, all it takes to prevent a file from being recovered is to make sure the computer uses that space again after it is marked as "free space" on the file table. After crossing out the chapter in the table of contents, we need to go to each page of that chapter and cross out all of the words. It will be best if we cross out the words multiple times to make it harder for someone to see what's underneath. In the same way, we will want to write random data to the free space multiple times, since some hardware can determine the data that was previously on the drive even after it has changed. The software below does just that: it deletes the file, then writes random data over and over again to prevent anyone from figuring out what it said.</p>
+
+		  <h3>Why would I want to erase the free space?</h3>
+		  <p>Securely erasing the free space on a drive is useful if you have already deleted sensitive files, but you didn't delete them securely. When you securely erase free space it's like going back to any page not listed in your book's table of contents and marking it out, just in case we forgot to mark it out when we removed the chapter from the table of contents.</li>
+
+<span class="HideOSX">
+          <h2>Part II: Securely Erase Data on OS X</h2>
+          <h3>Files and Folders</h3>
+          <ol>
+          	<div class="sshot-right"><img class='sshot-sm' src="/content/screenshots/HT-DELETE-OSXDragToTrash.jpg" /></div>
+			<li>First, move the sensitive file to the Trash just like normal. Securely erasing will take more time than normal, so it's a good idea to empty your trash of normal, non-sensitive files before you add the sensitive files to the Trash.</li>
+			<li>Right click the Trash icon on your dock.</li>
+		    <div class="sshot-right"><img class='sshot-sm' src="/content/screenshots/HT-DELETE-OSXSecureEmpty.jpg" /></div>
+			<li>Press and hold the Command key. You should see the words "Empty Trash" switch to "Secure Empty Trash".</li>
+			<li>Click <strong>Secure Empty Trash</strong> to securely erase all files in the Trash by deleting them and writing over the space seven times.</li>
+          </ol>
+          <h3>Free Space</h3>
+          <ol>
+			<li>Open <strong>Disk Utility</strong> in the <strong>Utilities</strong> folder, located inside the <strong>Applications</strong> folder. </li>
+			<div class="sshot-right"><img class='sshot-sm' src="/content/screenshots/HT-DELETE-OSXFreeSpaceButton.jpg" /></div>
+			<li>On the left side, select the partition you want to erase the free space on. A partition is just a part of a hard drive, and the part you want is probably called "Macintosh HD" unless you have changed the name. (In the screenshot to the right, the name was changed to "Silver Box".)</li>
+			<li>Click the <strong>Erase</strong> tab, then click <strong>Erase Free Space...</strong></li>
+			<div class="sshot-right"><img class='sshot-sm' src="/content/screenshots/HT-DELETE-OSXFreeSpaceOpt.jpg" /></div>
+			<li>A window will open asking you to select how to erase the free space.
+				<ul>
+				<li>The "Zero Out" option is better than nothing. It writes zeros over everything (remember computers only deal with 1s and 0s in the first place).</li>
+				<li><strong>We recommend the 7-pass option.</strong> It is a good compromise between security and speed. It will take a few hours, so you may want to leave it going over night.</li>
+				<li>If you have plenty of time, and you want to be absolutely sure that no files can be recovered from your free space, choose 35-pass. Then go play Risk, then Monopoly, then Settlers of Catan, and build a scale model of the Eiffel Tower out of hand-carved toothpicks.</li>
+				</ul>
+			</li>
+          </ol>
+          <h3>Entire Drives</h3>
+          <ol>
+          	<li>To erase your entire hard drive...</li>
+          	<li>Wait a second! Are you sure you want to do that? You won't be able to start your computer until you reinstall OS X (or another operating system).</li>
+          	<li>Anyway, if you want to erase your entire hard drive, insert your OS X Install Disc and restart your computer.</li>
+          	<li>When you hear the startup sound, press and hold the <strong>C</strong> key. Your computer should boot from the Install Disc.</li>
+          	<li>Once it starts up, select <strong>Disk Utility</strong> from the menu at the top.</li>
+          	<li>In Disk Utility, select the drive you want to erase, and click the <strong>Erase</strong> button on the "Erase" tab.</li>
+          	<li>You will once again have the option of how to erase. Once again, we recommend the 7-pass option in most cases. But, if you have a few days (seriously) to spare, go for 35!<l/i>
+          </ol>
+</span>          
+<span class="HideWin">        
+		  <h2>Part II: Securely Erase Data on Windows</h2>
+          <h3>Files and Folders</h3>
+          <ol><div class="sshot-right"><img class='sshot-sm' src="/content/screenshots/HT-DELETE-EraserDownload.jpg" /></div>
+            <div class="sshot-right"><img class="sshot-sm" src="/content/screenshots/HT-DELETE-EraserInstallTypical.jpg" /></div>
+			<li>Obtain <strong>Eraser</strong> from the site's download page. Be sure to click the "Eraser 6.0.10.2620" link under "Stable Builds", as there are misleading advertisements on the page. <strong>If it looks like a big shiny Download button, it is NOT the right one.</strong></li>
+            <li>Save the file to your computer, then click Run in the download or double-click the "Eraser 6.0.10.2620.exe" file you saved.</li>
+            <li>The installation is simple. Click <strong>Next</strong>, choose to accept the license agreement, click <strong>Typical</strong> (unless you need to install additional languages), then click <strong>Install</strong>.</li>
+            <div class="sshot-right"><img class='sshot-sm' src="/content/screenshots/HT-DELETE-EraserContext.jpg" /></div>
+            <li>To securely erase a file or folder, simply right-click it, then hover over the <strong>Eraser</strong> menu. Select either <strong>Erase</strong> or <strong>Erase on restart</strong>.<br /><strong>WARNING: If you select "Erase", the program will not ask for any confirmation. The file or folder will be deleted <u>immediately</u> and <u>permanently</u>!!!</strong> <br /> For this reason, we recommend selecting "Erase on restart", so you have the option to cancel.</li>
+            <div class="sshot-right"><img class='sshot-sm' src="/content/screenshots/HT-DELETE-EraserRunNow.jpg" /></div>
+            <li>If you selected "Erase", the file is gone. You're done! If you selected "Erase on restart" the file will be deleted the next time you shut down your computer.</li>
+            <li>To cancel erasing a file you selected to "Erase on restart", first run Eraser, then right-click the file on the "Erase Schedule" list. Click <strong>Delete Task</strong> to cancel it.</li>
+          </ol>
+          
+          <h3>Free Space</h3>
+          <ol>
+          	<li>To erase the free space on your drive, first open <strong>Eraser</strong> from the Start menu or Desktop icon.</li>
+          	<li>On the "Erase Schedule" page, right-click in the big white box, or click the down arrow next to "Erase Schedule" at the top. Then, select <strong>New Task</strong>.</li>
+          	<li>In the "Task Properties" page, on the "Task" tab, select when you want the task to run. You can have it run immediately, manually when you choose later, or schedule it to run the next time you restart the computer or on a recurring basis.</li>
+          	<li>Next, click the <strong>Add Data</strong> button in the bottom left.</li>
+          	<li>Choose an Erasure method. We recommend choosing any 3- or 7-pass option. The more passes, the better the security but the longer it will take. Also, the more free space, the longer it will take. The times below are only estimates:
+          	  <ul>
+          		<li>If you have days to spare (seriously) and highly sensitive files to erase, go ahead and choose the <strong>35-pass option</strong>. </li>
+          		<li>For a good balance between time and security, a <strong>7-pass option</strong> will usually complete overnight.</li>
+          		<li>For some security when time is somewhat limited, a <strong>3-pass option</strong> will usually complete in a few hours.</li>
+          		<li>For a better-than-nothing option, select a 1- or 2-pass option. We don't know why anyone would bother with the "First/last 16KB Erasure" option.</li>
+          	  </ul>
+          	</li>
+          	<li>Select the <strong>Unused disk space</strong> option, then click <strong>OK</strong>. (You can also use this method schedule Eraser to delete specific files or folders instead.)</li>
+          	<li>Click <strong>OK</strong> in the Task Properties window. If you selected "Run immediately", Eraser will begin erasing your free space. If you selected "Run manually", right-click the task when you are ready and click <strong>Run Now</strong>.</li>
+          </ol>
+</span>         
+          
+          
+          <h2>Part III: Securely Erase (Almost) Any Entire Hard Drive</h2>
+          <ol>
+          	<li>First, <strong>make sure you really want to permanently erase all of the data on all hard drives currently plugged into the computer</strong>.</li>
+          	<li>Instructions in progress, short version: Burn DBAN to a CD. Boot from the DBAN CD and type "autonuke" or "dodshort" to erase and write over the entire drive 3 times, or "dod" to write over the drive 7 times. We recommend the "dod" option.</li>
+          </ol>
+
+
+          
+<!-- END PAGE-SPECIFIC CONTENT -->
+
+
+
+

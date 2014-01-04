@@ -1,0 +1,34 @@
+body {
+	padding-top: 50px;
+	padding-bottom: 20px;
+}
+.logo { 
+	background:url("/crypto-icon-wide.png");
+	width:325px;
+	height:44px;
+}
+.sub-item {
+	font-size: .9em;
+	padding-left:2em;
+}
+.subactive {
+	background-color:#FF925D;
+	padding-left:2em;
+}
+a.sub-item:hover {
+	background-color:#FDCDAF;
+}
+.hideme {
+	display:none;
+}
+.osSelect {
+	float:right;
+	clear:right;
+	/*width:150px;*/
+	background:#DDDDDD;
+	padding:.25em;
+	margin:.25em;
+}
+.copyleft {
+	font-size:.8em;
+}

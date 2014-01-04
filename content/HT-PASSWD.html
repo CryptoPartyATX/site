@@ -1,0 +1,108 @@
+
+<!-- BEGIN PAGE-SPECIFIC CONTENT -->
+<style>
+.page-icon {
+		width:150px;
+		height:150px;
+		display:inline-block;
+		float:right;
+		clear:right;
+		background:url("/images/passwd-selected.png");
+}
+div.sshot-right, div.sshot-wide {
+	border: 2px solid #DDD;
+	padding: .25em;
+}
+.sshot-right {
+	width:20em;
+	float:right;
+	clear:right;
+}
+.sshot-wide {
+	width:80%;
+}
+.sshot-sm, .sshot-wd {
+	width:100%;
+}
+</style>
+       <div class="page-icon">&nbsp;</div>
+       <h1>Choosing Secure Passwords</h1>
+          <h3><i>Possibly the most important step in keeping your data private</i></h3>
+          <p><strong>Purpose:</strong>This guide attempts to explain how to choose a secure password. It is extremely important to choose strong passwords, because your password is often your first and last line of defense. You don't always have the option to encrypt your data, and when you don't, your only means of protection is the password you use to access your data. When you are logging in to your bank account, social media, or many other online services, your password plays a crucial role; anyone who can guess your password could gain access to your account and all the data it contains.</p>
+          <p><strong>Software:</strong>There is no required software, but we recommend using KeePass to securely store your passwords. This enables you to choose passwords that are more complex than you could remember on your own. <strong>However</strong>, this puts an extreme burden on the strength of your master password for the KeePass software itself.</p>
+
+          <div class="list-group">
+            <a href="http://keepass.info/" class="list-group-item">
+              <h3 class="list-group-item-heading">KeePass</h3>
+              <p class="list-group-item-text">An open source password manager to securely store passwords for many accounts.<br /><em>http://keepass.info/</em></p>
+            </a>
+          </div>
+
+
+        <h2>Nutshell</h2>
+        	<p>First, we talk about what makes a password strong and how to choose a strong password.</p>
+			<p>Second, we optionally install KeePass to manage your passwords.</p>
+			<p>Third, we select a Master Password for KeePass and begin storing passwords for other accounts.</p>
+			<p>Finally, we talk about two-factor authentication and the limits of KeePass.</p>
+
+        <h2>Part I: Strong Passwords</h2>
+          <h3>The Problem</h3>
+          <p>One of the biggest problems with passwords is that the good ones are often hard to remember or too long to be convenient. One way to combat this is to store your passwords on your computer. This allows you to have the strongest possible passwords for all of your accounts, and you can just copy the password from your list when you want to sign in. <strong>BUT</strong> this puts the burden on the security of your own computer. If you don't encrypt your computer, it can be very easy to collect all of the passwords stored on your computer. We recommend approaching the problem by using a program such as KeePass, which stores your passwords on your computer, but encrypts them to keep them safe from prying eyes. The most important thing to remember about this method is that KeePass itself is protected by a password. You will need to remember a single master password to access your other saved passwords. The master password must be as strong as you can possibly manage, but it is the only password you will have to remember. Make it count!</p>
+          
+          <h3>So what makes a strong password?</h3>
+          <ol>
+          	<li><strong>Length:</strong> The single most important factor in choosing a strong password is its length. One way that passwords are <em>"cracked"</em> (discovered) is through the <em>brute-force</em> method. This simply means that an attacker tries every possible combination of letters, numbers, and symbols until one of them works. If your password is short it can be cracked in a short amount of time. Each additional character exponentially increases the amount of time needed to guess it. You may think that "4Od9ge" is a stronger password than "catpizza1234", but if the attacker is simply guessing every possible combination, it will take far longer to guess "abcdpizza1234" simply because of its length. Think of a combination lock with three dials. You can start at 0-0-0, then guess 0-0-1, then 0-0-2, and so on until you get to 9-9-9. With three dials, the attacker can guarantee success in a maximum of 1000 guesses. If you add one more dial, you have to guess from 0-0-0-0 to 9-9-9-9, which takes up to 10,000 guesses. The same idea applies to passwords. Each time you add a character, you multiply the number of guesses by the number of possible characters. Even if you just use lowercase letters, that means multiplying by 26 for each additional character. So a 5-lowercase-letter password could be guessed in a maximum of 11,881,376 (26^5; i.e., 26 digits ^ 5 characters) attempts, but a 6-character password would take up to 308,915,776 (26^6) tries. That's a pretty big difference just for adding a single letter!</li>
+			<li><strong>Complexity:</strong> The next factor to consider is how complex your password is. A password is more complex if it contains a larger variety of characters. In the previous example, we showed that a 5-character password of only lowercase letters will be guessed in a maximum of 11,881,376 (26^5) tries. If you make the password more complex by adding in upper-case letters, as well as the digits 0-9, it will now take a maximum of 916,132,832 guesses (62^5, i.e., (26 lowercase + 26 uppercase + 10 digits)^5). If you add in special characters and symbols like $, @, &, etc., you once again exponentially increase the amount of time it takes to guess.</li>
+			<li><strong>Lack of Personal Connection:</strong> Another very important consideration is ensuring that your password is not something that a person could guess if they know a lot about you. If you use your birthday and your dog's name, like "Spot051278", you may think you have a long, complex password. While a password like this may be somewhat strong against <em>brute-force</em> attacks, someone who knows your birthday and your dog's name might simply guess it without the help of a password-cracking program. It is important to choose a password that cannot be guessed by a human, no matter how well they know you.</li>
+			<li><strong>Substitution:</strong> You may think it is a good idea to take a password like "Spot051278" and change out a few characters to make it hard for someone who knows you to guess. For example, you might choose "5p0t051z78". This does make it more difficult for a human to guess, but it doesn't slow down a computer guessing every combination. In addition, a human or computer may be able to guess how you substituted your letters. Although substitution helps, it does not make your password much stronger. Additionally, it may be difficult to remember how you substituted the letters in your password, especially if you substitute in different ways for each password (like you should).</li>
+		  	<li><strong>Uniqueness:</strong> It is important to use a different password for each account. The reason for this is that if someone manages to guess one of your passwords, they won't have access to any others. If you use the same password on multiple accounts, someone who manages to figure out one of them can get access to more accounts than they even tried to in the first place. A strong password will not tell the attacker anything about any other password you have if they manage to guess it. For this reason, it is not a good idea to simply change or add a character or two. If the attacker can see your pattern of making passwords, all of your passwords are at risk if even one of them is discovered. If an attacker discovers that you use "Spot051278g" for your Google account, the attacker may try "Spot051278f" for your Facebook account. Your password is different, but the difference doesn't provide you with much benefit.</li>
+		  	<li><strong>Privacy:</strong> Be sure to keep your password as private as you want the data that it protects to be. Do not write your password down on a sticky-note next to your computer. If someone walks up to your computer, you might as well not have a password at all. Do not share your password with anyone you do not trust to keep it safe. If you must transmit your password to someone for some reason, be sure to use encryption. Otherwise, anyone monitoring your connection or anyone with access to the servers involved could see it. If you must write down your password, store it in a secure location that no one can physically access (e.g., a safe that only you have the key to). This way you can keep it around until you get it memorized, but it isn't available to anyone else.</li>
+		  </ol>
+		  
+		  <h3>The Solution</h3>
+		  <ol>
+		  	<li><strong>Option 1 - Good and Memorable: </strong>The most user-friendly solution is to choose a strong password that is easy to remember. One suggestion for coming up with passwords like this is presented in <a href="http://xkcd.com/936/">this xkcd comic</a>. Essentially, choose four or more <strong>randomly selected</strong> words. It extremely important that these words have nothing to do with you and nothing to do with each other. Do not select a four-word phrase that has ever been published or spoken. Select random words like "CraftDictatorshipCassettePlumbing" (but not that particular combination, as it has now been published). This easily satisfies the length requirement, and you can increase your security further by performing some substitution for added complexity.</li>
+		  	<li><strong>Option 2 - Better and Stored: </strong>In order to have the longest, must unique and complex passwords, we recommend storing your passwords in a program like KeePass. This enables you to generate random passwords that are extremely long. It will be extremely difficult to remember these passwords, but they will provide the best security on case-by-case basis. KeePass will store your passwords for you, so you can copy and paste them as needed to log into your accounts. Keep in mind that you will still need to remember one master password in order unlock KeePass to get access to the passwords it stores. This master password should be as strong as possible; if someone with access to your computer guesses the master password, they can access all of your other passwords. All of your passwords are only as safe as the master password.</li>
+		  </ol>
+		  <p>If you are comfortable choosing and remembering long, complex passwords, you can stop here. If you want to use KeePass to remember your passwords for you, continue reading!</p>
+		  
+
+
+        <h2>Part II: Install KeePass</h2>
+        <h3>Windows</h3>
+          <ol>
+			<li>Go to the <a href="http://keepass.info/">KeePass website</a> and download KeePass 2.24 (Installer EXE for Windows) under Professional Edition</li>
+			<li>Double-click <strong>KeePass-2.24-Setup.exe</strong> in your Downloads folder.</li>
+			<li>Select your language, then review and choose to accept the license agreement.</li>
+			<li>Click <strong>Next &gt;</strong> until the installation completes. The default options are okay, but you may wish to create a Desktop or Quick Launch on the "Select Additional Tasks" page.</li>
+			<li>KeePass will automatically run after the installation unless you uncheck the box on the last page. Go ahead and let it run. </li>
+		  </ol>
+
+
+		<h2>Part III: Set Up KeePass</h2>
+		<!--<h3>Windows</h3>-->
+		  <ol>
+			<li>The first time you run KeePass, it will ask you if you want to enable Automatic Updates. This is optional, but recommended.</li>
+		  	<li>In the <strong>File</strong> menu, click <strong>New...</strong> and choose a location to store your password database. This is where KeePass will keep an encrypted copy of the passwords it manages for you. Choose a location that you will remember and that will not be accidentally deleted. You can choose any name you'd like and you can always create more databases later for different sets of passwords, if desired.</li>
+		  	<li>Choose a secure Master password. This is the only password you will have to remember, but it is also the most important password you have. If anyone with access to your computer can guess your Master password, they will be able to see all of the passwords you store in that database. I can't emphasize this enough; <strong>choose a secure Master password!</strong></li>
+		  	<li>Type the Master password you selected into the first box, and repeat it in the next one. The quality indicator will turn greener to indicate how secure your password is. Click <strong>OK</strong> to continue.</li>
+		  	<li>On the "Database Settings" window, just click <strong>OK</strong>. The default options are okay, and we'll talk more about the options later.</li>
+			<li>You should now see the main KeePass window, with two sample password entries. Start by adding the password to one of your current accounts. In the <strong>Edit</strong> menu, click <strong>Add Entry...</strong></li>
+			<li>In the "Add Entry" window, type in a title that describes what the password is used for. Then type in your username and the current password for that account. You can optionally include a web address or other notes. Click <strong>OK</strong>.</li>
+			<li>You should now see the password you added in the list in the main KeePass window. When you want to look up your password in the future, you can right-click the account and select <strong>Copy Password</strong>. Then you can paste the password into the login form on the website or application.</li>	 
+			<li>Be sure to save your database after making changes by clicking the <strong>File</strong> menu, then <strong>Save</strong>. Then you can close KeePass until you need it again. At this point, you're finished. Feel free to add more passwords to your database and remember to save before quitting.</li> 
+		  </ol>
+		  
+		  
+		<h2>Part IV: Additional KeePass Options</h2>
+		  <ol>
+			<li>Database options. [Content Needed.]</li>
+			<li>KeePass password Generator [Content Needed.]</li>
+		  </ol>
+
+          
+<!-- END PAGE-SPECIFIC CONTENT -->
+
+
+
+
