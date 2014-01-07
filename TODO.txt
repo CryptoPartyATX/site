@@ -1,0 +1,58 @@
+CryptoPartyATX.org To-Do list
+
+[General/Style]
+-	Navigation
+-	Overall site style?
+-	Screenshot styles
+-	Print layout css
+
+[General/Content]
+-	Spelling/grammar/readability
+
+[Main Pages]
+	{Crypto Info and How-To Guides}
+	-	How to throw a CryptoParty
+		:write a short guide for throwing a party
+	-	Why Crypto Matters
+		:write a page and collect links re why to encrypt
+	-	How Crypto Works
+		:collect links re how crypto works, possibly write page
+	
+	{Links}
+	-	General links to friends and friendly orgs (RT4, EFF, etc)
+	
+[How-to Pages]
+-	Add Linux option/guides/screens for Linux for all pages
+-	Clickable screens for full size
+-	"Nutshell" item spacing is annoying
+-	Stop using <strong> for items being clicked, define css
+
+	{Email Encryption}
+	-	Review/update powerpoint
+	-	Incorporate more info from ppt re what email encryption does and does not do
+	-	Add info on obscuring metadata w/ throwaway accounts and VPNs/tor
+	-	Update for Enigmail config changes
+		:Enigmail now has setup walkthrough thing, what does it do exactly? do we still need key manager?
+	
+	{Choosing Secure Passwords}
+	-	KeePass (or other) for OS X
+	-	KeePass advanced Options
+	-	Two-factor Authentication
+	
+	{Secure Delete}
+	-	DBAN
+	-	Can the NSA recover the data (if they wanted to?)
+
+	{NEW: Privacy Plug-ins}
+	-	HTTPS Everywhere
+	-	AdBlock Plus
+	-	Disconnect
+	-	Cryptocat
+	-	NoScript
+		
+	{NEW: Linux Mint}
+	:or other linux, but Mint is pretty easy for intro
+			
+	{NEW: VPNs}
+	-	Add page for using VPNs
+	
