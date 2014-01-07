@@ -1,5 +1,4 @@
 
-<!-- BEGIN PAGE-SPECIFIC CONTENT -->
 <style>
 .page-icon {
 		width:150px;
@@ -25,6 +24,46 @@ div.sshot-right, div.sshot-wide {
 	width:100%;
 }
 </style>
+
+<script type="text/javascript">
+/* 
+Password script written by plexiglass for CryptoPartyATX.org; 
+Unlicensed/Public Domain 
+*/
+
+function genNewPasswd() {
+	var newPass = "";
+	var charset = new Array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','0','1','2','3','4','5','6','7','8','9','0','!','@','#','$','%','^','&','*','(',')','[',']','{','}','<','>','/','?',',','.',':',';','`','~')
+
+	for(var i=0; i<20; i++){
+		// Get some pseudo-random input numbers
+		var rVar = Math.floor(Math.random() * i * 1000);
+		var curRand = Math.random();
+		var curMilli = new Date().getTime();
+		
+		// Make sure it is within range of the charset
+		var curCharNum = (Math.floor(curRand * curMilli) + rVar) % charset.length;
+		
+		// Get char from charset
+		var curChar = charset[curCharNum];
+		
+		// Add char to password
+		newPass += curChar;
+		
+		// Wait a few milliseconds to help our randomness
+		var t = new Date().getTime(); 
+		while (new Date().getTime() < t + 25 + i);
+		
+		// Flip the charset around to help our randomness
+		charset.reverse();
+	}
+	
+	// Output new password
+	document.getElementById('passTxt').value = newPass;
+}
+</script>
+
+
        <div class="page-icon">&nbsp;</div>
        <h1>Choosing Secure Passwords</h1>
           <h3><i>Possibly the most important step in keeping your data private</i></h3>
@@ -39,11 +78,21 @@ div.sshot-right, div.sshot-wide {
           </div>
 
 
+
         <h2>Nutshell</h2>
         	<p>First, we talk about what makes a password strong and how to choose a strong password.</p>
 			<p>Second, we optionally install KeePass to manage your passwords.</p>
 			<p>Third, we select a Master Password for KeePass and begin storing passwords for other accounts.</p>
 			<p>Finally, we talk about two-factor authentication and the limits of KeePass.</p>
+
+
+
+		<h2>Generate a Password</h2>
+		<p>Want to get straight to the point and just generate a strong password right here? Click <strong>Generate Password</strong> below to generate a 20-character password using upper- and lower-case characters, digits, and special characters. This password is generated in your browser and is never stored or sent across the Internet.</p>
+		<input type="text" id="passTxt" value="No Password Generated" size=30>
+		<button onclick="genNewPasswd()">Generate Password</button>
+
+
 
         <h2>Part I: Strong Passwords</h2>
           <h3>The Problem</h3>
@@ -99,10 +148,4 @@ div.sshot-right, div.sshot-wide {
 			<li>Database options. [Content Needed.]</li>
 			<li>KeePass password Generator [Content Needed.]</li>
 		  </ol>
-
-          
-<!-- END PAGE-SPECIFIC CONTENT -->
-
-
-
-
+		  
