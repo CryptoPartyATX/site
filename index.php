@@ -128,7 +128,7 @@ else if ($pageid==3){
 
 
 <!-- Contact info -->
-<p><strong>Contact Us!</strong> If you find problems with this site, need help, or have improvements or suggestions, please contribute to the <a href="https://github.com/CryptoPartyATX/site">git repo</a> or email me at <a href="mailto:plexiglass@riseup.net">plexiglass@riseup.net</a>.</p>
+<p><strong>Contact Us!</strong> If you need any help, find problems with the site, or have improvements or suggestions, please contribute to the <a href="https://github.com/CryptoPartyATX/site">git repo</a> or email me at <a href="mailto:plexiglass@riseup.net">plexiglass@riseup.net</a>.</p>
 
 
 

@@ -1,5 +1,5 @@
 
-<!-- BEGIN PAGE-SPECIFIC CONTENT -->
+
 <style>
 .page-icon {
 		width:150px;
@@ -49,7 +49,7 @@ else {
           <p><strong>Software:</strong> The only software needed is TrueCrypt. It is available on the creators' website. For security reasons, we recommend downloading the software from its official website and verifying the checksum.</p>
 
           <div class="list-group">
-            <a href="http://truecrypt.org" class="list-group-item">
+            <a target="_blank" href="http://truecrypt.org" class="list-group-item">
               <h3 class="list-group-item-heading">TrueCrypt</h3>
               <p class="list-group-item-text">Open-source program to encrypt and password-protect files and storage devices.</p>
             </a>
@@ -64,12 +64,12 @@ else {
 
 			<p>Last, we will discuss a few advanced options, like keyfiles, whole drive encryption, and hidden volumes.</p>
 
-			<p>For further information, we recommend consulting TrueCrypt's own tutorial, located at: <a href="http://www.truecrypt.org/docs/tutorial">http://www.truecrypt.org/docs/tutorial</a></p>
+			<p>For further information, we recommend consulting TrueCrypt's own tutorial, located at: <a target="_blank" href="http://www.truecrypt.org/docs/tutorial">http://www.truecrypt.org/docs/tutorial</a></p>
 
           <h2>Part I: Install TrueCrypt</h2>
           <ol>
             <li>
-              Obtain the TrueCrypt installation file from the creators' website: <a href="http://www.truecrypt.org/">http://www.truecrypt.org/</a>
+              Obtain the TrueCrypt installation file from the creators' website: <a target="_blank" href="http://www.truecrypt.org/">http://www.truecrypt.org/</a>
             </li>
             <li>
               Install TrueCrypt
@@ -166,7 +166,7 @@ else {
           <h2>Part IV: Advanced Options</h2>
           	<h3>Keyfiles</h3>
           	<p>One way to increase the security of your TrueCrypt container is by using keyfiles instead of, or in addition to, the password. Create a container normally, but when you get to the password selection screen, check the box next to “Use Keyfiles”. Then, click the <strong>Keyfiles...</strong> button to select the files and/or folders you want to use. Key files work just like passwords, but instead of typing a password you select a file on your computer. Since the contents of the file are used like the password, <strong>it is absolutely imperative</strong> that your keyfile(s) is not modified. You must use identical files to unlock the volume as the ones used when it was created.</p>
-          	<p>For more information on keyfiles, please consult TrueCrypt's documentation: <a href="http://www.truecrypt.org/docs/keyfiles">http://www.truecrypt.org/docs/keyfiles</a></p>
+          	<p>For more information on keyfiles, please consult TrueCrypt's documentation: <a target="_blank" href="http://www.truecrypt.org/docs/keyfiles">http://www.truecrypt.org/docs/keyfiles</a></p>
 			
 			<h3>Encrypting Entire Drives</h3>
 			<p>If you want to encrypt an entire USB drive or a non-system partition on your computer, click <strong>Create Volume</strong> and select the “Encrypt entire drive/partition” option in Windows, or the “Create a volume within a partition/drive” option on OS X. Proceed normally until you get to the Volume Location screen. Select the drive you want to encrypt, and click next. <strong>This WILL NOT encrypt data that is already on the drive. This will FORMAT the selected drive and DELETE all files currently on it.</strong> Click <strong>Next &gt;</strong> and proceed with the rest of the installation as normal.</p>
@@ -177,10 +177,3 @@ else {
 			<p>The outer layer and the inner layer have different passwords. If you enter the password for the outer layer, TrueCrypt will mount the volume and all you will see is the decoy contents of the outer layer. If you enter the password for the inner layer, TrueCrypt will mount the volume containing only your more highly sensitive data.</p>
 			<p>The basic idea is that this way, if someone else gets their hands on your encrypted drive, and they also have some way to force you to give up the password, you can give up the password to the outer volume. They will only be able to see the decoy files, and they have no way of determining if there is a hidden volume.</p>
 			
-
-          
-<!-- END PAGE-SPECIFIC CONTENT -->
-
-
-
-

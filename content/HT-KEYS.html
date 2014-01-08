@@ -1,5 +1,5 @@
 
-<!-- BEGIN PAGE-SPECIFIC CONTENT -->
+
 <style>
 .page-icon {
 		width:150px;
@@ -54,11 +54,11 @@ else {
           <p><strong>Software:</strong> The following software is used in this guide:</p>
 
           <div class="list-group">
-            <span class="HideOSX"><a href="https://gpgtools.org/" class="list-group-item">
+            <span class="HideOSX"><a target="_blank" href="https://gpgtools.org/" class="list-group-item">
               <h3 class="list-group-item-heading">GPG Suite (OS X)</h3>
               <p class="list-group-item-text">Open-source GPG key manager for Mac OS X computers</p>
             </a></span>
-            <span class="HideWin"><a href="http://www.gpg4win.org/" class="list-group-item">
+            <span class="HideWin"><a target="_blank" href="http://www.gpg4win.org/" class="list-group-item">
               <h3 class="list-group-item-heading">Gpg4Win (Windows)</h3>
               <p class="list-group-item-text">Open-source GPG key manager for Windows computers</p>
             </a></span>
@@ -73,7 +73,7 @@ else {
           <h2>Part I: Intro to Keysigning and Keyservers</h2>
           <h3>Keyservers</h3>
           	<p>Keeping in mind that you need someone's Public Key in order to send them an encrypted message, we need an easy way to find someone's Public Key. If you want to make it easy for anyone to send you an encrypted message, it's a good idea to store a copy of your Public Key online. That's all a keyserver does; it basically stores a copy of your Public Key "in the cloud" so anyone can look up your key in much the same way that someone could look up a phone number in a phone book or directory. Keyservers have the added benefit of making it easy to see the signatures on a key. There are a number of different public keyservers, but they all typically copy each other, so it does not really matter which one you use.</p>
-          	<p>We'll go through the process in detail below in Part IV, but if you want to take a peek right now, go to <a href="http://keys.gnupg.net">http://keys.gnupg.net</a> and type <em>plexiglass@riseup.net</em> in the Search String box, then press the Submit button. You should be able to see my public key. (To view the signatures, you will need to select the "verbose" option before clicking Submit.)</p>
+          	<p>We'll go through the process in detail below in Part IV, but if you want to take a peek right now, go to <a target="_blank" href="http://keys.gnupg.net">http://keys.gnupg.net</a> and type <em>plexiglass@riseup.net</em> in the Search String box, then press the Submit button. You should be able to see my public key. (To view the signatures, you will need to select the "verbose" option before clicking Submit.)</p>
           <h3>Keysigning</h3>
           	<p>The basic idea behind key pairs is that anything encrypted with the pair's Public Key can only be decrypted by the Private Key of the same pair. This means that it is extremely important to make sure you that encrypt your messages with the right Public Key, otherwise your intended recipient will not be able to decrypt the message. Worse than that, if some third party has the Private Key for the (wrong) Public Key you used, that third party will be able to decrypt the message instead.</p>          
             <p>So how can you be sure that the Public Key with which you are encrypting the message will allow only the intended recipient to decrypt it? The easiest way would be to physically get a copy each Public Key directly from the people you want to contact. This would virtually guarantee that you are using the right key, but it can be very impractical to get the public keys of all your contacts in this way.</p>
@@ -186,11 +186,6 @@ else {
           
           <h3>Suggested links for further information</h3>
           <ul>
-            <li><a href="http://www.cryptnet.net/fdp/crypto/keysigning_party/en/keysigning_party.html">Keysigning Party How-To (Intro to Keysigning, Keyservers, and Webs of Trust)</a></li>
+            <li><a target="_blank" href="http://www.cryptnet.net/fdp/crypto/keysigning_party/en/keysigning_party.html">Keysigning Party How-To (Intro to Keysigning, Keyservers, and Webs of Trust)</a></li>
           </ul>
-
-<!-- END PAGE-SPECIFIC CONTENT -->
-
-
-
 

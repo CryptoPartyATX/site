@@ -1,4 +1,5 @@
-<!-- BEGIN PAGE-SPECIFIC CONTENT -->
+
+
 <style>
 .page-icon {
 		width:150px;
@@ -52,24 +53,24 @@ else {
           <h3><i>A guide to setting up PGP-encrypted email on Windows and OS X</i></h3>
           <p><strong>Purpose:</strong> This guide attempts to explain how to implement PGP email encryption to enhance security and privacy. This guide is a recipe, not an encyclopedia. Its primary goal is to demonstrate how it is done, not to explain why (although there is some explanation at the end). For further information, we recommend consulting the Ars Technica article on setting up email encryption. The Ars guide uses the same method described below, but we have no affiliation with Ars Technica. The article can be found <a href="http://arstechnica.com/security/2013/06/encrypted-e-mail-how-much-annoyance-will-you-tolerate-to-keep-the-nsa-away/">here at Ars Technica.</a></p>
 
-		  <p><strong>Powerpoint Presentation</strong>: <a href="https://cryptopartyatx.org/misc/EmailPresentation.pptx">Here</a> is the PowerPoint presentation created for our December 2013 party in case you couldn't make it or want a copy.</p>
+		  <p><strong>Powerpoint Presentation</strong>: <a target="_blank" href="https://cryptopartyatx.org/misc/EmailPresentation.pptx">Here</a> is the PowerPoint presentation created for our December 2013 party in case you couldn't make it or want a copy.</p>
 
           <p><strong>Software:</strong> The following software is used in this guide. For best security, always download the files from the original source and verify the checksum.</p>
 
           <div class="list-group">
-            <a href="https://www.mozilla.org/en-US/thunderbird/" class="list-group-item">
+            <a target="_blank" href="https://www.mozilla.org/en-US/thunderbird/" class="list-group-item">
               <h3 class="list-group-item-heading">Mozilla Thunderbird</h3>
               <p class="list-group-item-text">Open-source email client, works similarly to Outlook</p>
             </a>
-            <span class="HideOSX"><a href="https://gpgtools.org/" class="list-group-item">
+            <span class="HideOSX"><a target="_blank" href="https://gpgtools.org/" class="list-group-item">
               <h3 class="list-group-item-heading">GPG Suite (OS X)</h3>
               <p class="list-group-item-text">Open-source GPG key manager for Mac OS X computers</p>
             </a></span>
-            <span class="HideWin"><a href="http://www.gpg4win.org/" class="list-group-item">
+            <span class="HideWin"><a target="_blank" href="http://www.gpg4win.org/" class="list-group-item">
               <h3 class="list-group-item-heading">Gpg4Win (Windows)</h3>
               <p class="list-group-item-text">Open-source GPG key manager for Windows computers</p>
             </a></span>
-            <a href="http://www.truecrypt.org/" class="list-group-item">
+            <a target="_blank" href="http://www.truecrypt.org/" class="list-group-item">
               <h3 class="list-group-item-heading">TrueCrypt</h3>
               <p class="list-group-item-text">TrueCrypt is not necessary for email encryption, but it allows you to create encrypted “containers” that work like password-protected folders. You can fill these containers with the files you want to encrypt, and send them as email attachments as one way to encrypt attachments. You can also use them to keep your keys and personal data more secure on your own computer.</p>
             </a>
@@ -92,7 +93,7 @@ else {
             <li>
               Obtain the Thunderbird installation file
               <ul>
-                <li>Visit <a href="https://www.mozilla.org/en-US/thunderbird/">Mozilla Thunderbird's site</a> and download the latest version</li>
+                <li>Visit <a target="_blank" href="https://www.mozilla.org/en-US/thunderbird/">Mozilla Thunderbird's site</a> and download the latest version</li>
               </ul>
             </li>
             <li>
@@ -134,7 +135,7 @@ else {
             <li>
               Obtain the GPG Suite installation file
               <ul>
-                <li>Download the GPG Suite or <a href="https://gpgtools.org/">here</a>.</li>
+                <li>Download the GPG Suite or <a target="_blank" href="https://gpgtools.org/">here</a>.</li>
               </ul>
             </li>
             <li>
@@ -164,7 +165,7 @@ else {
             <li>
               Obtain the Gpg4Win Installation file
               <ul>
-                <li>Download the latest version <a href="http://www.gpg4win.org/">here</a>.</li>
+                <li>Download the latest version <a target="_blank" href="http://www.gpg4win.org/">here</a>.</li>
               </ul>
             </li>
             <li>
@@ -241,18 +242,13 @@ else {
 		  <p>Please see our <a href="?page=1.7">guide to Keysigning and Keyservers</a> for more information.</p>
 
           <h3><strong>How do I use TrueCrypt? Why?</strong></h3>
-          <p>Please see <a href="#">our TrueCrypt guide</a> for information on how to setup and use TrueCrypt. For more information, TrueCrypt has an informative guide on their website: <a href="http://www.truecrypt.org/docs/tutorial">http://www.truecrypt.org/docs/tutorial</a>.</p>
+          <p>Please see <a href="?page=1.2">our TrueCrypt guide</a> for information on how to setup and use TrueCrypt. For more information, TrueCrypt has an informative guide on their website: <a target="_blank" href="http://www.truecrypt.org/docs/tutorial">http://www.truecrypt.org/docs/tutorial</a>.</p>
           <p>Why use TrueCrypt? You private key is very important to keep private. Keeping it private has two parts, the first of which is keeping it. Since your private key is the only way to decrypt messages sent using your public key, your emails will be gone forever if you lose your private key. After following this guide, you will have your private key stored on your computer by the keymanager program (GPA or GPGKeychainAccess). But if your computer hard drive fails then you have lost your private key. There will be no way to recreate it, and anything you could previously use it to decrypt will now be forever lost to the winds of randomness. Long story short, you absolutely need to create a backup. You should use an external device like a USB thumb drive that you can store in a safe and secure location.</p>
           <p>To make sure you keep it private, you should use TrueCrypt to encrypt the backup copy. If you have a spare flash drive that you can use for just this and other private files you want to keep (the keys will only take a few KB of space), I recommend selecting the “Create a volume within a partition/drive” option and using the whole USB drive. Then you can mount the drive using TrueCrypt and make your backup copy there. I also recommend the “Hidden TrueCrypt volume” option if you don't mind the hassle. You may want to keep more than one backup copy in a separate location. You could give one to your friend or your mother or anyone who won't lose it, they won't be able to read anything on it without your password.</p>
           
           <h3>Suggested links for further information</h3>
           <ul>
-            <li><a href="http://arstechnica.com/security/2013/06/encrypted-e-mail-how-much-annoyance-will-you-tolerate-to-">Ars Technica Email Encryption Guide</a></li>
-            <li><a href="http://www.truecrypt.org/docs/tutorial">TrueCrypt Tutorial (Official)</a></li>
+            <li><a target="_blank" href="http://arstechnica.com/security/2013/06/encrypted-e-mail-how-much-annoyance-will-you-tolerate-to-">Ars Technica Email Encryption Guide</a></li>
+            <li><a target="_blank" href="http://www.truecrypt.org/docs/tutorial">TrueCrypt Tutorial (Official)</a></li>
           </ul>
-
-<!-- END PAGE-SPECIFIC CONTENT -->
-
-
-
 
