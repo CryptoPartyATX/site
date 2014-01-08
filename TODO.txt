@@ -18,7 +18,7 @@ CryptoPartyATX.org To-Do list
 	-	How Crypto Works
 		:collect links re how crypto works, possibly write page
 	
-	{Links}
+	{NEW: Links}
 	-	General links to friends and friendly orgs (RT4, EFF, etc)
 	
 [How-to Pages]
@@ -26,6 +26,7 @@ CryptoPartyATX.org To-Do list
 -	Clickable screens for full size
 -	"Nutshell" item spacing is annoying
 -	Stop using <strong> for items being clicked, define css
+-	Video tutorials
 
 	{Email Encryption}
 	-	Review/update powerpoint
