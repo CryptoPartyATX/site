@@ -18,10 +18,15 @@
         <link href='/css/lato.css' rel='stylesheet' type='text/css'>
 
 		<!-- Load main css -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/crypto.css">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/crypto.css">
+        
+        <!-- Image expansion -->
+        <link href="css/lightbox.css" rel="stylesheet" />
+		<script src="/js/jquery-1.10.2.min.js"></script>
+		<script src="/js/lightbox-2.6.min.js"></script>
 
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
