@@ -24,10 +24,10 @@ CryptoPartyATX.org To-Do list
 [How-to Pages]
 -	Add Linux option/guides/screens for Linux for all pages
 -	"Nutshell" item spacing is annoying
--	Stop using <strong> for items being clicked, define css
 -	Video tutorials
 
 	{Email Encryption}
+	-	Items being clicked are not bolded on this guide
 	-	Review/update powerpoint
 	-	Incorporate more info from ppt re what email encryption does and does not do
 	-	Add info on obscuring metadata w/ throwaway accounts and VPNs/tor
