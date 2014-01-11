@@ -25,6 +25,7 @@ CryptoPartyATX.org To-Do list
 -	Add Linux option/guides/screens for Linux for all pages
 -	"Nutshell" item spacing is annoying
 -	Video tutorials
+-	Update <strong> to <span clickItem> for HT-DELETE, add clickItems for HT-EMAIL
 
 	{Email Encryption}
 	-	Items being clicked are not bolded on this guide
