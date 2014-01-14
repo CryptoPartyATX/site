@@ -33,6 +33,7 @@ div.sshot-right, div.sshot-wide {
 $pageid = $_GET['page'];
 $os = $_GET['os'];
 if(!$os){$os="win";}
+if($os != "win" && $os != "osx"){$os="win";} /* temporary, for compatibility until all pages have linux guides */
 
 if($os=="win"){
 	echo "<style>.HideOSX {display:none;}</style>";

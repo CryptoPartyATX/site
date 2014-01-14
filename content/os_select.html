@@ -1,0 +1,26 @@
+<?php
+
+$pageid = $_GET['page'];
+$os = $_GET['os'];
+if(!$os){$os="win";}
+if($os != "lnx" && $os != "osx"){$os="win";}
+
+if($os=="win"){
+	echo "<style>.HideOSX {display:none;}</style>\n";
+	echo "<style>.HideLnx {display:none;}</style>\n";
+	echo "<div class=\"osSelect\">Select Your OS: <br /><img src=\"/images/win_selected.png\" /><a href=\"?page=$pageid&os=osx\"><img src=\"/images/osx_unselected.png\" /></a><a href=\"?page=$pageid&os=lnx\"><img src=\"/images/lnx_unselected.png\" /></a></div>\n";
+}
+else if ($os=="osx") {
+	echo "<style>.HideWin {display:none;}</style>\n";
+	echo "<style>.HideLnx {display:none;}</style>\n";
+	echo "<div class=\"osSelect\">Select Your OS: <br /><a href=\"?page=$pageid&os=win\"><img src=\"/images/win_unselected.png\" /></a><img src=\"/images/osx_selected.png\" /><a href=\"?page=$pageid&os=lnx\"><img src=\"/images/lnx_unselected.png\" /></a></div>\n";
+}
+else {
+	echo "<style>.HideWin {display:none;}</style>\n";
+	echo "<style>.HideOSX {display:none;}</style>\n";
+	echo "<div class=\"osSelect\">Select Your OS: <br /><a href=\"?page=$pageid&os=win\"><img src=\"/images/win_unselected.png\" /></a><a href=\"?page=$pageid&os=osx\"><img src=\"/images/osx_unselected.png\" /></a><img src=\"/images/lnx_selected.png\" /></div>\n";
+
+}
+
+
+?>

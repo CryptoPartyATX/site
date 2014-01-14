@@ -32,21 +32,9 @@ div.sshot-right, div.sshot-wide {
 </style>
 	   <div class="page-icon">&nbsp;</div>
 	   
-<?php
+<!-- Include OS Selection buttons -->
+<?php include "os_select.html"; ?>
 
-$pageid = $_GET['page'];
-$os = $_GET['os'];
-if(!$os){$os="win";}
-
-if($os=="win"){
-	echo "<style>.HideOSX {display:none;}</style>";
-	echo "<a href=\"?page=$pageid&os=osx\"><div class=\"osSelect\">Select Your OS: <br /><img src=\"/images/os_button_win.png\" /></div></a>\n";
-}
-else {
-	echo "<style>.HideWin {display:none;}</style>";
-	echo "<a href=\"?page=$pageid&os=win\"><div class=\"osSelect\">Select Your OS: <br /><img src=\"/images/os_button_osx.png\" /></div></a>\n";
-}
-?>
        <h1>Keysigning and Keyservers</h1>
           <h3><i>A guide to signing PGP keys and using keyservers</i></h3>
           <p><strong>Purpose:</strong> This guide attempts to explain the purpose and process of keysigning and using keyservers to distribute public keys. If you do not already have a PGP key, please refer to Part II of our <a href="?page=1.1">Email Encryption guide</a> to get started.</p>
@@ -62,6 +50,7 @@ else {
               <h3 class="list-group-item-heading">Gpg4Win (Windows)</h3>
               <p class="list-group-item-text">Open-source GPG key manager for Windows computers</p>
             </a></span>
+            <span class="HideLnx">No additional software is used with Linux Mint.</span>
           </div>
 
           <h2>Nutshell</h2>
@@ -132,6 +121,26 @@ else {
           </ol>
           <p><strong>Note:</strong> to view a key's current signatures, just click the key. You can review the signatures on the "Signatures" tab at the bottom of the main window.</p>
 </span>
+<span class="HideLnx">
+          <h3>Linux Mint (Passwords and Keys)</h3>
+          <ol>
+            <li>First, you will need to obtain someone else's public key. You can do this through email, by downloading it from a keyserver, in person, or by any other method.</li>
+            <li>Run <span class="clickItem">Passwords and Keys</span> by clicking the Linux Mint <span class="clickItem">Menu</span> button, then going to <span class="clickItem">Preferences</span>, then <span class="clickItem">Passwords and Keys</span>.</li>
+            <div class="sshot-wide"><a href="/content/screenshots/HT-KEYS-LNXbrowse.jpg" data-lightbox="HT-KEYS-LNXkeyimport" title="Browse for a saved Public Key (Linux)"><img class="sshot-wd" src="/content/screenshots/HT-KEYS-LNXbrowse.jpg"/></a><a href="/content/screenshots/HT-KEYS-LNXkeyimport.jpg" data-lightbox="HT-KEYS-LNXkeyimport" title="Import the Public Key (Linux)"><img class="sshot-wd" src="/content/screenshots/HT-KEYS-LNXkeyimport.jpg"/></a></div>
+            <li>Click the <span class="clickItem">File</span> menu, then click <span class="clickItem">Import...</span>. Find and select the public key and press <span class="clickItem">Open</span> to import it.</li>
+            <li>You should see a small window that allows you to review the key before adding it. Click <span class="clickItem">Import</span>.</li>
+            <li>Now that you have imported your contact's key, right click it in the main window, and select <span class="clickItem">Properties</span>.</li>
+            <div class="sshot-right"><a href="/content/screenshots/HT-KEYS-LNXcheckprint.jpg" data-lightbox="HT-KEYS-LNXcheckprint" title="Check the Fingerprint of a Public Key (Linux)"><img class="sshot-sm" src="/content/screenshots/HT-KEYS-LNXcheckprint.jpg"/></a></div>
+            <li><strong>This is the most important step:</strong> On the Details tab, you should see an entry for "Fingerprint". You will need to verify the fingerprint by asking your contact to confirm it. For security reasons, you should not ask your contact to confirm it by email, chat, or any other unsecured communication. Anything that travels across the Internet could potentially be altered before it gets to you. You should not sign a key unless you are completely sure that it has not been altered. Because of this, the best way to verify a fingerprint is in person. You can read the fingerprint off of this screen and ask your contact to confirm it. Alternatively, if you can recognize your contact's voice, the next best alternative is to call your contact and verify the fingerprint over the phone. Remember, <strong>if the fingerprint does not <u>exactly</u> match what your contact says, you should not sign the key!</strong> Once you have checked and confirmed the fingerprint, you can continue. </li>
+          	<div class="sshot-wide"><a href="/content/screenshots/HT-KEYS-LNXclicksign.jpg" data-lightbox="HT-KEYS-LNXSign" title="Click the Sign this Key button in the Trust tab of the key's Properties (Linux)"><img class="sshot-wd" src="/content/screenshots/HT-KEYS-LNXclicksign.jpg"/></a><a href="/content/screenshots/HT-KEYS-LNXhowcareful.jpg" data-lightbox="HT-KEYS-LNXSign" title="Select how carefully you checked, then sign the key (Linux)"><img class="sshot-wd" src="/content/screenshots/HT-KEYS-LNXhowcareful.jpg"/></a></div>
+          	<li>On the Trust tab click the box next to <span class="clickItem">I trust signatures from...</span> and press <span class="clickItem">Sign this Key</span></li>
+          	<li>A window will open asking you to verify the fingerprint before signing. Ask yourself one more time if you are sure the key belongs to the person it says, then make a selection for how carefully you checked the key. Click <span class="clickItem">Sign</span> to sign the key.</li>
+			<div class="sshot-right"><a href="/content/screenshots/HT-KEYS-LNXenterpass.jpg" data-lightbox="HT-KEYS-LNXenterpass" title="Enter the Password for Your Private Key to Sign a Public Key (Linux)"><img class="sshot-sm" src="/content/screenshots/HT-KEYS-LNXenterpass.jpg"/></a></div>
+			<li>A window will open asking you to type the password for your private key. This is necessary because the act of signing involves performing some math based on your private key and your contact's public key in order to generate a unique result. This ensures that your signature no longer counts if the public key is altered, and that no one can sign a key while pretending to be you. Type in your password and press <span class="clickItem">Unlock</span>.</li>
+			<li>You have now successfully signed your contact's public key. Now that you have signed it, you should upload it to a keyserver. Otherwise, you are the only person who can see the signature. Continue to Part III to see how to use a keyserver.</li>
+          </ol>
+          <p><strong>Note:</strong> to view a key's current signatures, just right click the key and go to <span class="clickItem">Properties</span>. You can review the signatures on the <span class="clickItem">Trust</span> tab at the bottom of the main window.</p>
+</span>
 
           <h2>Part III: How to use Keyservers</h2>
           <p>Keyservers can be used in four main ways: 
@@ -153,7 +162,7 @@ else {
             	<ul><li>Note: A Key ID is an even shorter version of the key's fingerprint. It's not secret information; it just provides a quick way to find public keys. So if you searched by Key ID, you should only see one result. If you did not, and you can't tell which result is correct, ask your contact for their Key ID and you should be able to find it easily if it is on the keyserver.</li></ul>
             </li>
             <li>Once you have determined which result is correct, click the link in the "pub" row next to your contact's name. (The link you are clicking should match the KeyID of the public key for your contact.)</li>
-            <li>Highlight the entire key, including dashes, from the point where it says "-----BEGIN PGP PUBLIC KEY BLOCK-----" to the point where it says "-----END PGP PUBLIC KEY BLOCK-----". Copy and paste this into a text file using Notepad, TextEdit, or any other plain text software. Do not use an application such as Microsoft Word, as this will add extra formatting information that could keep your key manager program from recognizing the key. Save the key with any file name, with the extension ".txt" or ".asc"</li>
+            <li>Highlight the entire key, including dashes, from the point where it says "-----BEGIN PGP PUBLIC KEY BLOCK-----" to the point where it says "-----END PGP PUBLIC KEY BLOCK-----". Copy and paste this into a text file using Notepad, TextEdit, or any other plain text software. Do not use an application such as Microsoft Word, as this will add extra formatting information that could keep your key manager program from recognizing the key. Save the key with any file name, with the extension <span class="clickItem">.asc</span>.</li>
           </ol>
                     
 <span class="HideOSX">
@@ -165,18 +174,41 @@ else {
           	<li>Review the results as in the previous method. Check the box next to the key you want to import, then press <span class="clickItem">Retrieve key</span></li>
           </ol>
 </span>
+<span class="HideLnx">
+          <h3>Obtaining a Key from a Keyserver - Alternate Method (Linux Mint)</h3>
+          <ol>
+          	<li>Open <span class="clickItem">Passwords and Keys</span>.</li>
+          	<li>Press <span class="clickItem">Find Remote Keys...</span> under the <strong>Remote</strong> menu of the main window.</li>
+          	<li>Type in the name, email address, or Key ID of the person you want to contact and press <span class="clickItem">Search key</span>.</li>
+          	<li>Review the results as in the previous method. Some results may be duplicated, but it does not matter which copy you import. Select the key you want to import, then press <span class="clickItem">Import</span>.</li>
+          	<li>You may now close the search result window. The key should appear in the main window of <span class="clickItem">Passwords and Keys</span>.</li>
+          </ol>
+</span>
+
+
           
           <h3>Updating a Key from a Keyserver</h3>
           <ul>
-          	<span class="HideOSX"><li><strong>OS X</strong> - To retrieve the latest version of a key from the keyserver, simply open up <span class="clickItem">GPG Keychain Access</span>, right click the key you want to update, and click <span class="clickItem">Update from keyserver</span>. That's it, you can now see all of the latest signatures for that key that have been sent to the keyserver!</li></span>
-            <span class="HideWin"><li><strong>Windows</strong> - To retrieve the latest version of a key from the keyserver, open up <span class="clickItem">GPA</span> and click <span class="clickItem">Retrieve Keys...</span> in the <span class="clickItem">Server</span> menu. Type in the Key ID you see next to your contact's key in the main window, and press <span class="clickItem">OK</span>. That's it, you can now see all of the latest signatures for that key that have been sent to the keyserver!</li></span>
+          	<span class="HideOSX"><li>To retrieve the latest version of a key from the keyserver, simply open up <span class="clickItem">GPG Keychain Access</span>, right click the key you want to update, and click <span class="clickItem">Update from keyserver</span>. That's it, you can now see all of the latest signatures for that key that have been sent to the keyserver!</li></span>
+            <span class="HideWin"><li>To retrieve the latest version of a key from the keyserver, open up <span class="clickItem">GPA</span> and click <span class="clickItem">Retrieve Keys...</span> in the <span class="clickItem">Server</span> menu. Type in the Key ID you see next to your contact's key in the main window, and press <span class="clickItem">OK</span>. That's it, you can now see all of the latest signatures for that key that have been sent to the keyserver!</li></span>
+          	<span class="HideLnx"><li>To update all of your keys to their latest versions, open up <span class="clickItem">Passwords and Keys</span> and select <span class="clickItem">Sync and Publish Keys...</span> under the <span class="clickItem">Remote</span> menu.</li></span>
           </ul>
 
 		  <h3>Sending a Key to a Keyserver</h3>
           <ul>
-          	<span class="HideOSX"><li><strong>OS X</strong> - To send a key to the keyserver in the first place, simply open up <span class="clickItem">GPG Keychain Access</span>, right click the key you want to update, and click <span class="clickItem">Send public key to keyserver</span>. That's it, now others can search for your public key and get it from the keyserver!</li></span>
-          	<span class="HideWin"><li><strong>Windows</strong> - To send a key to the keyserver in the first place, simply open up <span class="clickItem">GPA</span>, right click the key you want to update, and click <span class="clickItem">Send keys...</span>. A box will open asking you to confirm you want to send it to the keyserver. Click <span class="clickItem">OK</span>. That's it, now others can search for your public key and get it from the keyserver!</li></span>
+          	<span class="HideOSX"><li>To send a key to the keyserver in the first place, simply open up <span class="clickItem">GPG Keychain Access</span>, right click the key you want to update, and click <span class="clickItem">Send public key to keyserver</span>. That's it, now others can search for your public key and get it from the keyserver!</li></span>
+          	<span class="HideWin"><li>To send a key to the keyserver in the first place, simply open up <span class="clickItem">GPA</span>, right click the key you want to update, and click <span class="clickItem">Send keys...</span>. A box will open asking you to confirm you want to send it to the keyserver. Click <span class="clickItem">OK</span>. That's it, now others can search for your public key and get it from the keyserver!</li></span>
           </ul>
+          <span class="HideLnx">
+          	<ol>
+          		<li>To send a key to the keyserver in the first place, open up <span class="clickItem">Passwords and Keys</span> and select <span class="clickItem">Sync and Publish Keys...</span> under the <span class="clickItem">Remote</span> menu.</li>
+          		<li>If the window that opens says "No key server has been chosen for publishing", click the <span class="clickItem">Key Servers</span> button, then select a key server in the dropdown menu next to the <span class="clickItem">Publish keys to:</span> label. Click <span class="clickItem">Close</span>.</li>
+          		<ul><li>Note: You can also use set the program to automatically update your keys in that menu.</li></ul>
+          		<li>Click <span class="clickItem">Sync</span> to update all of your keys.</li>
+			</ol>	          	
+          </span>
+
+
           
           <h3>Updating the Keyserver's Copy</h3>
           <p>You only need to update the keyserver's copy if you have added a signature. There is no difference between sending a key in the first place and updating it. Just follow the previous instructions for sending a key and the keyserver will be updated with the signature you added! Remember to be careful about which keys you sign.</p>

@@ -46,13 +46,14 @@
 
 /* Page selection - default 0 (main page) */
 $pageid = $_GET['page'];
-if (!$pageid || $pageid>3 || $pageid<0){
+if (!$pageid || $pageid>4 || $pageid<0){
 	$pageid=0;
 }
 
-/* OS Selection - default Windows */
+/* OS Selection - default to Windows */
 $os = $_GET['os'];
 if(!$os){$os="win";}
+if($os != "osx" && $os !="lnx"){$ox="win";}
 
 ?>     
       
@@ -71,6 +72,7 @@ if(!$os){$os="win";}
                 <a href="?page=1.8&os=<?php echo $os; ?>" class="list-group-item sub-item<?php if($pageid==1.8)echo ' subactive'; if($inactive) echo ' hideme'; ?>">Securely Delete Data</a>
             <a href="?page=2&os=<?php echo $os; ?>" class="list-group-item<?php if($pageid==2)echo ' active'; ?>">Upcoming Events</a>
             <a href="?page=3&os=<?php echo $os; ?>" class="list-group-item<?php if($pageid==3)echo ' active'; ?>">Contribute</a>
+            <a href="?page=4&os=<?php echo $os; ?>" class="list-group-item<?php if($pageid==4)echo ' active'; ?>">Links</a>
         </div>
         <div>Follow <a href="https://twitter.com/atxcrypto">ATXCrypto on Twitter</a></div>
     </div>
@@ -117,6 +119,9 @@ else if ($pageid==2){
 }
 else if ($pageid==3){
 	include "content/contrib.html";
+}
+else if ($pageid==4){
+	include "content/links.html";
 }
 
 ?>

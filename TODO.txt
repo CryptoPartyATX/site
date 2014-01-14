@@ -23,6 +23,7 @@ CryptoPartyATX.org To-Do list
 	
 [How-to Pages]
 -	Add Linux option/guides/screens for Linux for all pages
+	:option added for otr, email, keys,
 -	"Nutshell" item spacing is annoying
 -	Video tutorials
 -	Update <strong> to <span clickItem> for HT-DELETE, add clickItems for HT-EMAIL
@@ -44,6 +45,10 @@ CryptoPartyATX.org To-Do list
 	-	DBAN
 	-	Can the NSA recover the data (if they wanted to?)
 
+	{NEW: Metadata}
+	-	What it is
+	-	How to obfuscate
+
 	{NEW: Privacy Plug-ins}
 	-	HTTPS Everywhere
 	-	AdBlock Plus
@@ -51,8 +56,8 @@ CryptoPartyATX.org To-Do list
 	-	Cryptocat
 	-	NoScript
 		
-	{NEW: Linux Mint}
-	:or other linux, but Mint is pretty easy for intro
+	{NEW: Getting Started with Linux Mint}
+	:linux guides being written assuming Mint for now
 			
 	{NEW: VPNs}
 	-	Add page for using VPNs

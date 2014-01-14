@@ -33,21 +33,8 @@ div.sshot-right, div.sshot-wide {
 	   <div class="page-icon">&nbsp;</div>
 	   
 	   
-<?php
-
-$pageid = $_GET['page'];
-$os = $_GET['os'];
-if(!$os){$os="win";}
-
-if($os=="win"){
-	echo "<style>.HideOSX {display:none;}</style>";
-	echo "<a href=\"?page=$pageid&os=osx\"><div class=\"osSelect\">Select Your OS: <br /><img src=\"/images/os_button_win.png\" /></div></a>\n";
-}
-else {
-	echo "<style>.HideWin {display:none;}</style>";
-	echo "<a href=\"?page=$pageid&os=win\"><div class=\"osSelect\">Select Your OS: <br /><img src=\"/images/os_button_osx.png\" /></div></a>\n";
-}
-?>
+<!-- Include OS Selection buttons -->
+<?php include "os_select.html"; ?>
 	   
        <h1>Email Encryption with Thunderbird</h1>
           <h3><i>A guide to setting up PGP-encrypted email on Windows and OS X</i></h3>
@@ -89,28 +76,47 @@ else {
 
 
           <h2>Part I: Install Thunderbird</h2>
+          
           <ol>
+          
+          
+<span class="HideOSX">          
             <li>
               Obtain the Thunderbird installation file
-              <ul>
-                <li>Visit <a target="_blank" href="https://www.mozilla.org/en-US/thunderbird/">Mozilla Thunderbird's site</a> and download the latest version</li>
-              </ul>
+              <ul><li>Visit <a target="_blank" href="https://www.mozilla.org/en-US/thunderbird/">Mozilla Thunderbird's site</a> and download the latest version</li></ul>
             </li>
             <li>
               Install Thunderbird
               <ul>
                 <li>Double-click the installation file in your download folder</li>
-                <span class="HideOSX"><li>OS X – Drag Thunderbird to your Applications folder</li></span>
-                <span class="HideWin"><li>Windows – Allow the program to run and click Next until the installation program finishes. The standard options are okay.</li></span>
+                <li>Drag Thunderbird to your Applications folder</li>
               </ul>
             </li>
             <li>
               Run Thunderbird
+              <ul><li>Double-click Thunderbird in your Applications folder</li></ul>
+            </li>
+</span>
+<span class="HideWin">          
+            <li>
+              Obtain the Thunderbird installation file
+              <ul><li>Visit <a target="_blank" href="https://www.mozilla.org/en-US/thunderbird/">Mozilla Thunderbird's site</a> and download the latest version</li></ul>
+            </li>
+            <li>
+              Install Thunderbird
               <ul>
-                <span class="HideOSX"><li>OS X – Double-click Thunderbird in your Applications folder</li></span>
-                <span class="HideWin"><li>Windows – Thunderbird should run after installation. If it does not, click the Start menu, select Programs or “All Programs”, and click Mozilla Thunderbird.</li></span>
+                <li>Double-click the installation file in your download folder</li>
+                <li>Allow the program to run and click Next until the installation program finishes. The standard options are okay.</li>
               </ul>
             </li>
+            <li>
+              Run Thunderbird
+              <ul><li>Thunderbird should run after installation. If it does not, click the Start menu, select Programs or “All Programs”, and click Mozilla Thunderbird.</li></ul>
+            </li>
+</span>
+<span class="HideLnx">
+            <li>Thunderbird is already installed on Linux Mint!</li>
+</span>
             <li>
               Configure Thunderbird to use your current email account
               <ul><div class="sshot-right"><a href="/content/screenshots/HT-EMAIL-AcctSetup.jpg" data-lightbox="AcctSetup" title="Setup Your Email Account"><img class="sshot-sm" src="/content/screenshots/HT-EMAIL-AcctSetup.jpg" /></a></div>
@@ -127,7 +133,8 @@ else {
             <li>Done! You can now access your email account using Thunderbird. You may want to customize the appearance of Thunderbird or enable other Add-Ons, but those topics are not covered in this guide. It may take some time to load all of your emails, but you should be able to continue with this guide in the meantime.</li>
           </ol>
 
-          <h2>Part II: Install GPGSuite or Gpg4Win (GPA) and Create Your Key Pair</h2>
+
+          <h2>Part II: Install a Key Manager and Create Your Key Pair</h2>
 <span class="HideOSX">
           <h3>OS X (GPG Suite)</h3>
           <div class="sshot-right"><a href="/content/screenshots/HT-EMAIL-GPGGen.jpg" data-lightbox="GPGGen" title="Generate Your PGP Keypair (OS X)"><img class="sshot-sm" src="/content/screenshots/HT-EMAIL-GPGGen.jpg" /></a></div>
@@ -190,6 +197,21 @@ else {
             <li>Done! You now have a key pair; a Public PGP Key and a Private PGP Key. Do you know what that means? If you don't, now is a good time to go read the Appendix.</li>
           </ol>
 </span>
+<span class="HideLnx">
+		<ol>
+			<li>Linux Mint already has a key manager. Launch it by selecting the Linux Mint <span class="clickItem">Menu</span> button, then <span class="clickItem">Preferences</span>, then <span class="clickItem">Passwords and Keys</span></li>
+			<li>Press the <span class="clickItem">+</span> button, or select <span class="clickItem">File > New...</span></li>
+			<li>Select <span class="clickItem">PGP Key</span>, then click <span class="clickItem">Continue</span></li>
+			<li>Fill out your name and email address, and choose from the additional options if you want to change the key size or set an expiration date. Then click <span class="clickItem">Create</span>.</li>
+			<li>Enter the passphrase you will use whenever you want to sign a message you are sending, or when you want to decrypt a message sent to you. Type it again to confirm, and press <span class="clickItem">OK</span>.</li>
+			<li>Wait while the key generates. It helps if you do other things on your computer during this process.</li>
+			<li>To view the key you generated, select the <span class="clickItem">View</span> menu, then <span class="clickItem">By keyring</span>. Click GnuPG keys on the left side of the main window. You should see your new key on the right.</li>
+		</ol>
+</span>
+
+
+
+
           <h2>Part III: Install Enigmail</h2>
 
           <ol>
@@ -213,8 +235,9 @@ else {
               Import the recipient's public key. 
               <div class="sshot-right"><a href="/content/screenshots/HT-EMAIL-GPGImport.jpg" data-lightbox="GPGImport" title="Import Your Contact's Public Key"><img class="sshot-sm" src="/content/screenshots/HT-EMAIL-GPGImport.jpg" /></a></div>
               <ul>
-                <span class="HideWin"><li>Windows - Open up GPA and click the Import button. Find the file and select it, then click OK.</li></span>
-                <span class="HideOSX"><li>OS X – open up GPG Keychain Access and click Import. Find and select the key file, then click Open. </li></span>
+                <span class="HideWin"><li>Windows - Open up <span class="clickItem">GPA</span> and click the <span class="clickItem">Import</span> button. Find the file and select it, then click <span class="clickItem">OK</span>.</li></span>
+                <span class="HideOSX"><li>OS X – Open up <span class="clickItem">GPG Keychain Access</span> and click <span class="clickItem">Import</span>. Find and select the key file, then click <span class="clickItem">Open</span>. </li></span>
+              	<span class="HideLnx"><li>Linux - Open up <span class="clickItem">Passwords and Keys</span>, then click <span class="clickItem">File > Import...</span> Find and select the key file, then click <span class="clickItem">Open</span>.</li></span>
               </ul>
             </li>
             <li>Type a test email. Open Thunderbird and address an email to the owner of a public key you imported. Type something in the body to be encrypted. Please note that the subject line will not be encrypted.</li>
