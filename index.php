@@ -42,7 +42,7 @@ if (!$pageid || $pageid>4 || $pageid<0){
 /* OS Selection - default to Windows */
 $os = $_GET['os'];
 if(!$os){$os="win";}
-if($os != "osx" && $os !="lnx"){$ox="win";}
+if($os != "osx" && $os !="lnx"){$os="win";}
 
 ?> 
 
