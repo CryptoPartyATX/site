@@ -18,21 +18,17 @@ CryptoPartyATX.org To-Do list
 	-	How Crypto Works
 		:collect links re how crypto works, possibly write page
 	
-	{NEW: Links}
-	-	General links to friends and friendly orgs (RT4, EFF, etc)
-	
 [How-to Pages]
--	Add Linux option/guides/screens for Linux for all pages
-	:option added for otr, email, keys,
+-	Add Linux screens for remaining pages
 -	"Nutshell" item spacing is annoying
--	Video tutorials
+-	Video tutorials?
 -	Update <strong> to <span clickItem> for HT-DELETE, add clickItems for HT-EMAIL
 
 	{Email Encryption}
 	-	Items being clicked are not bolded on this guide
 	-	Review/update powerpoint
 	-	Incorporate more info from ppt re what email encryption does and does not do
-	-	Add info on obscuring metadata w/ throwaway accounts and VPNs/tor
+	-	Add (link to new page with) info on obscuring metadata w/ throwaway accounts and VPNs/tor
 	-	Update for Enigmail config changes
 		:Enigmail now has setup walkthrough thing, what does it do exactly? do we still need key manager?
 	
@@ -42,6 +38,7 @@ CryptoPartyATX.org To-Do list
 	-	Two-factor Authentication
 	
 	{Secure Delete}
+	-	Add Linux guide
 	-	DBAN
 	-	Can the NSA recover the data (if they wanted to?)
 

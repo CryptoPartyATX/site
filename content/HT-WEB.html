@@ -27,22 +27,9 @@ div.sshot-right, div.sshot-wide {
 </style>
 	   <div class="page-icon">&nbsp;</div>
 	   
-<?php
+<!-- Include OS Selection buttons -->
+<?php include "os_select.html"; ?>
 
-$pageid = $_GET['page'];
-$os = $_GET['os'];
-if(!$os){$os="win";}
-if($os != "win" && $os != "osx"){$os="win";} /* temporary, for compatibility until all pages have linux guides */
-
-if($os=="win"){
-	echo "<style>.HideOSX {display:none;}</style>";
-	echo "<a href=\"?page=$pageid&os=osx\"><div class=\"osSelect\">Select Your OS: <br /><img src=\"/images/os_button_win.png\" /></div></a>\n";
-}
-else {
-	echo "<style>.HideWin {display:none;}</style>";
-	echo "<a href=\"?page=$pageid&os=win\"><div class=\"osSelect\">Select Your OS: <br /><img src=\"/images/os_button_osx.png\" /></div></a>\n";
-}
-?>
        <h1>Encrypted Web Browsing</h1>
           <h3><i>A guide to encrypting your web browsing traffic with Tor</i></h3>
           <p><strong>Purpose:</strong>This guide attempts to explain how to install and use TorBrowser to more securely access the Internet through the TOR (The Onion Router) network. TOR encrypts your web requests and transmits them through a web of relays. This helps to hide your IP address from the website you visit and make it more difficult for third parties to track your activity.</p>
@@ -65,13 +52,20 @@ else {
         <h2>Part I: Install TorBrowser</h2>
           <ol>
 			<li>Obtain TorBrowser from the <a target="_blank" href="https://www.torproject.org/download/download">TorProject download page</a> We always recommend downloading the latest copy of the installation file from the website and verifying the checksum.</li>
+<span class="HideLnx">
+			<h3>Linux Mint</h3>
+			<ol>
+				<li>Extract TorBrowser by double-clicking the downloaded installation file. Drag the <span class="clickItem">tor-browser_en-US</span> folder to any location on your computer. TorBrowser is self-contained, so there is no further installation. It is ready to go.</li>
+				<li>Any time you need to run TorBrowser, you run it from this folder by double-clicking <span class="clickItem">start-tor-browser</span> and pressing <span class="clickItem">Run</span>. You can move this folder any time when TorBrowser isn't running, and you may want to create a shortcut on your start menu, toolbar, or desktop.</li>
+			</ol>
+</span>	
 <span class="HideWin">
 			<h3>Windows</h3>
 			<ol>
 				<li>Extract TorBrowser by double-clicking the downloaded installation file and choosing a directory. TorBrowser is self-contained, so there is no further installation. It is ready to go.</li>
 				<li>Any time you need to run TorBrowser, you run it from this folder. You can move this folder any time when TorBrowser isn't running, and you may want to create a shortcut on your start menu, toolbar, or desktop.</li>
 			</ol>
-</span>	
+</span>
 <span class="HideOSX">		
 			<h3>OS X</h3>
 			Extract TorBrowser by double-clicking the downloaded installation zip file. After it finishes, you should see the <span class="clickItem">TorBrowser_en-US</span> application. Drag it to your Applications or any other folder if you would like.
@@ -81,7 +75,7 @@ else {
 
 		<h2>Part II: Test TorBrowser</h2>
 		  <ol>
-			<li>Open TorBrowser by navigating to the location you downloaded it (Windows), or your Applications folder (OS X).</li>
+			<li>Open TorBrowser by navigating to the location you downloaded it (Windows/Linux), or your Applications folder (OS X).</li>
 			<li>You should see the Vidalia window pop up. Vidalia does all the work of connecting to the Tor Network, and should be left running while you use TorBrowser.</li>
 			<li>After Vidalia connects, you should see a TorBrowser window that looks similar to Firefox (because it is a version of Firefox). That window should start on the TorCheck page: (https://check.torproject.org/?lang=en-US). If everything is working properly, you should see the following screen:</li>
 		  	<div class="sshot-wide"><a href="/content/screenshots/HT-WEB-TorSuccess.jpg" data-lightbox="HT-WEB-TorSuccess" title="You Are Successfully Using TorBrowser"><img class="sshot-wd" src="/content/screenshots/HT-WEB-TorSuccess.jpg"/></a></div>
@@ -111,6 +105,14 @@ else {
               <p class="list-group-item-text"><em>https://www.torproject.org/docs/tor-doc-osx.html.en</em></p>
             </a>
 </span>
+<span class="HideLnx">
+            <a target="_blank" href="https://www.torproject.org/docs/tor-doc-unix.html.en" class="list-group-item">
+              <h3 class="list-group-item-heading">Tor Install Guide for Linux [Official]</h3>
+              <p class="list-group-item-text"><em>https://www.torproject.org/docs/tor-doc-unix.html.en</em></p>
+            </a>
+</span>
+
+
             <a target="_blank" href="https://www.torproject.org/dist/manual/short-user-manual_en.xhtml" class="list-group-item">
               <h3 class="list-group-item-heading">Tor Short User Manual [Official]</h3>
               <p class="list-group-item-text"><em>https://www.torproject.org/dist/manual/short-user-manual_en.xhtml</em></p>

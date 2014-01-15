@@ -27,22 +27,8 @@ div.sshot-right, div.sshot-wide {
 </style>
 	   <div class="page-icon">&nbsp;</div>
 	   
-<?php
-
-$pageid = $_GET['page'];
-$os = $_GET['os'];
-if(!$os){$os="win";}
-if($os != "win" && $os != "osx"){$os="win";} /* temporary, for compatibility until all pages have linux guides */
-
-if($os=="win"){
-	echo "<style>.HideOSX {display:none;}</style>";
-	echo "<a href=\"?page=$pageid&os=osx\"><div class=\"osSelect\">Select Your OS: <br /><img src=\"/images/os_button_win.png\" /></div></a>\n";
-}
-else {
-	echo "<style>.HideWin {display:none;}</style>";
-	echo "<a href=\"?page=$pageid&os=win\"><div class=\"osSelect\">Select Your OS: <br /><img src=\"/images/os_button_osx.png\" /></div></a>\n";
-}
-?>
+<!-- Include OS Selection buttons -->
+<?php include "os_select.html"; ?>
 	   
        <h1>File and Folder Encryption with TrueCrypt</h1>
           <h3><i>A guide to encrypting, files, folders, and drives using TrueCrypt</i></h3>
@@ -76,8 +62,14 @@ else {
             <li>
               Install TrueCrypt
               <ul>
-                <span class="HideOSX"><li>OS X – Double-click <span class="clickItem">TrueCrypt 7.1a.dmg</span> in your downloads folder, then double-click <span class="clickItem">TrueCrypt 7.1a.mpkg</span> in the window that opens. Click <span class="clickItem">Continue</span> twice and then <span class="clickItem">Install</span>. Enter your password to allow the program to install.</li></span>
-                <span class="HideWin"><li>WINDOWS – Double-click <span class="clickItem">TrueCrypt Setup 7.1a.exe</span>. Allow the program to run, choose to accept the license, and then click <span class="clickItem">Next</span> until the installation completes. You can customize the options if you wish, but the default options are okay.</li></span>
+                <span class="HideOSX"><li>Double-click <span class="clickItem">TrueCrypt 7.1a.dmg</span> in your downloads folder, then double-click <span class="clickItem">TrueCrypt 7.1a.mpkg</span> in the window that opens. Click <span class="clickItem">Continue</span> twice and then <span class="clickItem">Install</span>. Enter your password to allow the program to install.</li></span>
+                <span class="HideWin"><li>Double-click <span class="clickItem">TrueCrypt Setup 7.1a.exe</span>. Allow the program to run, choose to accept the license, and then click <span class="clickItem">Next</span> until the installation completes. You can customize the options if you wish, but the default options are okay.</li></span>
+                <span class="HideLnx">
+                	<li>Extract <span class="clickItem">truecrypt-7.1a-setup-x64</span> from the downloaded package, double-click it, and select <span class="clickItem">Run</span>.</li>
+                	<li>Type "1" and press Enter to begin the installation. Review the license (press space to scroll down) and type "Yes" to accept.</li>
+                	<li>Type your password when prompted to allow the program installation. After it is completed, it will be available under the Linux Mint <span class="clickItem">Menu &gt; Accessories &gt; TrueCrypt</span></li>
+                </span>
+              
               </ul>
             </li>
           </ol>
@@ -85,11 +77,13 @@ else {
 		  <h2>Part II: Create an Encrypted File Container</h2>
           <ol>
             <li>
-              	<span class="HideOSX">OS X – Double-click <span class="clickItem">TrueCrypt</span> in your <span class="clickItem">Applications</span> folder.<br /></span>
-				<span class="HideWin">WINDOWS – Click <span class="clickItem">Start &gt; Programs &gt; TrueCrypt &gt; TrueCrypt</span></span>
+              	<span class="HideOSX">Double-click <span class="clickItem">TrueCrypt</span> in your <span class="clickItem">Applications</span> folder.<br /></span>
+				<span class="HideWin">Click <span class="clickItem">Start &gt; Programs &gt; TrueCrypt &gt; TrueCrypt</span></span>
+ 				<span class="HideLnx">Click the Linux Mint <span class="clickItem">Menu &gt; Accessories &gt; TrueCrypt</span></span>
+           
             </li>
             <li>
-              	Click the <span class="clickItem">Create Volume</span> button in the main TrueCrypt window. (Windows TrueCrypt should be nearly identical in content and format to the OS X screenshots here, but has a different style.)
+              	Click the <span class="clickItem">Create Volume</span> button in the main TrueCrypt window. (Windows and Linux TrueCrypt should be nearly identical in content and format to the OS X screenshots here, but with a different style.)
             </li>
             <div class="sshot-wide"><a href="/content/screenshots/HT-FILE-CreateVolume.jpg" data-lightbox="HT-FILE-CreateVolume" title="Create a New Volume in TrueCrypt"><img class='sshot-wd' src="/content/screenshots/HT-FILE-CreateVolume.jpg"/></a></div>
             <li>
@@ -147,8 +141,10 @@ else {
           	<div class="sshot-wide"><a href="/content/screenshots/HT-FILE-VolumeOpen.jpg" data-lightbox="HT-FILE-VolumeOpen" title="You Have Successfully Opened the Truecrypt Volume"><img class='sshot-wd' src="/content/screenshots/HT-FILE-VolumeOpen.jpg"/></a></div>
           	<li>
           		If you typed your password correctly, the volume should appear in the slot you selected. To access the encrypted volume:<br />
-				<span class="HideWin">WINDOWS: Go to <span class="clickItem">My Computer</span> and open the drive letter that you selected. <br /></span>
-				<span class="HideOSX">OS X: Find the volume in the Finder under Devices, or on the Desktop</span>
+				<span class="HideWin">Go to <span class="clickItem">My Computer</span> and open the drive letter that you selected. <br /></span>
+				<span class="HideOSX">Find the volume in the Finder under Devices, or on the Desktop</span>
+				<span class="HideLnx">Find the volume in the file browser under <span class="clickItem">Devices</span> or in the <span class="clickItem">Computer</span> location.</span>
+
           	</li>
           	<li>
           		Now, add a file to your container. Since we are just practicing, you can use any file. Simply drag the file into the container; it works like any other folder. This will copy the file, not move it, so when you use this with actual private data, you may want to delete the unencrypted original file after you have verified that the encrypted copy works.
