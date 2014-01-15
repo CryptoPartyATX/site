@@ -30,17 +30,6 @@
 
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
-
-    <div class="container">
-
-      <div class="row">
-        <div class="col-lg-4">
-        
-        <a href="?page=0"><div class="logo">&nbsp;</div></a>
 
 <?php
 
@@ -55,7 +44,19 @@ $os = $_GET['os'];
 if(!$os){$os="win";}
 if($os != "osx" && $os !="lnx"){$ox="win";}
 
-?>     
+?> 
+
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-lg-4">
+
+        <a href="?page=0&os=<?php echo $os; ?>"><div class="logo">&nbsp;</div></a>
       
         <div class="list-group">
             <a href="?page=0&os=<?php echo $os; ?>" class="list-group-item<?php if($pageid==0)echo ' active'; ?>">
