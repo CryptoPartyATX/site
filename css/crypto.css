@@ -24,8 +24,9 @@ a.sub-item:hover {
 .osSelect {
 	float:right;
 	clear:right;
-	/*width:150px;*/
-	background:#DDDDDD;
+	/*width:225px;*/
+	background: #EFEFEF;
+	border:1px solid #DDDDDD;
 	padding:.25em;
 	margin:.25em;
 }
