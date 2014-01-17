@@ -1,7 +1,6 @@
 CryptoPartyATX.org To-Do list
 
 [General/Style]
--	Navigation
 -	Overall site style?
 -	Screenshot layout
 -	Print layout css
@@ -41,6 +40,9 @@ CryptoPartyATX.org To-Do list
 	-	Add Linux guide
 	-	DBAN
 	-	Can the NSA recover the data (if they wanted to?)
+
+	{NEW: Android Email Enc}
+	:finally figured that out
 
 	{NEW: Metadata}
 	-	What it is
