@@ -35,7 +35,7 @@
 
 /* Page selection - default 0 (main page) */
 $pageid = $_GET['page'];
-if (!$pageid || $pageid>4 || $pageid<0){
+if (!$pageid || $pageid>5 || $pageid<0){
 	$pageid=0;
 }
 /* Compatibility for old links */
@@ -74,8 +74,9 @@ if($os != "osx" && $os !="lnx"){$os="win";}
                 <a href="?page=1.5&os=<?php echo $os; ?>" class="list-group-item sub-item<?php if($pageid==1.5)echo ' subactive'; if($inactive) echo ' hideme'; ?>">Encrypted Web Browsing</a>
             <a href="?page=2&os=<?php echo $os; ?>" class="list-group-item<?php $inactive=false; if($pageid >= 2 && $pageid < 3)echo ' active'; else $inactive=true; ?>">Privacy Guides</a>
                 <a href="?page=2.1&os=<?php echo $os; ?>" class="list-group-item sub-item<?php if($pageid==2.1)echo ' subactive'; if($inactive) echo ' hideme'; ?>">Choosing Secure Passwords</a>
-                <a href="?page=2.2&os=<?php echo $os; ?>" class="list-group-item sub-item<?php if($pageid==2.2)echo ' subactive'; if($inactive) echo ' hideme'; ?>">Keysigning and Keyservers</a>
-                <a href="?page=2.3&os=<?php echo $os; ?>" class="list-group-item sub-item<?php if($pageid==2.3)echo ' subactive'; if($inactive) echo ' hideme'; ?>">Securely Delete Data</a>
+                <a href="?page=2.4&os=<?php echo $os; ?>" class="list-group-item sub-item<?php if($pageid==2.4)echo ' subactive'; if($inactive) echo ' hideme'; ?>">Obscuring Metadata</a>
+               	<a href="?page=2.2&os=<?php echo $os; ?>" class="list-group-item sub-item<?php if($pageid==2.2)echo ' subactive'; if($inactive) echo ' hideme'; ?>">Keysigning and Keyservers</a>
+                <a href="?page=2.3&os=<?php echo $os; ?>" class="list-group-item sub-item<?php if($pageid==2.3)echo ' subactive'; if($inactive) echo ' hideme'; ?>">Securely Erasing Data</a>
             <a href="?page=3&os=<?php echo $os; ?>" class="list-group-item<?php if($pageid==3)echo ' active'; ?>">Upcoming Events</a>
             <a href="?page=4&os=<?php echo $os; ?>" class="list-group-item<?php if($pageid==4)echo ' active'; ?>">Contribute</a>
             <a href="?page=5&os=<?php echo $os; ?>" class="list-group-item<?php if($pageid==5)echo ' active'; ?>">Links</a>
@@ -121,6 +122,9 @@ else if ($pageid==2){
 	}
 	else if ($pageid==2.3){
 		include "content/HT-DELETE.html";
+	}
+	else if ($pageid==2.4){
+		include "content/HT-META.html";
 	}
 
 else if ($pageid==3){

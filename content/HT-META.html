@@ -1,0 +1,103 @@
+
+
+<style>
+.page-icon {
+		width:150px;
+		height:150px;
+		display:inline-block;
+		float:right;
+		clear:right;
+		background:url("/images/meta-selected.png");
+}
+div.sshot-right, div.sshot-wide {
+	border: 2px solid #DDD;
+	padding: .25em;
+}
+.sshot-right {
+	width:20em;
+	float:right;
+	clear:right;
+}
+.sshot-wide {
+	width:80%;
+}
+.sshot-sm, .sshot-wd {
+	width:100%;
+}
+</style>
+
+       <div class="page-icon">&nbsp;</div>
+       <h1>Obscure Your Metadata</h1>
+          <h3><i>The next step after encrypting the content</i></h3>
+          <p><strong>Purpose:</strong>This guide attempts to explain how to obscure your metadata. This will help protect your privacy further by helping to prevent adversaries from determining if an encrypted (or other) communication came from you.</p>
+          <p><strong>Software:</strong>There is no strictly required software, but we highly recommend using Tor or a VPN in order to obscure your IP address.</p>
+
+          <div class="list-group">
+            <a target="_blank" href="https://torproject.org" class="list-group-item">
+              <h3 class="list-group-item-heading">TorBrowser</h3>
+              <p class="list-group-item-text">Browser bundle that encrypts your web traffic to help protect your anonymity online.<br /><em>https://torproject.org</em></p>
+            </a>
+          </div>
+
+
+
+        <h2>Nutshell</h2>
+        	<p>First, we talk about what metadata is, and how it puts your privacy at risk.</p>
+			<p>Second, we discuss how Tor and VPN services obscure your IP address.</p>
+			<p>Finally, we talk about using "throw-away" accounts and phones that are not tied to you directly.</p>
+
+
+
+        <h2>Part I: What is Metadata?</h2>
+          <h3>Definition</h3>
+          <p>Metadata is data about a communication or file, <em>other than its actual content</em>. For example, regarding an email message, the metadata includes (but is not limited to) the email and IP addresses of the sender and recipient, the time the message was sent, the size of the message, and the subject line. In general, you can think of it as anything written on the outside of an envelope. The message is safe inside, but the outside must show where the letter is coming from and going to, and it will show when the post office processed it.</p>
+          
+          <h3>How does metadata affect your privacy?</h3>
+          <p>Apart from your service providers, who use the data primarily for advertising purposes, it has become known that government agencies <a target="_blank" href="http://www.theguardian.com/world/2013/sep/30/nsa-americans-metadata-year-documents">such as the NSA</a> collect and store metadata in order to determine the relationships and behavior of as many people as possible.</p>
+		  <p>Let's call whoever is interested in this data an "adversary", since we want to protect our privacy from them. Adversaries with access to your email metadata can find out whom you email most often, when you typically send emails, how long your emails to certain contacts are, etc. Likewise, adversaries can determine whom you call most often, when you usually make phone calls, how long the phone calls are, etc.</p>
+		  <p>What if you don't want an adversary, be it a company or a government agency, to build a profile of your daily habits? Even if you encrypt the content of your communications, an adversary could still learn a lot about your lifestyle by monitoring <em>when, how much,</em> and <em>to whom</em> you communicate. To protect our privacy, we will want to obscure the metadata whenever possible.</p>
+		  
+		  <h3>The Solution in General</h3>
+		  <p>Generally speaking, to obscure the metadata we need to conceal a few things:
+		  	<ul>
+		  		<li>The names or addresses of the accounts we use.</li>
+		  		<li>The IP address(es) we use to connect to our accounts.</li>
+		  		<li>The data we transmit using those accounts. (This is concealed primarily through encryption.)</li>
+		  	</ul>
+		  </p>		  
+
+
+        <h2>Part II: Tor and VPNs</h2>
+		<p>To obscure the IP address you use to connect to an account, you should route all of your activity for that account through Tor or a VPN service. As long as you only connect to a particular account through one of these methods, it will be very difficult for anyone to definitively claim that you were involved with the account's online activity. You may have to configure your applications to use Tor or the VPN you select.</p>
+		
+		<h3>Tor</h3>
+		<p>Tor routes your traffic through a chain of multiple encrypted connections around the world before transmitting the data with the website you visit. The "exit node", the last step in the chain, transmits the requested data to the destination. For example, if you access a website through Tor, the website will think that your IP address is the IP address of the exit node.</p>
+		<p>In addition, many people will use the same exit node. This makes it even harder to determine who made the request. On top of figuring out the encrypted chain, an adversary will have to figure out which requests from the exit node belong to you, and which ones don't.</p>
+		
+		<h3>VPN (Virtual Private Network) Services</h3>
+		<p>VPN services generally charge a monthly access fee, and they work in a similar way. However, VPNs do not typically route your requests through a worldwide chain. Instead, you form an encrypted connection with the VPN server, and the VPN server makes any web requests for you. It's sort of like connecting directly to a Tor exit node and skipping the chain.</p>
+		<p>VPNs still provide a good level of privacy, as long as your VPN service does not log its connections and you pay in a way that cannot be traced back to you. You may want to connect to Tor through the VPN to further protect your privacy. Like Tor, VPN services use the same exit IP for many different users, making it more difficult to differentiate the connections.</p>
+
+		<h2>Part III: Throw-away accounts</h2>
+		<p>For added privacy when using email or other web services, you can create "throw-away" accounts that are not directly linked to you. Be sure to create these accounts through Tor or a VPN, and <u>only</u> access them through Tor or a VPN. If you ever connect to these accounts from your actual IP address, your privacy is at risk because there is now a record of you personally logging in to that account.</p>
+		<p>When creating the account, be sure to choose a username that does not in any way identify you, and do not provide any accurate information in the setup process (e.g., use a fake name and/or address, and do not link this account to any real account of yours).</p>
+		<p><strong>Please note:</strong> 
+			<ul>
+				<li>The email address sending the emails (or the account performing whatever action) will still be visible, but it will be harder to track back to you personally since the account is not in your name.</li>
+				<li>It is not recommended that you log into any personal accounts or other throw-away accounts through the same VPN, since that would create a similarity between the accounts. On Tor, you should select "Use a New Identity" and verify your IP address has changed before logging into an account that you want to keep separate.</li>
+				<li>Do not transmit personally identifiable information using a throw-away account. If you must, be sure to use encryption.</li>
+				<li>This works best if the only email addresses or site users you contact are also using throw-away accounts, and you always use encryption.</li>
+			</ul>
+		
+		
+		<h2>Part IV: Throw-away Phones</h2>
+		<p>If you want to protect your phone call and text message privacy, one option is to use prepaid phones to make calls and send text messages. In order to minimize the connection to yourself, you will want to purchase the prepaid phones and phone cards using cash, and buy them at a location you do not normally shop. If the phone requires online registration, connect through Tor or a VPN, and choose not to disclose accurate information about yourself (e.g., use a throw-away email account and a fake name).</p>
+		<p>Although it will be more expensive than a standard prepaid phone, if you purchase a prepaid Android phone you can also encrypt your calls, texts, and web traffic (using RedPhone, TextSecure, and Orbot, respectively), and you may have the option to encrypt the entire phone as well.</p>
+		<p><strong>Please note:</strong> 
+			<ul>
+				<li>The phone number making the calls/texts will still be visible, but it will be harder to track back to you personally since the phone is not in your name.</li>
+				<li>Your phone carrier will be able to determine your approximate location based on which cell tower your phone connects to when making the call. Over time, the pattern of cell tower connections could be correlated with the pattern of your actual phone. To mitigate this, avoid travelling with both phones at the same time, and turn off and remove the battery of the prepaid phone when not in use.</li>
+				<li>Do not transmit personally identifiable information using the prepaid phone. If you must, be sure to use encryption. <strong>Absolutely DO NOT</strong> log into any non-throw-away accounts on the prepaid phone.</li>
+				<li>This works best if the only numbers you contact are other prepaid phones purchased in a similar manner, and you always use encryption.</li>
+			</ul>
+		  
