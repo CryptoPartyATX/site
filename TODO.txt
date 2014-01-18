@@ -2,6 +2,7 @@ CryptoPartyATX.org To-Do list
 
 [General/Style]
 -	Overall site style?
+	:Nav seems too wide
 -	Screenshot layout
 -	Print layout css
 
@@ -10,8 +11,6 @@ CryptoPartyATX.org To-Do list
 
 [Main Pages]
 	{Crypto Info and How-To Guides}
-	-	How to throw a CryptoParty
-		:write a short guide for throwing a party
 	-	Why Crypto Matters
 		:write a page and collect links re why to encrypt
 	-	How Crypto Works
@@ -19,7 +18,6 @@ CryptoPartyATX.org To-Do list
 	
 [How-to Pages]
 -	Add Linux screens for remaining pages
--	"Nutshell" item spacing is annoying
 -	Video tutorials?
 -	Update <strong> to <span clickItem> for HT-DELETE, add clickItems for HT-EMAIL
 
@@ -43,11 +41,7 @@ CryptoPartyATX.org To-Do list
 
 	{NEW: Android Email Enc}
 	:finally figured that out
-
-	{NEW: Metadata}
-	-	What it is
-	-	How to obfuscate
-
+	
 	{NEW: Privacy Plug-ins}
 	-	HTTPS Everywhere
 	-	AdBlock Plus
