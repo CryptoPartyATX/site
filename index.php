@@ -77,6 +77,7 @@ if($os != "osx" && $os !="lnx"){$os="win";}
                 <a href="?page=2.4&os=<?php echo $os; ?>" class="list-group-item sub-item<?php if($pageid==2.4)echo ' subactive'; if($inactive) echo ' hideme'; ?>">Obscuring Metadata</a>
                	<a href="?page=2.2&os=<?php echo $os; ?>" class="list-group-item sub-item<?php if($pageid==2.2)echo ' subactive'; if($inactive) echo ' hideme'; ?>">Keysigning and Keyservers</a>
                 <a href="?page=2.3&os=<?php echo $os; ?>" class="list-group-item sub-item<?php if($pageid==2.3)echo ' subactive'; if($inactive) echo ' hideme'; ?>">Securely Erasing Data</a>
+                <a href="?page=2.5&os=<?php echo $os; ?>" class="list-group-item sub-item<?php if($pageid==2.5)echo ' subactive'; if($inactive) echo ' hideme'; ?>">Throw a CryptoParty</a>
             <a href="?page=3&os=<?php echo $os; ?>" class="list-group-item<?php if($pageid==3)echo ' active'; ?>">Upcoming Events</a>
             <a href="?page=4&os=<?php echo $os; ?>" class="list-group-item<?php if($pageid==4)echo ' active'; ?>">Contribute</a>
             <a href="?page=5&os=<?php echo $os; ?>" class="list-group-item<?php if($pageid==5)echo ' active'; ?>">Links</a>
@@ -126,6 +127,9 @@ else if ($pageid==2){
 	else if ($pageid==2.4){
 		include "content/HT-META.html";
 	}
+	else if ($pageid==2.5){
+		include "content/HT-PARTY.html";
+	}
 
 else if ($pageid==3){
 	include "content/events.html";
@@ -145,7 +149,7 @@ else if ($pageid==5){
 <!-- BEGIN copyright notice -->
 <p class="copyleft" xmlns:dct="http://purl.org/dc/terms/" xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#">
 	<a rel="license" href="http://creativecommons.org/publicdomain/zero/1.0/"><img src="/images/cc0.png" style="border-style: none;" alt="CC0" /></a>
-	&nbsp;To the extent possible under law,  <a rel="dct:publisher" href="https://cryptopartyatx.org">CryptoPartyATX.org</a> has waived all copyright and related or neighboring rights to <span property="dct:title">CryptoPartyATX.org</span>.<br />
+	&nbsp;To the extent possible under law,  <a rel="dct:publisher" href="https://cryptopartyatx.org">CryptoPartyATX.org</a> has waived all copyright and related or neighboring rights to <span property="dct:title">CryptoPartyATX.org</span>.
  	The applications referenced on this site are open-source unless otherwise noted and can be obtained at the creators' websites, listed when used. We have no affiliation with any linked site unless otherwise noted.</p>
 <!-- END copyright notice -->
 
