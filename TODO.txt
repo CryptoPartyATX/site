@@ -42,12 +42,9 @@ CryptoPartyATX.org To-Do list
 	{NEW: Android Email Enc}
 	:finally figured that out
 	
-	{NEW: Privacy Plug-ins}
-	-	HTTPS Everywhere
-	-	AdBlock Plus
-	-	Disconnect
-	-	Cryptocat
+	{Privacy Plug-ins}
 	-	NoScript
+
 		
 	{NEW: Getting Started with Linux Mint}
 	:linux guides being written assuming Mint for now
