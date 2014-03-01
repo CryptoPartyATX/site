@@ -21,7 +21,7 @@ CryptoPartyATX.org To-Do list
 -	Video tutorials?
 -	Update <strong> to <span clickItem> for HT-DELETE, add clickItems for HT-EMAIL
 
-	{Email Encryption}
+	{UPDATE: Email Encryption}
 	-	Items being clicked are not bolded on this guide
 	-	Review/update powerpoint
 	-	Incorporate more info from ppt re what email encryption does and does not do
@@ -29,22 +29,28 @@ CryptoPartyATX.org To-Do list
 	-	Update for Enigmail config changes
 		:Enigmail now has setup walkthrough thing, what does it do exactly? do we still need key manager?
 	
-	{Choosing Secure Passwords}
+	{UPDATE: Choosing Secure Passwords}
 	-	KeePass (or other) for OS X
 	-	KeePass advanced Options
 	-	Two-factor Authentication
 	
-	{Secure Delete}
+	{UPDATE: Secure Delete}
 	-	Add Linux guide
 	-	DBAN
 	-	Can the NSA recover the data (if they wanted to?)
 
-	{NEW: Android Email Enc}
-	:finally figured that out
-	
-	{Privacy Plug-ins}
+	{UPDATE: Privacy Plug-ins}
 	-	NoScript
 
+	{UPDATE: SMS Encryption}
+	-	Latest version of Textsecure
+		-	New screenshots
+		-	Registration feature 
+			:sends messages over data connection instead of SMS
+
+	{NEW: Android Email Enc}
+	:finally figured that out
+	:caveat about storing private keys on a mobile device
 		
 	{NEW: Getting Started with Linux Mint}
 	:linux guides being written assuming Mint for now
