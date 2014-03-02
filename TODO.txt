@@ -22,10 +22,8 @@ CryptoPartyATX.org To-Do list
 -	Update <strong> to <span clickItem> for HT-DELETE, add clickItems for HT-EMAIL
 
 	{UPDATE: Email Encryption}
-	-	Items being clicked are not bolded on this guide
 	-	Review/update powerpoint
 	-	Incorporate more info from ppt re what email encryption does and does not do
-	-	Add (link to new page with) info on obscuring metadata w/ throwaway accounts and VPNs/tor
 	-	Update for Enigmail config changes
 		:Enigmail now has setup walkthrough thing, what does it do exactly? do we still need key manager?
 	
