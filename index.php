@@ -35,7 +35,7 @@
 
 /* Page selection - default 0 (main page) */
 $pageid = $_GET['page'];
-if (!$pageid || $pageid>5 || $pageid<0){
+if (!$pageid || $pageid>6 || $pageid<0){
 	$pageid=0;
 }
 /* Compatibility for old links */
@@ -82,6 +82,7 @@ if($os != "osx" && $os !="lnx"){$os="win";}
             <a href="?page=3&os=<?php echo $os; ?>" class="list-group-item<?php if($pageid==3)echo ' active'; ?>">Upcoming Events</a>
             <a href="?page=4&os=<?php echo $os; ?>" class="list-group-item<?php if($pageid==4)echo ' active'; ?>">Contribute</a>
             <a href="?page=5&os=<?php echo $os; ?>" class="list-group-item<?php if($pageid==5)echo ' active'; ?>">Links</a>
+            <a href="?page=6&os=<?php echo $os; ?>" class="list-group-item<?php if($pageid==6)echo ' active'; ?>">Contact Us</a>
         </div>
         <div>
         	Follow <a href="https://twitter.com/atxcrypto">@ATXCrypto on Twitter</a><br />
@@ -147,6 +148,10 @@ else if ($pageid==4){
 else if ($pageid==5){
 	include "content/links.html";
 }
+else if ($pageid==6){
+	include "contact/contact.html";
+}
+
 
 ?>
 <!-- END page-specific content -->
