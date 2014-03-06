@@ -157,19 +157,16 @@ else if ($pageid==6){
 <!-- END page-specific content -->
         
         <hr>
-        
+   
+<!-- Contact info -->
+<p><strong>Contact Us!</strong> If you need any help, find problems with the site, or have improvements or suggestions, please contribute to the <a href="https://github.com/CryptoPartyATX/site">git repo</a> or email me at <a href="mailto:plexiglass@riseup.net">plexiglass@riseup.net</a>.</p>
+           
 <!-- BEGIN copyright notice -->
 <p class="copyleft" xmlns:dct="http://purl.org/dc/terms/" xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#">
 	<a rel="license" href="http://creativecommons.org/publicdomain/zero/1.0/"><img src="/images/cc0.png" style="border-style: none;" alt="CC0" /></a>
 	&nbsp;To the extent possible under law,  <a rel="dct:publisher" href="https://cryptopartyatx.org">CryptoPartyATX.org</a> has waived all copyright and related or neighboring rights to <span property="dct:title">CryptoPartyATX.org</span>.
  	The applications referenced on this site are open-source unless otherwise noted and can be obtained at the creators' websites, listed when used. We have no affiliation with any linked site unless otherwise noted.</p>
 <!-- END copyright notice -->
-
-
-<!-- Contact info -->
-<p><strong>Contact Us!</strong> If you need any help, find problems with the site, or have improvements or suggestions, please contribute to the <a href="https://github.com/CryptoPartyATX/site">git repo</a> or email me at <a href="mailto:plexiglass@riseup.net">plexiglass@riseup.net</a>.</p>
-
-
 
         </div> <!-- /col-lg-8 -->
       </div> <!-- /row -->
