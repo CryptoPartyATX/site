@@ -108,6 +108,7 @@ div.sshot-right, div.sshot-wide {
 		<h3>Linux Mint</h3>
 		<ol>
 			<li>Pidgin is already installed, so we just need to add the OTR plugin.</li>
+			<div class="sshot-wide"><a href="/content/screenshots/HT-OTR-LNXPidginOTR.jpg" data-lightbox="HT-OTR-LNXPidginOTR" title="Use apt-get to install the OTR plugin for Pidgin"><img class="sshot-wd" src="/content/screenshots/HT-OTR-LNXPidginOTR.jpg"/></a></div>
 			<li>To install the OTR plugin for Pidgin, first open up the <span class="clickItem">Terminal</span>, which is located on the menu bar or in the Accessories tab of the Linux Mint Menu.</li>
 			<li>Type or copy and paste the following command into the Terminal window, and press Enter:<br />
 				<span class="clickItem">sudo apt-get install pidgin-otr</span>
@@ -148,14 +149,14 @@ div.sshot-right, div.sshot-wide {
 </span>		 
 <span class="HideLnx">        
           <h3>Linux Mint</h3>
-          <div class="sshot-right"><a href="/content/screenshots/HT-OTR-PidginAcct.jpg" data-lightbox="HT-OTR-PidginAcct" title="Setup Your IM Account on Pidgin (Windows)"><img class="sshot-sm" src="/content/screenshots/HT-OTR-PidginAcct.jpg"/></a></div>
+          <div class="sshot-right"><a href="/content/screenshots/HT-OTR-LNXPidginAcct.jpg" data-lightbox="HT-OTR-LNXPidginAcct" title="Setup Your IM Account on Pidgin (Linux)"><img class="sshot-sm" src="/content/screenshots/HT-OTR-LNXPidginAcct.jpg"/></a></div>
 		  <ol>
 		  	<li>Run <span class="clickItem">Pidgin</span> by clicking the Linux Mint Menu, then Internet, then <span class="clickItem">Pidgin Internet Messenger</span>. </li>
 			<li>Pidgin should prompt you to add your account. If not, click <span class="clickItem">Accounts</span> in the menu bar, then click <span class="clickItem">Manage Accounts</span>. Then click the <span class="clickItem">Add...</span> button.</li>
 			<li>Select the type of IM account you want to use under Protocol. Then type in your username and password, and press <span class="clickItem">Save</span>.</li>
 			<li>Your account should now be connected and your buddy list should begin to load. Next we configure OTR for encryption.</li>
 			<li>In the Pidgin Buddy List window, select the <span class="clickItem">Tools</span> menu, then click <span class="clickItem">Plugins</span>. Scroll down until you find the <span class="clickItem">Off-the-Record Messaging</span> plugin. Check the box next to the plugin, and then click <span class="clickItem">Configure Plugin</span>.</li>
-			<div class="sshot-right"><a href="/content/screenshots/HT-OTR-PidginGen.jpg" data-lightbox="HT-OTR-PidginGen" title="Generate Your Key Pairs on Pidgin (Linux)"><img class="sshot-sm" src="/content/screenshots/HT-OTR-PidginGen.jpg"/></a></div>
+			<div class="sshot-right"><a href="/content/screenshots/HT-OTR-LNXPidginGen.jpg" data-lightbox="HT-OTR-LNXPidginGen" title="Generate Your Key Pairs on Pidgin (Linux)"><img class="sshot-sm" src="/content/screenshots/HT-OTR-LNXPidginGen.jpg"/></a></div>
 			<li>In the Off-The-Record Messaging Config screen, select the account you want to use encryption with, and then click <span class="clickItem">Generate</span>.</li>
 			<li>Choose your Default OTR Settings to control how messages are sent by default. You will need to have “Enable private messaging” selected, and I recommend also selecting “Automatically initiate private messaging” so Pidgin will encrypt your chat automatically as long as the person you are messaging has OTR installed. If you want your account to only send encrypted messages, also select “Require private messaging”. Finally, I recommend selecting “Don't log OTR conversations” if you do not want to keep a chat history of your encrypted chats. When you have finished selecting your options, click <span class="clickItem">Close</span>.</li>
 			<li>Pidgin is now set up to use OTR to encrypt your messages. Remember, the person you message must also have OTR installed in order to have an encrypted chat session.</li>
@@ -194,7 +195,7 @@ div.sshot-right, div.sshot-wide {
 		  <ol>
 		  	<li>Open Pidgin if it is not already open. In the Buddy List window, double-click the name of a contact to start a new message.</li>
 			<li>On the right side of the chat window, above the text box at the bottom, you should see “Not Private” in red text. Click that, and select “Start private conversation”. If the person you are trying to contact has an OTR-enabled chat program, then you are ready to go.</li>
- 			<div class="sshot-right"><a href="/content/screenshots/HT-OTR-PidginSuccess.jpg" data-lightbox="HT-OTR-PidginSuccess" title="You Successfully Encrypted a Conversation in Pidgin (Linux)"><img class="sshot-sm" src="/content/screenshots/HT-OTR-PidginSuccess.jpg"/></a></div>
+ 			<div class="sshot-right"><a href="/content/screenshots/HT-OTR-LNXPidginSuccess.jpg" data-lightbox="HT-OTR-LNXPidginSuccess" title="You Successfully Encrypted a Conversation in Pidgin (Linux)"><img class="sshot-sm" src="/content/screenshots/HT-OTR-LNXPidginSuccess.jpg"/></a></div>
  			<li>If this is the first time you have sent an encrypted message to that person, Pidgin will show “Unverified” on the right side above the text box at the bottom. You will generally only need to do verification once per contact, but occasionally you may need to verify again. If your contact is using anything other than Pidgin with the OTR plugin, you may need to select “Manual fingerprint verification”. Please see the following link for more information on verification: <br />
 				<a target="_blank" href="https://otr-help.cypherpunks.ca/4.0.0/authenticate.php?lang=en">https://otr-help.cypherpunks.ca/4.0.0/authenticate.php?lang=en</a></li>
 			<li>Once you have completed the above steps, including verification, the window should show “Private” on the right side above the text box at the bottom.</li>
