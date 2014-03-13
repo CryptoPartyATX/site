@@ -116,7 +116,10 @@ div.sshot-right, div.sshot-wide {
 </span>
             <li>
               Configure Thunderbird to use your current email account
-              <ul><div class="sshot-right"><a href="/content/screenshots/HT-EMAIL-AcctSetup.jpg" data-lightbox="AcctSetup" title="Setup Your Email Account"><img class="sshot-sm" src="/content/screenshots/HT-EMAIL-AcctSetup.jpg" /></a></div>
+              <ul>
+              <span class="HideLnx"><div class="sshot-right"><a href="/content/screenshots/HT-EMAIL-LNXAcctSetup.jpg" data-lightbox="LNXAcctSetup" title="Setup Your Email Account"><img class="sshot-sm" src="/content/screenshots/HT-EMAIL-LNXAcctSetup.jpg" /></a></div></span>
+              <span class="HideWin"><div class="sshot-right"><a href="/content/screenshots/HT-EMAIL-AcctSetup.jpg" data-lightbox="WinAcctSetup" title="Setup Your Email Account"><img class="sshot-sm" src="/content/screenshots/HT-EMAIL-AcctSetup.jpg" /></a></div></span>
+              <span class="HideOSX"><div class="sshot-right"><a href="/content/screenshots/HT-EMAIL-AcctSetup.jpg" data-lightbox="AcctSetup" title="Setup Your Email Account"><img class="sshot-sm" src="/content/screenshots/HT-EMAIL-AcctSetup.jpg" /></a></div></span>
                 <li>
                   Thunderbird should automatically begin to setup your email account. If it does not, click <span class="clickItem">Create a new account</span>
                   <ul>
@@ -131,8 +134,8 @@ div.sshot-right, div.sshot-wide {
           </ol>
 
 
-          <h2>Part II: Install a Key Manager and Create Your Key Pair</h2>
 <span class="HideOSX">
+          <h2>Part II: Install a Key Manager and Create Your Key Pair</h2>
           <h3>OS X (GPG Suite)</h3>
           <div class="sshot-right"><a href="/content/screenshots/HT-EMAIL-GPGGen.jpg" data-lightbox="GPGGen" title="Generate Your PGP Keypair (OS X)"><img class="sshot-sm" src="/content/screenshots/HT-EMAIL-GPGGen.jpg" /></a></div>
           <ol>
@@ -164,6 +167,7 @@ div.sshot-right, div.sshot-wide {
           </ol>
 </span>
 <span class="HideWin">
+          <h2>Part II: Install a Key Manager and Create Your Key Pair</h2>
           <h3>Windows (Gpg4Win with GPA)</h3>
           <ol>
             <li>
@@ -195,8 +199,12 @@ div.sshot-right, div.sshot-wide {
           </ol>
 </span>
 <span class="HideLnx">
+        <h2>Part II: Create Your Key Pair</h2>
+		<h3>Linux Mint</h3>
+		<div class="sshot-right"><a href="/content/screenshots/HT-EMAIL-LNXGen.jpg" data-lightbox="LNXGen" title="Generate Your PGP Keypair (Linux Mint)"><img class="sshot-sm" src="/content/screenshots/HT-EMAIL-LNXGen.jpg" /></a></div>
 		<ol>
 			<li>Linux Mint already has a key manager. Launch it by selecting the Linux Mint <span class="clickItem">Menu</span> button, then <span class="clickItem">Preferences</span>, then <span class="clickItem">Passwords and Keys</span></li>
+            <div class="sshot-right"><a href="/content/screenshots/HT-EMAIL-LNXSetPass.jpg" data-lightbox="LNXSetPass" title="Set a Passphrase to Access Your PGP Key"><img class='sshot-sm' src="/content/screenshots/HT-EMAIL-LNXSetPass.jpg" /></a></div>
 			<li>Press the <span class="clickItem">+</span> button, or select <span class="clickItem">File > New...</span></li>
 			<li>Select <span class="clickItem">PGP Key</span>, then click <span class="clickItem">Continue</span></li>
 			<li>Fill out your name and email address, and choose from the additional options if you want to change the key size or set an expiration date. Then click <span class="clickItem">Create</span>.</li>
@@ -214,10 +222,16 @@ div.sshot-right, div.sshot-wide {
           <ol>
             <li>Run <span class="clickItem">Thunderbird</span>, if it is not still open.</li>
             <li>Open <span class="clickItem">Add-Ons</span>, located in the <span class="clickItem">Tools</span> menu or in the menu launched by the button with 3 horizontal bars near the top right of Thunderbird.</li>
-            <div class="sshot-wide"><a href="/content/screenshots/HT-EMAIL-Enig.jpg" data-lightbox="Enig" title="Install Enigmail in the Thunderbird Add-ons Manager"><img class="sshot-wd" src="/content/screenshots/HT-EMAIL-Enig.jpg" /></a></div>
+
+            <span class="HideLnx"><div class="sshot-wide"><a href="/content/screenshots/HT-EMAIL-LNXEnig.jpg" data-lightbox="LNXEnig" title="Install Enigmail in the Thunderbird Add-ons Manager"><img class="sshot-wd" src="/content/screenshots/HT-EMAIL-LNXEnig.jpg" /></a></div></span>
+            <span class="HideWin"><div class="sshot-wide"><a href="/content/screenshots/HT-EMAIL-Enig.jpg" data-lightbox="Enig" title="Install Enigmail in the Thunderbird Add-ons Manager"><img class="sshot-wd" src="/content/screenshots/HT-EMAIL-Enig.jpg" /></a></div></span>
+            <span class="HideOSX"><div class="sshot-wide"><a href="/content/screenshots/HT-EMAIL-Enig.jpg" data-lightbox="Enig" title="Install Enigmail in the Thunderbird Add-ons Manager"><img class="sshot-wd" src="/content/screenshots/HT-EMAIL-Enig.jpg" /></a></div></span>
             <li>Search for <span class="clickItem">Enigmail</span> using the search box on the Add-Ons page. Click <span class="clickItem">Install</span>, and then restart Thunderbird to enable the add-on.</li>
             <span class="HideWin"><li>WINDOWS ONLY: check Enigmail In the <span class="clickItem">Tools</span> menu or button, select <span class="clickItem">OpenPGP</span> then <span class="clickItem">Preferences</span>. If you see an error message, or if the <span class="clickItem">Preferences</span> box shows "Could not find GnuPG" under <span class="clickItem">Basic Settings</span> and <span class="clickItem">Files and Directories</span>, check the box <span class="clickItem">Override with</span>. Then, press <span class="clickItem">Browse...</span>. Navigate to and select <span class="clickItem">C:\Program Files\GNU\GnuPG\gpg2.exe</span>. (On some systems, you may need to use <span class="clickItem">C:\Program Files (x86)\GNU\GnuPG\gpg2.exe</span>.)</li></span>
-            <div class="sshot-right"><a href="/content/screenshots/HT-EMAIL-EnigSetup.jpg" data-lightbox="EnigSetup" title="Check if GPG is Configured Correctly for Enigmail"><img class="sshot-sm" src="/content/screenshots/HT-EMAIL-EnigSetup.jpg" /></a></div>
+            
+            <span class="HideLnx"><div class="sshot-right"><a href="/content/screenshots/HT-EMAIL-LNXEnigSetup.jpg" data-lightbox="LNXEnigSetup" title="Check if GPG is Configured Correctly for Enigmail"><img class="sshot-sm" src="/content/screenshots/HT-EMAIL-LNXEnigSetup.jpg" /></a></div></span>
+            <span class="HideWin"><div class="sshot-right"><a href="/content/screenshots/HT-EMAIL-EnigSetup.jpg" data-lightbox="EnigSetup" title="Check if GPG is Configured Correctly for Enigmail"><img class="sshot-sm" src="/content/screenshots/HT-EMAIL-EnigSetup.jpg" /></a></div></span>
+            <span class="HideOSX"><div class="sshot-right"><a href="/content/screenshots/HT-EMAIL-EnigSetup.jpg" data-lightbox="EnigSetup" title="Check if GPG is Configured Correctly for Enigmail"><img class="sshot-sm" src="/content/screenshots/HT-EMAIL-EnigSetup.jpg" /></a></div></span>
             <li>Configure Enigmail for your email account. Click the <span class="clickItem">menu button</span> and go to <span class="clickItem">Options</span> or <span class="clickItem">Preferences</span> and then <span class="clickItem">Account Settings</span>. On the left side, select <span class="clickItem">OpenPGP Security</span>. Check the box at the top of the right side to enable Enigmail. If you entered your email address when you made your private key, the <span class="clickItem">Use email address of this identity...</span> option is fine. Otherwise, click the specific key option and press <span class="clickItem">Select Key</span>. Select the key you made and press <span class="clickItem">OK</span>.</li>
             <li>Done! You can now send and received encrypted emails.</li>
           </ol>
@@ -225,12 +239,14 @@ div.sshot-right, div.sshot-wide {
           <h2>Part IV: Send and Receive a test email</h2>
 
           <p>Basics of Keys: In order to send someone an encrypted message, you will need their public key. For example, to send a message that only John can decrypt, you must encrypt it with John's public key. John then uses his private key to decrypt the message. Never give out your private key for any reason. Whoever has your private key can decrypt any encrypted message sent to you using your paired public key. For further information on how key pairs work, now is a really good time to read the Appendix or see the suggested links on that.</p>
+              <span class="HideLnx"><div class="sshot-right"><a href="/content/screenshots/HT-EMAIL-LNXKeyImport.jpg" data-lightbox="LNXKeyGPGImport" title="Import Your Contact's Public Key"><img class="sshot-sm" src="/content/screenshots/HT-EMAIL-LNXKeyImport.jpg" /></a></div></span>
+              <span class="HideWin"><div class="sshot-right"><a href="/content/screenshots/HT-EMAIL-GPGImport.jpg" data-lightbox="GPGImport" title="Import Your Contact's Public Key"><img class="sshot-sm" src="/content/screenshots/HT-EMAIL-GPGImport.jpg" /></a></div></span>
+              <span class="HideOSX"><div class="sshot-right"><a href="/content/screenshots/HT-EMAIL-GPGImport.jpg" data-lightbox="GPGImport" title="Import Your Contact's Public Key"><img class="sshot-sm" src="/content/screenshots/HT-EMAIL-GPGImport.jpg" /></a></div></span>
 
           <ol>
             <li>Obtain a public key from someone you want to email. If you don't have anyone's public key, download <a href="/content/FE0E7924.asc">the public key</a> for <a href="mailto:plexiglass@riseup.net">plexiglass@riseup.net</a> and attach your public key when you send me an email. I'll try to answer you ASAP by sending you an encrypted email back. Please do not send any sensitive information, this is for testing purposes only.</li>
             <li>
               Import the recipient's public key. 
-              <div class="sshot-right"><a href="/content/screenshots/HT-EMAIL-GPGImport.jpg" data-lightbox="GPGImport" title="Import Your Contact's Public Key"><img class="sshot-sm" src="/content/screenshots/HT-EMAIL-GPGImport.jpg" /></a></div>
               <ul>
                 <span class="HideWin"><li>Windows - Open up <span class="clickItem">GPA</span> and click the <span class="clickItem">Import</span> button. Find the file and select it, then click <span class="clickItem">OK</span>.</li></span>
                 <span class="HideOSX"><li>OS X – Open up <span class="clickItem">GPG Keychain Access</span> and click <span class="clickItem">Import</span>. Find and select the key file, then click <span class="clickItem">Open</span>. </li></span>
@@ -238,7 +254,9 @@ div.sshot-right, div.sshot-wide {
               </ul>
             </li>
             <li>Type a test email. Open Thunderbird and address an email to the owner of a public key you imported. Type something in the body to be encrypted. Please note that <em>the subject line will not be encrypted</em>.</li>
-            <div class="sshot-right"><a href="/content/screenshots/HT-EMAIL-GPGSend.jpg" data-lightbox="GPGSend" title="Send a Test Email"><img class="sshot-sm" src="/content/screenshots/HT-EMAIL-GPGSend.jpg" /></a></div>
+            <span class="HideLnx"><div class="sshot-right"><a href="/content/screenshots/HT-EMAIL-LNXSend.jpg" data-lightbox="LNXSend" title="Send a Test Email"><img class="sshot-sm" src="/content/screenshots/HT-EMAIL-LNXSend.jpg" /></a></div></span>
+            <span class="HideWin"><div class="sshot-right"><a href="/content/screenshots/HT-EMAIL-GPGSend.jpg" data-lightbox="GPGSend" title="Send a Test Email"><img class="sshot-sm" src="/content/screenshots/HT-EMAIL-GPGSend.jpg" /></a></div></span>
+            <span class="HideOSX"><div class="sshot-right"><a href="/content/screenshots/HT-EMAIL-GPGSend.jpg" data-lightbox="GPGSend" title="Send a Test Email"><img class="sshot-sm" src="/content/screenshots/HT-EMAIL-GPGSend.jpg" /></a></div></span>
             <li>
               Encrypt and send the message. Press the <span class="clickItem">key icon</span> in the bottom right of the Compose window, or select <span class="clickItem">Encrypt this message</span> under the <span class="clickItem">OpenPGP</span> menu. Press <span class="clickItem">Send</span> to send the email. You should see your message turn into what looks like garbage text right before it gets sent out. If you are signing the message, it may ask you to enter the passphrase for your private key. If so, type the passphrase you typed when you created the key pair.
               <ul>

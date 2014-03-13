@@ -17,9 +17,9 @@ CryptoPartyATX.org To-Do list
 		:collect links re how crypto works, possibly write page
 	
 [How-to Pages]
--	Add Linux screens for remaining pages
+-	Add Linux screens for remaining pages (FILE, WEB)
 -	Video tutorials?
--	Update <strong> to <span clickItem> for HT-DELETE, add clickItems for HT-EMAIL
+-	Update <strong> to <span clickItem> for HT-DELETE
 
 	{UPDATE: Email Encryption}
 	-	Review/update powerpoint
