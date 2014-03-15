@@ -20,6 +20,7 @@ CryptoPartyATX.org To-Do list
 -	Add Linux screens for remaining pages (FILE, WEB)
 -	Video tutorials?
 -	Update <strong> to <span clickItem> for HT-DELETE
+-	Link how to verify checksums
 
 	{UPDATE: Email Encryption}
 	-	Review/update powerpoint
@@ -45,6 +46,9 @@ CryptoPartyATX.org To-Do list
 		-	New screenshots
 		-	Registration feature 
 			:sends messages over data connection instead of SMS
+			
+	{UPDATE: IM Encryption}
+	-	Android and iOS guides (ChatSecure)
 
 	{NEW: Android Email Enc}
 	:finally figured that out
