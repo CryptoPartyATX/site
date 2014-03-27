@@ -1,0 +1,159 @@
+
+
+<style>
+.page-icon {
+		width:150px;
+		height:150px;
+		display:inline-block;
+		float:right;
+		clear:right;
+		background:url("/images/mint-selected.png");
+}
+div.sshot-right, div.sshot-wide {
+	border: 2px solid #DDD;
+	padding: .25em;
+}
+.sshot-right {
+	width:20em;
+	float:right;
+	clear:right;
+}
+.sshot-wide {
+	width:80%;
+	clear:both;
+}
+.sshot-sm, .sshot-wd {
+	width:100%;
+}
+</style>
+	   <div class="page-icon">&nbsp;</div>
+	   
+<?php
+
+$pageid = $_GET['page'];
+$os = $_GET['os'];
+if(!$os){$os="win";}
+
+?>
+	   
+<h1>Installing Linux Mint</h1>
+<h3><i>A guide to getting started with Linux.</i></h3>
+
+<p>
+	<strong>Purpose:</strong> This guide attempts to explain how to install Linux Mint, one of the most popular and user-friendly flavors of Linux.<br />
+	<strong>Software:</strong> The following software is used in this guide:
+</p>
+
+<div class="list-group">
+
+	<a target="_blank" href="http://www.linuxmint.com/" class="list-group-item">
+		<h3 class="list-group-item-heading">Linux Mint (Cinnamon)</h3>
+		<p class="list-group-item-text">Open-source operating system with many useful programs included. We use the Cinnamon edition in this guide.<br /><em>http://www.linuxmint.com/</em></p>
+	</a>
+</div>
+
+<h2>Nutshell</h2>
+<p><ol>
+	<li>We'll start with a brief introduction to Linux in general, and talk about why we recommend Mint.</li>
+	<li>Next, we'll download and burn the installation disc, then install Linux Mint.</li>
+	<li>Then we'll check for software updates.</li>
+	<li>Finally, we recommend going through the Linux version of our encryption guides, and provide some helpful links.</li>
+
+</ol></p>
+
+<h2>Part I: What is Linux? Why use it?</h2>
+<p>Linux is an open source operating system (OS) that was developed as a free alternative to Unix. Linux was created by Linus Torvalds, re-using much software from the GNU (GNU's Not Unix) project which had similar goals. Linux is open source, which means that the actual code used to program the operating system can be viewed by anyone. This allows anyone (with enough programming skills) to check for security holes, add new features, and make the operating system more efficient and reliable. We recommend using Linux because it is free, open source, and often not much different than Windows or OS X.</p>
+
+<h3>Free and Free</h3>
+<p>Almost all versions of Linux are free (as in no cost). Most versions of Linux are also Free Software, meaning free as in "Free Speech" not free as in "Free Beer". Free Software means that copyrights or licensing must allow anyone to use the software for any purpose, change the software, and redistribute the original software or modified version. [<a target="_blank" href="https://www.gnu.org/philosophy/free-sw.html">More info</a>]</p>
+
+<h3>Open Source</h3>
+<p>As a prerequisite to being Free Software, the code must be open source. Otherwise it would be difficult to study or change. Opting for open source software is like supporting transparency in government. In order to feel comfortable allowing the program to control aspects of your computer (or for the government to control aspects of your life), it is important to know what it's actually doing. Open source software allows anyone to look at the code for backdoors, vulnerabilities, inefficiencies, design problems, or even typographical errors. Closed source applications can only <em>claim</em> that they are following the rules or protecting your privacy, open source applications can <em>prove it</em>.</p>
+
+<h3>Easy to Use</h3>
+<p>Now that we have the more philosophical stuff out of the way, it's time for the good news: Linux is almost as easy to use as Windows or OS X. A decade ago, you had to be very computer savvy in order to even bother attempting to use Linux, but that has changed as Linux has grown in popularity. We picked Linux Mint because it supports full disk encryption out of the box, and has a lot of useful pre-installed software. Linux Mint is especially easy to use for Windows users, since programs are listed in a menu much like the Start Menu.</p>  
+
+<h2>Part II: Installing Linux Mint</h2>
+
+<h3>Download and Burn to DVD</h3><ol>
+	<li>First, go to the Linux Mint <a target="_blank" href="http://www.linuxmint.com/download.php">download page</a>.</li>
+	<li>Select either the <span class="clickItem">32-bit</span> or <span class="clickItem">64-bit</span> download link next to Cinnamon.
+	If you aren't sure which one, start with the 64-bit version and try the 32-bit version if that does not work. Most new computers
+	will support the 64-bit version.</li>
+	<li>On the next page, select a link from under the <span class="clickItem">MIRROR</span> column, or use the Torrent link near the top of the page.</li>
+	<li>Once you have saved the <span class="clickItem">.iso</span> file to your computer, burn it to a DVD using a DVD-burning program or <a target="_blank" href="http://www.wikihow.com/Burn-ISO-Files-to-DVD">one of the methods described here</a>.</li>
+</ol>
+
+<h3>Boot Your Computer from the DVD</h3><ol>
+	<li>While the computer is still turned on, insert the DVD in to the drive.</li>
+	<li>Shut down the computer completely.</li>
+	<li>If you have an Apple computer, turn the computer on and hold the <span class="clickItem">option</span> key from the time you hear the sound to the point where you see an image of a hard drive and a CD on the screen. Use the arrow keys to select the CD and press <span class="clickItem">enter</span>.</li>
+	<li>If you have a PC, turn the computer on and immediately start tapping the <span class="clickItem">F12</span> key to get to the boot device menu. Select the CD/DVD drive using the arrow keys, and press <span class="clickItem">enter</span>. If this does not work for you, <a target="_blank" href="http://www.wikihow.com/Boot-a-Computer-from-a-CD">see this guide</a>.</li>
+</ol>
+
+
+<h3>Install Linux Mint</h3><ol>
+	<div class="sshot-wide"><a href="/content/screenshots/HT-MINT-LiveDesk.jpg" data-lightbox="HT-MINT-LiveDesk" title="Boot to the Linux Mint Live Desktop"><img class="sshot-wd" src="/content/screenshots/HT-MINT-LiveDesk.jpg"/></a></div> 
+	<li>Your computer should start to the Linux Mint Live Desktop. This will work just like Linux Mint once it is installed, so here is your chance to play around before you commit to making the switch. No files on your computer will be changed, so you can feel free to explore.</li> 
+	<li>When you are ready to install, double-click the <span class="clickItem">Install Linux Mint</span> icon on the Desktop.</li>
+
+	<div class="sshot-wide"><a href="/content/screenshots/HT-MINT-Install0.jpg" data-lightbox="HT-MINT-Install" title="Install Linux Mint"><img class="sshot-wd" src="/content/screenshots/HT-MINT-Install0.jpg"/></a></div>
+	<li>Select the language you want to use with Linux Mint, then click <span class="clickItem">Continue</span>.</li>
+
+	<div class="sshot-wide"><a href="/content/screenshots/HT-MINT-Install1.jpg" data-lightbox="HT-MINT-Install" title="Install Linux Mint"><img class="sshot-wd" src="/content/screenshots/HT-MINT-Install1.jpg"/></a></div>
+	<li>Ensure that your computer meets the requirements, then click <span class="clickItem">Continue</span>.</li>
+
+	<div class="sshot-wide"><a href="/content/screenshots/HT-MINT-Install2.jpg" data-lightbox="HT-MINT-Install" title="Install Linux Mint"><img class="sshot-wd" src="/content/screenshots/HT-MINT-Install2.jpg"/></a></div>
+	<li>For the purposes of this guide, we're going to use <span class="clickItem">Erase disk and install Linux Mint</span> option. If you're feeling adventurous, you can use the other option, but that is far beyond the scope of this guide.</li>
+	<li>We highly recommend that you select <span class="clickItem">Encrypt the new Linux Mint installation for security</span> option. This will encrypt your entire hard drive, so the computer cannot be started without the passphrase.</li>
+	<li>We also recommend that you select the <span class="clickItem">Use LVM with the new Linux Mint installation</span> option. This will be helpful if you ever decide to make new partitions on your hard drive.</li>
+
+	<div class="sshot-wide"><a href="/content/screenshots/HT-MINT-Install3.jpg" data-lightbox="HT-MINT-Install" title="Install Linux Mint"><img class="sshot-wd" src="/content/screenshots/HT-MINT-Install3.jpg"/></a></div>
+	<li>Choose a strong password that will be used every time you start your computer. Type it again to confirm it.</li>
+	<li>We highly recommend that you select the <span class="clickItem">Overwrite empty disk space</span>. This will write random data over the empty parts of the hard drive, so it will be virtually impossible for an adversary to determine where your encrypted files end and the empty space begins. With this option selected, the installation will take much longer, but we are of the opinion that this is time well spent. Make some margaritas to help pass the time.</li>
+	
+	<div class="sshot-wide"><a href="/content/screenshots/HT-MINT-Install4.jpg" data-lightbox="HT-MINT-Install" title="Install Linux Mint"><img class="sshot-wd" src="/content/screenshots/HT-MINT-Install4.jpg"/></a></div>
+	<li>Select a location. This is mostly used for your time zone, but you may want to choose a different location in the same time zone (or even another time zone) for privacy reasons.</li>
+
+	<div class="sshot-wide"><a href="/content/screenshots/HT-MINT-Install5.jpg" data-lightbox="HT-MINT-Install" title="Install Linux Mint"><img class="sshot-wd" src="/content/screenshots/HT-MINT-Install5.jpg"/></a></div>
+	<li>Select your keyboard layout (you probably don't need to change it). You can test the setting by typing in the text box provided. If the right characters are appearing, you have the right keyboard setting.</li>
+	
+	<div class="sshot-wide"><a href="/content/screenshots/HT-MINT-Install6.jpg" data-lightbox="HT-MINT-Install" title="Install Linux Mint"><img class="sshot-wd" src="/content/screenshots/HT-MINT-Install6.jpg"/></a></div>
+	<li>Enter your name (or any name...) and a name for your computer, then choose a username to log in with, and a password for your user account. Please note that this password can and should be different than the password you selected to encrypt your whole computer in a previous step.</li>
+	<li>We also recommend that you select the options <span class="clickItem">Require my password to log in</span> and <span class="clickItem">Encrypt my home folder</span> for added security.</li>
+	
+	<div class="sshot-wide"><a href="/content/screenshots/HT-MINT-Install7.jpg" data-lightbox="HT-MINT-Install" title="Install Linux Mint"><img class="sshot-wd" src="/content/screenshots/HT-MINT-Install7.jpg"/></a></div>
+	<li>Sit back and relax while the installation completes. Take a sip of your margarita and click through the slides to learn more about the software and features included in Linux Mint.</li>
+
+	<div class="sshot-wide"><a href="/content/screenshots/HT-MINT-Install8.jpg" data-lightbox="HT-MINT-Install" title="Install Linux Mint"><img class="sshot-wd" src="/content/screenshots/HT-MINT-Install8.jpg"/></a></div>
+	<li>When you see the <span class="clickItem">Installation Complete</span> box, you're nearly done! Remove the DVD from the drive, and click <span class="clickItem">Restart Now</span> to boot up your new Linux Mint installation.</li>
+
+</ol>
+
+<h2>Part III: Start and Update Linux Mint</h2>
+<ol>
+	<div class="sshot-wide"><a href="/content/screenshots/HT-MINT-Decrypt.jpg" data-lightbox="HT-MINT-Decrypt" title="Decrypt Your Computer to Start Linux"><img class="sshot-wd" src="/content/screenshots/HT-MINT-Decrypt.jpg"/></a></div>
+	<li>If you selected the option to encrypt the whole computer, you'll be presented with this screen. Type the computer password and press the <span class="clickItem">enter</span> key to decrypt and boot your computer.</li>
+	
+	<div class="sshot-wide"><a href="/content/screenshots/HT-MINT-Login0.jpg" data-lightbox="HT-MINT-Login" title="Login to the Computer"><img class="sshot-wd" src="/content/screenshots/HT-MINT-Login0.jpg"/></a></div>  
+	<li>After you have entered your password to decrypt the computer, you will reach the main login screen. Click on your username.</li>
+	
+	<div class="sshot-wide"><a href="/content/screenshots/HT-MINT-Login1.jpg" data-lightbox="HT-MINT-Login" title="Login to the Computer"><img class="sshot-wd" src="/content/screenshots/HT-MINT-Login1.jpg"/></a></div>  
+	<li>Enter the password for your user account and press the <span class="clickItem">enter</span> key or click <span class="clickItem">OK</span>.</li>
+	
+	<div class="sshot-wide"><a href="/content/screenshots/HT-MINT-Update0.jpg" data-lightbox="HT-MINT-Update" title="Check for Updates"><img class="sshot-wd" src="/content/screenshots/HT-MINT-Update0.jpg"/></a></div>  
+	<li>Once the Linux Mint desktop has loaded, we'll want to update the software. Click on the <span class="clickItem">shield icon</span> near the clock in the bottom right of the screen. Enter your user account password to launch the Update Manager. Click on <span class="clickItem">Refresh</span> to update the list, then <span class="clickItem">Install Updates</span> to install the updates.</li>
+
+	<div class="sshot-wide"><a href="/content/screenshots/HT-MINT-Update1.jpg" data-lightbox="HT-MINT-Update" title="Check for Updates"><img class="sshot-wd" src="/content/screenshots/HT-MINT-Update1.jpg"/></a></div>  
+	<li>Once again, sit back and relax while the updates are installed. This could take some time.</li>
+</ol>
+
+<h2>Part IV: Get Encrypting</h2>
+	<p>Now that you have Linux Mint installed, jump right in to our encryption guides. The guides were written with Linux Mint specifically in mind, and often you will find you already have the programs and just need to configure and use them.</p>
+	<ul>
+		<li><a href="/?page=1.1&os=lnx">Email encryption</a> with Thunderbird (pre-installed)</li>
+		<li><a href="/?page=1.3&os=lnx">Instant Message (IM) encryption</a> with Pidgin (pre-installed) and OTR</li>
+		<li><a href="/?page=1.2&os=lnx">File and folder encryption</a> with TrueCrypt</li>
+		<li><a href="/?page=1.5&os=lnx">Encrypted web browsing</a> with TorBrowser</li>
+	</ul>
+

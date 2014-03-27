@@ -72,6 +72,7 @@ if($os != "osx" && $os !="lnx"){$os="win";}
                 <a href="?page=1.3&os=<?php echo $os; ?>" class="list-group-item sub-item<?php if($pageid==1.3)echo ' subactive'; if($inactive) echo ' hideme'; ?>">Instant Message Encryption</a>
                 <a href="?page=1.4&os=<?php echo $os; ?>" class="list-group-item sub-item<?php if($pageid==1.4)echo ' subactive'; if($inactive) echo ' hideme'; ?>">Text Message (SMS) Encryption</a>
                 <a href="?page=1.5&os=<?php echo $os; ?>" class="list-group-item sub-item<?php if($pageid==1.5)echo ' subactive'; if($inactive) echo ' hideme'; ?>">Encrypted Web Browsing</a>
+                <a href="?page=1.9&os=<?php echo $os; ?>" class="list-group-item sub-item<?php if($pageid==1.9)echo ' subactive'; if($inactive) echo ' hideme'; ?>">Install Linux Mint</a>
             <a href="?page=2&os=<?php echo $os; ?>" class="list-group-item<?php $inactive=false; if($pageid >= 2 && $pageid < 3)echo ' active'; else $inactive=true; ?>">Privacy Guides</a>
                 <a href="?page=2.6&os=<?php echo $os; ?>" class="list-group-item sub-item<?php if($pageid==2.6)echo ' subactive'; if($inactive) echo ' hideme'; ?>">Privacy Plug-ins</a>
                 <a href="?page=2.1&os=<?php echo $os; ?>" class="list-group-item sub-item<?php if($pageid==2.1)echo ' subactive'; if($inactive) echo ' hideme'; ?>">Choosing Secure Passwords</a>
@@ -118,6 +119,12 @@ else if ($pageid==1){
 	else if ($pageid==1.5){
 		include "content/HT-WEB.html";
 	}
+	
+	// $pageid 6, 7, and 8 are reserved for backward compatibility
+
+	else if ($pageid==1.9){
+		include "content/HT-MINT.html";
+	}
 else if ($pageid==2){
 	include "content/privacy.html";
 }		
@@ -139,6 +146,7 @@ else if ($pageid==2){
 	else if ($pageid==2.6){
 		include "content/HT-PLUGINS.html";
 	}
+
 else if ($pageid==3){
 	include "content/events.html";
 }

@@ -55,7 +55,9 @@ CryptoPartyATX.org To-Do list
 	:caveat about storing private keys on a mobile device
 		
 	{NEW: Getting Started with Linux Mint}
-	:linux guides being written assuming Mint for now
+	:need icon, general intro
+	
+	{NEW: Dual-booting Linux & OS}
 			
 	{NEW: VPNs}
 	-	Add page for using VPNs

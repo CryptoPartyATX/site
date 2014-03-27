@@ -9,14 +9,14 @@ body {
 }
 .sub-item {
 	font-size: .9em;
-	padding-left:2em;
+	padding-left:3em;
 }
 .subactive {
 	background-color:#FF925D;
-	padding-left:2em;
+	padding-left:3em;
 }
 a.sub-item:hover {
-	background-color:#FDCDAF;
+	background-color:#FFDABC;
 }
 .hideme {
 	display:none;
