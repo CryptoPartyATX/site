@@ -87,7 +87,8 @@ if($os != "osx" && $os !="lnx"){$os="win";}
         </div>
         <div>
         	Follow <a href="https://twitter.com/atxcrypto">@ATXCrypto on Twitter</a><br />
-        	Subscribe to the <a href="https://cryptoglass.us/mailman/listinfo/rt4atx-list">RT4ATX email list</a>
+        	Subscribe to the <a href="https://cryptoglass.us/mailman/listinfo/rt4atx-list">RT4ATX email list</a><br />
+        	BTC: 1NbwGhRLxiU68qieWe4TEp1u6FpBEP9GYJ
         </div>
     </div>
     

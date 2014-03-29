@@ -20,7 +20,7 @@ CryptoPartyATX.org To-Do list
 -	Add Linux screens for remaining pages (FILE, WEB)
 -	Video tutorials?
 -	Update <strong> to <span clickItem> for HT-DELETE
--	Link how to verify checksums
+-	Link how to verify checksums, encourage on more pages
 
 	{UPDATE: Email Encryption}
 	-	Review/update powerpoint
@@ -53,9 +53,6 @@ CryptoPartyATX.org To-Do list
 	{NEW: Android Email Enc}
 	:finally figured that out
 	:caveat about storing private keys on a mobile device
-		
-	{NEW: Getting Started with Linux Mint}
-	:need icon, general intro
 	
 	{NEW: Dual-booting Linux & OS}
 			
