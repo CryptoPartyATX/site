@@ -9,7 +9,7 @@
  
  
 /*
- *
+ * ][ Maelstrom ][
  * This code has been modified by plexiglass for cryptopartyatx.org and cryptoglass.us
  * All modifications are public domain.
  *
@@ -27,7 +27,16 @@ $email_to = "plexiglass@riseup.net";
     }
  
     $email_from="plexiglass@riseup.net";
+    
+    // get actual message
     $message = $_POST['message']; 
+    
+    // get decoy messages
+    $message1 = $_POST['message1'];
+    $message2 = $_POST['message2'];
+    $message3 = $_POST['message3'];
+    $message4 = $_POST['message4'];
+    
     $error_message = "";
  
   $string_exp = "/^[A-Za-z .'-]+$/";
@@ -48,7 +57,15 @@ $email_to = "plexiglass@riseup.net";
  
 $header = 'From: ' . $email_from . "\r\n" . 'X-Mailer: PHP/' . phpversion();
  
-@mail($email_to, "[Cryptoparty Contact Form]", $message, $header);  
+ 
+$messages = array($message, $message1, $message2, $message3, $message4);
+shuffle($messages);
+shuffle($messages);
+shuffle($messages);
+
+foreach ($messages as $curmessage){
+@mail($email_to, "[CryptoParty Contact Form]", $curmessage, $header);
+}
  
 ?>
 <center>

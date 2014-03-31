@@ -158,7 +158,7 @@ else if ($pageid==5){
 	include "content/links.html";
 }
 else if ($pageid==6){
-	include "contact/contact.html";
+	include "contact/contact.php";
 }
 
 

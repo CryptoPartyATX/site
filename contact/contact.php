@@ -10,6 +10,11 @@
 function encrypt() {
   if (window.crypto && window.crypto.getRandomValues) {
 	var message = document.getElementById("message");
+	var message1 = document.getElementById("message1");
+	var message2 = document.getElementById("message2");
+	var message3 = document.getElementById("message3");
+	var message4 = document.getElementById("message4");
+	
 	if (message.value.indexOf("-----BEGIN PGP MESSAGE-----") !== -1 && message.value.indexOf("-----END PGP MESSAGE-----") !== -1) {
 		// encryption done		
 	} else {
@@ -17,6 +22,29 @@ function encrypt() {
 		var plaintext = message.value;
 		var ciphertext = openpgp.encryptMessage([pub_key],plaintext);
 		message.value = ciphertext;
+		
+			
+		/* 
+		technically should be checking whether these are already encrypted, but
+		it probably doesn't hurt to just keep layering encryption on it for the junk
+		messages 
+		*/
+		var plaintext1 = message1.value;
+		var ciphertext1 = openpgp.encryptMessage([pub_key],plaintext1);
+		message1.value = ciphertext1;
+		
+		var plaintext2 = message2.value;
+		var ciphertext2 = openpgp.encryptMessage([pub_key],plaintext2);
+		message2.value = ciphertext2;
+		
+		var plaintext3 = message3.value;
+		var ciphertext3 = openpgp.encryptMessage([pub_key],plaintext3);
+		message3.value = ciphertext3;
+		
+		var plaintext4 = message4.value;
+		var ciphertext4 = openpgp.encryptMessage([pub_key],plaintext4);
+		message4.value = ciphertext4;
+		
 		return true;
 	}    
   } else {
@@ -24,10 +52,64 @@ function encrypt() {
     return false;
   }
 }
+
+// check the length of the actual message and pad accordingly
+function checkparams() {
+
+	if(document.getElementById('thecheckbox').checked){
+		return false;
+	}
+	else {
+		// check length of message vs random number length, get stats, determine offset
+		var msgSize = document.getElementById("message").value.length;
+		var rand1Size = document.getElementById("message1").value.length;
+		var rand2Size = document.getElementById("message2").value.length;
+		var rand3Size = document.getElementById("message3").value.length;
+		var rand4Size = document.getElementById("message4").value.length;		
+		var minRand = Math.min(rand1Size, rand2Size, rand3Size, rand4Size);
+		var maxRand = Math.max(rand1Size, rand2Size, rand3Size, rand4Size);
+		var difRand = maxRand - minRand;
+		
+		// actual message length should be somewhere within range, but not necessarily the 
+		// longest, shortest, or average of the messages sent
+		var offset = Math.floor(Math.random() * difRand);
+		
+		// pad message if shorter than randoms
+		if(msgSize < minRand){
+			
+			// kindly add a newline before the padding
+			document.getElementById("message").value += "\n";
+			msgSize++;
+			
+			// add the padding
+			for(var i=0; i<(minRand - msgSize + offset); i++){
+				var randArray = new Uint32Array(1);
+				window.crypto.getRandomValues(randArray);
+				document.getElementById("message").value += (randArray[0] % 10);
+			}
+			
+		}
+		// pad randoms if shorter than message
+		else if (msgSize > maxRand) {
+		
+			for(var i=0; i<(msgSize - maxRand + offset); i++){
+				var randArray = new Uint32Array(4);
+				window.crypto.getRandomValues(randArray);
+				
+				document.getElementById("message1").value += (randArray[0] % 10);
+				document.getElementById("message2").value += (randArray[1] % 10);
+				document.getElementById("message3").value += (randArray[2] % 10);
+				document.getElementById("message4").value += (randArray[3] % 10);
+			}
+		}	
+
+		return true;
+	}
+}
 </script>
 
 <h1>Contact Us</h1>
-<h3><em>Here are a few easy ways to get in touch with us.</em><h3>
+<h3><em>Here are a few easy ways to get in touch with us.</em></h3>
 
 <h2>Twitter</h2>
 <p>Look for <a href="https://twitter.com/atxcrypto">@ATXCrypto</a> on Twitter and feel free to send us a direct message.</p>
@@ -49,11 +131,28 @@ the form below to send an encrypted email.
 </p>
 
 <form name="contact" method="post" action="/contact/send_form.php" onsubmit="return encrypt();">
+
+<?php	
+	// initialize random values for decoy messages
+	for($i=0; $i<100; $i++){$rand1 .= mt_rand();}
+	for($i=0; $i<100; $i++){$rand2 .= mt_rand();}
+	for($i=0; $i<100; $i++){$rand3 .= mt_rand();}
+	for($i=0; $i<100; $i++){$rand4 .= mt_rand();}
+
+	echo "<input type=\"hidden\" id=\"message1\" name=\"message1\" value=\"$rand1\">\n";
+	echo "<input type=\"hidden\" id=\"message2\" name=\"message2\" value=\"$rand2\">\n";
+	echo "<input type=\"hidden\" id=\"message3\" name=\"message3\" value=\"$rand3\">\n";
+	echo "<input type=\"hidden\" id=\"message4\" name=\"message4\" value=\"$rand4\">\n";
+	
+?>
+
+
+
 				<textarea  id="message" name="message" cols="70" rows="8">Name/Email:
 Subject:
 Message:</textarea><br />
-			<input type="checkbox" name="thecheckbox" checked=1  />&nbsp;&nbsp;Un-check this box if you are human.<br />
-			<input type="submit" value="Send Email" onclick="if(this.form.thecheckbox.checked){return false;}else return true;">
+			<input type="checkbox" id="thecheckbox" name="thecheckbox" checked=1  />&nbsp;&nbsp;Un-check this box if you are human.<br />
+			<input type="submit" value="Send Email" onclick="return checkparams();">
 </form><br />
 This form is based on <a href="https://encrypt.to">Encrypt.to</a>'s
 	<a href="https://github.com/encrypt-to/secure.contactform.php">secure contact form</a>.
