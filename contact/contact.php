@@ -132,6 +132,7 @@ the form below to send an encrypted email.
 
 <form name="contact" method="post" action="/contact/send_form.php" onsubmit="return encrypt();">
 
+
 <?php	
 	// initialize random values for decoy messages
 	for($i=0; $i<100; $i++){$rand1 .= mt_rand();}
