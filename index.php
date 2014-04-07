@@ -58,7 +58,7 @@ if($os != "osx" && $os !="lnx"){$os="win";}
     <div class="container">
 
       <div class="row">
-        <div class="col-lg-4">
+        <div class="col-lg-3">
 
         <a href="?page=0&os=<?php echo $os; ?>"><div class="logo">&nbsp;</div></a>
       
@@ -88,12 +88,12 @@ if($os != "osx" && $os !="lnx"){$os="win";}
         <div>
         	Follow <a href="https://twitter.com/atxcrypto">@ATXCrypto on Twitter</a><br />
         	Subscribe to the <a href="https://cryptoglass.us/mailman/listinfo/rt4atx-list">RT4ATX email list</a><br />
-        	BTC: 1NbwGhRLxiU68qieWe4TEp1u6FpBEP9GYJ
+        	BTC: <span class="btc">1NbwGhRLxiU68qieWe4TEp1u6FpBEP9GYJ</span>
         </div>
     </div>
     
     
-    <div class="col-lg-8">
+    <div class="col-lg-9">
 
 
 <!-- BEGIN page-specific content -->
