@@ -40,12 +40,14 @@ CryptoPartyATX.org To-Do list
 
 	{UPDATE: Privacy Plug-ins}
 	-	NoScript
+	-	Ghostery
 
 	{UPDATE: SMS Encryption}
 	-	Latest version of Textsecure
 		-	New screenshots
 		-	Registration feature 
 			:sends messages over data connection instead of SMS
+	-	Why not wickr
 			
 	{UPDATE: IM Encryption}
 	-	Android and iOS guides (ChatSecure)
