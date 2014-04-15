@@ -2,7 +2,6 @@ CryptoPartyATX.org To-Do list
 
 [General/Style]
 -	Overall site style?
--	Screenshot layout
 -	Print layout css
 
 [General/Content]
@@ -26,28 +25,14 @@ CryptoPartyATX.org To-Do list
 -	Time estimate
 -	Update <strong> to <span clickItem> for HT-DELETE
 -	Link how to verify checksums, encourage on more pages
-
 !	Check all links and version numbers
 
+# Encryption
 	{UPDATE: Email Encryption}
 	-	Review/update powerpoint
 	-	Incorporate more info from ppt re what email encryption does and does not do
 	-	Update for Enigmail config changes
 		:Enigmail now has setup walkthrough thing, what does it do exactly? do we still need key manager?
-	
-	{UPDATE: Choosing Secure Passwords}
-	-	KeePass (or other) for OS X
-	-	KeePass advanced Options
-	-	Two-factor Authentication
-	
-	{UPDATE: Secure Delete}
-	-	Add Linux guide, better option than shred?
-	-	DBAN
-	-	Can anyone recover the data?
-
-	{UPDATE: Privacy Plug-ins}
-	-	NoScript
-	-	Ghostery
 
 	{UPDATE: SMS Encryption}
 	-	Latest version of Textsecure
@@ -62,15 +47,29 @@ CryptoPartyATX.org To-Do list
 	{NEW: Android Email Enc}
 	:finally figured that out
 	:caveat about storing private keys on a mobile device
+
+
+#Privacy
+	{UPDATE: Privacy Plug-ins}
+	-	NoScript
+	-	Ghostery
+	
+	{UPDATE: Choosing Secure Passwords}
+	-	KeePass (or other) for OS X
+	-	KeePass advanced Options
+	-	Two-factor Authentication
+	
+	{UPDATE: Secure Delete}
+	-	Add Linux guide, better option than shred?
+	-	DBAN
+	-	Can anyone recover the data?
 	
 	{NEW: Dual-booting Linux & OS}
 			
 	{NEW: VPNs}
 	-	Add page for using VPNs
 	
-# MOVE SECTIONS: General stuff to under ABOUT section
-
-# NEW SECTION: Using Linux
+# NEW: Using Linux
 	{MOVE: Installing Linux}
 	
 	{NEW: Initial Setup}

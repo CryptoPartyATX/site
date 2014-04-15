@@ -1,3 +1,4 @@
+/* General */
 body {
 	padding-top: 50px;
 	padding-bottom: 20px;
@@ -8,29 +9,6 @@ body {
 	left:-50px;
 	width:325px;
 	height:44px;
-}
-.sub-item {
-	font-size: .9em;
-	padding-left:3em;
-}
-.subactive {
-	background-color:#FF925D;
-	padding-left:3em;
-}
-a.sub-item:hover {
-	background-color:#FFDABC;
-}
-.hideme {
-	display:none;
-}
-.osSelect {
-	float:right;
-	clear:right;
-	/*width:225px;*/
-	background: #EFEFEF;
-	border:1px solid #DDDDDD;
-	padding:.25em;
-	margin:.25em;
 }
 .copyleft {
 	font-size:.8em;
@@ -43,6 +21,37 @@ a.sub-item:hover {
 	font-size:.8em;
 }
 
+
+/* Nav */
+.sub-item {
+	font-size: .9em;
+	padding-left:3em;
+}
+.subactive {
+	background-color:#FF925D;
+	padding-left:3em;
+}
+a.sub-item:hover {
+	background-color:#FFDABC;
+}
+
+
+/* OS Selection */
+.hideme {
+	display:none;
+}
+.osSelect {
+	float:right;
+	clear:right;
+	/*width:225px;*/
+	background: #EFEFEF;
+	border:1px solid #DDDDDD;
+	padding:.25em;
+	margin:.25em;
+}
+
+
+/* Warning box */
 div.warning {
 	background-color:#ff9081;
 	padding:.5em;
@@ -64,4 +73,41 @@ div.warning {
 .secure:hover {
 	background-color:#1EAA38;
 	color:black;
+}
+
+
+/* Screenshots */
+div.sshot-right, div.sshot-wide, div.sshot-split, div.sshot-triple {
+	border: 1px solid #3071A9;
+	background-image: linear-gradient(to bottom, #CCCCDD 0%, #ffdec3 80%);
+	padding: .5em;
+	margin:auto;
+	margin-top:1.8em;
+	margin-bottom:.6em;
+	text-align:center;
+}
+.sshot-right {
+	width:20em;
+	float:right;
+	clear:right;
+	margin-top:1em;
+}
+.sshot-wide {
+	width:80%;
+	clear:both;
+}
+.sshot-split {
+	width:100%;
+}
+
+.sshot-sm, .sshot-wd {
+	width:100%;
+}
+.sshot-sp {
+	width:45%;
+	margin:0 .5em 0 .5em;
+}
+.sshot-tr {
+	width:30%;
+	margin:0 .5em 0 .5em;
 }

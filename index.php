@@ -67,9 +67,11 @@ if($os != "osx" && $os !="lnx"){$os="win";}
       
       
         <div class="list-group">
-            <a href="?page=0&os=<?php echo $os; ?>" class="list-group-item<?php if($pageid==0)echo ' active'; ?>">
-              About CryptoParty ATX
-            </a>
+            <a href="?page=0&os=<?php echo $os; ?>" class="list-group-item<?php $inactive=false; if($pageid==0||$pageid==3||$pageid==4||$pageid==5||$pageid==6)echo ' active'; else $inactive=true; ?>">About CryptoParty ATX</a>
+				<a href="?page=3&os=<?php echo $os; ?>" class="list-group-item sub-item<?php if($pageid==3)echo ' subactive'; if($inactive) echo ' hideme'; ?>">Upcoming Events</a>
+				<a href="?page=4&os=<?php echo $os; ?>" class="list-group-item sub-item<?php if($pageid==4)echo ' subactive'; if($inactive) echo ' hideme'; ?>">Contribute</a>
+				<a href="?page=5&os=<?php echo $os; ?>" class="list-group-item sub-item<?php if($pageid==5)echo ' subactive'; if($inactive) echo ' hideme'; ?>">Links</a>
+				<a href="?page=6&os=<?php echo $os; ?>" class="list-group-item sub-item<?php if($pageid==6)echo ' subactive'; if($inactive) echo ' hideme'; ?>">Contact Us</a>
             <a href="?page=1&os=<?php echo $os; ?>" class="list-group-item<?php $inactive=false; if($pageid >= 1 && $pageid < 2)echo ' active'; else $inactive=true; ?>">Encryption How-To Guides</a>
                 <a href="?page=1.1&os=<?php echo $os; ?>" class="list-group-item sub-item<?php if($pageid==1.1)echo ' subactive'; if($inactive) echo ' hideme'; ?>">Email Encryption</a>
                 <a href="?page=1.2&os=<?php echo $os; ?>" class="list-group-item sub-item<?php if($pageid==1.2)echo ' subactive'; if($inactive) echo ' hideme'; ?>">File and Folder Encryption</a>
@@ -84,10 +86,6 @@ if($os != "osx" && $os !="lnx"){$os="win";}
                	<a href="?page=2.2&os=<?php echo $os; ?>" class="list-group-item sub-item<?php if($pageid==2.2)echo ' subactive'; if($inactive) echo ' hideme'; ?>">Keysigning and Keyservers</a>
                 <a href="?page=2.3&os=<?php echo $os; ?>" class="list-group-item sub-item<?php if($pageid==2.3)echo ' subactive'; if($inactive) echo ' hideme'; ?>">Securely Erasing Data</a>
                 <a href="?page=2.5&os=<?php echo $os; ?>" class="list-group-item sub-item<?php if($pageid==2.5)echo ' subactive'; if($inactive) echo ' hideme'; ?>">Throw a CryptoParty</a>
-            <a href="?page=3&os=<?php echo $os; ?>" class="list-group-item<?php if($pageid==3)echo ' active'; ?>">Upcoming Events</a>
-            <a href="?page=4&os=<?php echo $os; ?>" class="list-group-item<?php if($pageid==4)echo ' active'; ?>">Contribute</a>
-            <a href="?page=5&os=<?php echo $os; ?>" class="list-group-item<?php if($pageid==5)echo ' active'; ?>">Links</a>
-            <a href="?page=6&os=<?php echo $os; ?>" class="list-group-item<?php if($pageid==6)echo ' active'; ?>">Contact Us</a>
         </div>
         <div>
         	Follow <a href="https://twitter.com/atxcrypto">@ATXCrypto on Twitter</a><br />
