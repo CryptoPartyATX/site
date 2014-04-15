@@ -42,9 +42,6 @@ function genNewPasswd() {
 		window.crypto.getRandomValues(randArray);
 		var curRand = randArray[0];
 		
-		// Make sure it is within range of the charset
-		// var curCharNum = curRand % charset.length;
-		
 		// Scale random to charset length
 		var decVal = curRand / 4294967295;
 		var curCharNum = Math.floor(decVal * charset.length);
