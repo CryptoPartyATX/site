@@ -19,8 +19,8 @@
 </style>
 <?php
 
-$pageid = $_GET['page'];
-$os = $_GET['os'];
+$pageid = htmlspecialchars($_GET['page']);
+$os = htmlspecialchars($_GET['os']);
 if(!$os){$os="win";}
 if($os != "lnx" && $os != "osx"){$os="win";}
 

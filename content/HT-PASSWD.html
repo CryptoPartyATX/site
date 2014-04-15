@@ -38,25 +38,23 @@ function genNewPasswd() {
 
 	for(var i=0; i<20; i++){
 		// Get some pseudo-random input numbers
-		var rVar = Math.floor(Math.random() * i * 1000);
-		var curRand = Math.random();
-		var curMilli = new Date().getTime();
+		var randArray = new Uint32Array(1);
+		window.crypto.getRandomValues(randArray);
+		var curRand = randArray[0];
 		
 		// Make sure it is within range of the charset
-		var curCharNum = (Math.floor(curRand * curMilli) + rVar) % charset.length;
+		// var curCharNum = curRand % charset.length;
 		
+		// Scale random to charset length
+		var decVal = curRand / 4294967295;
+		var curCharNum = Math.floor(decVal * charset.length);
+				
 		// Get char from charset
 		var curChar = charset[curCharNum];
-		
+
 		// Add char to password
 		newPass += curChar;
-		
-		// Wait a few milliseconds to help our randomness
-		var t = new Date().getTime(); 
-		while (new Date().getTime() < t + 25 + i);
-		
-		// Flip the charset around to help our randomness
-		charset.reverse();
+
 	}
 	
 	// Output new password
@@ -91,7 +89,7 @@ function genNewPasswd() {
 
 		<h2>Generate a Password</h2>
 		<p>Want to get straight to the point and just generate a strong password right here? Click <strong>Generate Password</strong> below to generate a 20-character password using upper- and lower-case characters, digits, and special characters. This password is generated in your browser and is never stored or sent across the Internet.</p>
-		<input type="text" id="passTxt" value="No Password Generated" size=30>
+		<input type="text" id="passTxt" value="No Password Generated" size=30 autocomplete="off">
 		<button onclick="genNewPasswd()">Generate Password</button>
 
 

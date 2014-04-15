@@ -30,8 +30,8 @@ div.sshot-right, div.sshot-wide {
 	   
 <?php
 
-$pageid = $_GET['page'];
-$os = $_GET['os'];
+$pageid = htmlspecialchars($_GET['page']);
+$os = htmlspecialchars($_GET['os']);
 if(!$os){$os="win";}
 if($os != "win" && $os != "osx"){$os="win";} /* temporary, for compatibility until all pages have linux guides */
 
@@ -76,7 +76,7 @@ else {
 		  <p>In order to truly get rid of those bank statements, journals, silly photos, and other personal files, you will need to take an extra step. Let's take a minute to understand why.</p>
 		  
 		  <h3>How do computers store files?</h3>
-		  <p>To understand what happens when you delete a file, we'll have to take a look at how computers keep track of files in the first place. Operating systems (like Windows or OS X) separate hard drive into different sections and store a table of where each file is located. It works like a table of contents for a book. The table of contents shows what page each chapter starts on and what it is called. Similarly, the file table shows where each file (or part thereof) starts and ends, along with other information. Computers do not store everything in order, so the file table actually shows where each chunk starts and ends, and what order they go in. This is as if the pages in your book didn't go order, so the table of contents would have to list each page number that goes with the chapter, instead of just the first page. This would be an inconvenient book to read, but the computer doesn't mind skipping around.</p>
+		  <p>To understand what happens when you delete a file, we'll have to take a look at how computers keep track of files in the first place. Operating systems (like Windows or OS X) separate hard drives into different sections and store a table of where each file is located. It works like a table of contents for a book. The table of contents shows what page each chapter starts on and what it is called. Similarly, the file table shows where each file (or part thereof) starts and ends, along with other information. Computers do not store everything in order, so the file table actually shows where each chunk starts and ends, and what order they go in. This is as if the pages in your book didn't go order, so the table of contents would have to list each page number that goes with the chapter, instead of just the first page. This would be an inconvenient book to read, but the computer doesn't mind skipping around.</p>
 		  
 		  <h3>What happens when I delete a file?</h3>
 		  <p>When you put a file in the Trash or Recycle Bin on your computer, the operating system essentially just marks the file as deleted. This does not change anything else about the file. It's a lot like if you created a folder called "Trash" and just moved the file there. When you empty the Trash, the file is "really" deleted. But "really" deleted in this context just means that it is removed from the file table. It's like if you took the randomly ordered book above and crossed out a chapter in the table of contents. The pages didn't go anywhere, but the chapter might as well be gone because it will be difficult to figure out which pages belong to it, and what order they go in. Since computers re-use space, eventually the pages <em>do</em> go somewhere. When the space is needed, the computer will eventually write over the parts that are not listed in the file table, since it can assume those parts aren't needed. But until that space gets written over again, all of the original data is still there.</p>
@@ -90,6 +90,14 @@ else {
 		  <h3>Why would I want to erase the free space?</h3>
 		  <p>Securely erasing the free space on a drive is useful if you have already deleted sensitive files, but you didn't delete them securely. When you securely erase free space it's like going back to any page not listed in your book's table of contents and marking it out, just in case we forgot to mark it out when we removed the chapter from the table of contents.</p>
 
+		  <h3>Should I Do This?</h3>
+		  <p>You should do this if you want to protect the privacy of any files that you delete. But always keep in mind that the point of this is to make sure there is no way to un-delete the files, so you need to very be careful about what you use these tools on. <br />
+		  	  <ul><strong>Possible uses for these tools:</strong>
+		  	  	<li>deleting a file that contains personal information (like a bank statement)</li>
+		  	  	<li>running DBAN on new computers and before selling, throwing out, or giving old ones away</li>
+		  	  	<li>erasing free space if you haven't securely erased anything before, or if you forgot to securely erase a sensitive file</li>
+		  	  </ul>
+		  </p>		  
 <span class="HideOSX">
           <h2>Part II: Securely Erase Data on OS X</h2>
           <h3>Files and Folders</h3>

@@ -42,3 +42,26 @@ a.sub-item:hover {
 .btc {
 	font-size:.8em;
 }
+
+div.warning {
+	background-color:#ff9081;
+	padding:.5em;
+	color:black;
+	font-weight:bold;
+	text-align:center;
+}
+
+.secure {
+	background-color:#7BDB8D;
+	padding:.5em;
+	color:black;
+	text-align:center;
+	margin-bottom:.5em;
+}
+.secure a {
+	color:black;
+}
+.secure:hover {
+	background-color:#1EAA38;
+	color:black;
+}

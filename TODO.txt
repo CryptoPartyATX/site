@@ -2,12 +2,15 @@ CryptoPartyATX.org To-Do list
 
 [General/Style]
 -	Overall site style?
-	:Nav seems too wide
 -	Screenshot layout
 -	Print layout css
 
 [General/Content]
 -	Spelling/grammar/readability
+
+[General/Code]
+-	Re-tab most pages
+-	Update pageid to page name
 
 [Main Pages]
 	{Crypto Info and How-To Guides}
@@ -19,8 +22,12 @@ CryptoPartyATX.org To-Do list
 [How-to Pages]
 -	Add Linux screens for remaining pages (FILE, WEB)
 -	Video tutorials?
+-	Difficulty meter (eventually setting)
+-	Time estimate
 -	Update <strong> to <span clickItem> for HT-DELETE
 -	Link how to verify checksums, encourage on more pages
+
+!	Check all links and version numbers
 
 	{UPDATE: Email Encryption}
 	-	Review/update powerpoint
@@ -34,9 +41,9 @@ CryptoPartyATX.org To-Do list
 	-	Two-factor Authentication
 	
 	{UPDATE: Secure Delete}
-	-	Add Linux guide
+	-	Add Linux guide, better option than shred?
 	-	DBAN
-	-	Can the NSA recover the data (if they wanted to?)
+	-	Can anyone recover the data?
 
 	{UPDATE: Privacy Plug-ins}
 	-	NoScript
@@ -61,3 +68,17 @@ CryptoPartyATX.org To-Do list
 	{NEW: VPNs}
 	-	Add page for using VPNs
 	
+# MOVE SECTIONS: General stuff to under ABOUT section
+
+# NEW SECTION: Using Linux
+	{MOVE: Installing Linux}
+	
+	{NEW: Initial Setup}
+	-	Plugins, additional software
+	
+	{NEW: Using Linux}
+	-	"Start menu", folder structure
+	-	Software Manager, Update Manager
+	
+	{NEW: Using the Command Line}
+	-	In general, common commands

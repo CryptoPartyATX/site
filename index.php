@@ -34,7 +34,7 @@
 <?php
 
 /* Page selection - default 0 (main page) */
-$pageid = $_GET['page'];
+$pageid = htmlspecialchars($_GET['page']);
 if (!$pageid || $pageid>6 || $pageid<0){
 	$pageid=0;
 }
@@ -44,7 +44,7 @@ if($pageid==1.7){$pageid=2.2;}
 if($pageid==1.8){$pageid=2.3;}
 
 /* OS Selection - default to Windows */
-$os = $_GET['os'];
+$os = htmlspecialchars($_GET['os']);
 if(!$os){$os="win";}
 if($os != "osx" && $os !="lnx"){$os="win";}
 
@@ -61,6 +61,10 @@ if($os != "osx" && $os !="lnx"){$os="win";}
         <div class="col-lg-3">
 
         <a href="?page=0&os=<?php echo $os; ?>"><div class="logo">&nbsp;</div></a>
+      
+      
+      	<?php include "warnings.php"; ?>
+      
       
         <div class="list-group">
             <a href="?page=0&os=<?php echo $os; ?>" class="list-group-item<?php if($pageid==0)echo ' active'; ?>">
@@ -88,7 +92,7 @@ if($os != "osx" && $os !="lnx"){$os="win";}
         <div>
         	Follow <a href="https://twitter.com/atxcrypto">@ATXCrypto on Twitter</a><br />
         	Subscribe to the <a href="https://cryptoglass.us/mailman/listinfo/rt4atx-list">RT4ATX email list</a><br />
-        	BTC: <span class="btc">1NbwGhRLxiU68qieWe4TEp1u6FpBEP9GYJ</span>
+        	BTC: <span class="btc">12Wb817YGmhA9qZnfBVaP4WCE3r5dFxUZr</span>
         </div>
     </div>
     

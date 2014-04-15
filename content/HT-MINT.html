@@ -30,8 +30,8 @@ div.sshot-right, div.sshot-wide {
 	   
 <?php
 
-$pageid = $_GET['page'];
-$os = $_GET['os'];
+$pageid = htmlspecialchars($_GET['page']);
+$os = htmlspecialchars($_GET['os']);
 if(!$os){$os="win";}
 
 ?>
