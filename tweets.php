@@ -74,12 +74,12 @@ link @'s and #'s
 
 // Why are we reading from a file? 
 // Because we don't want our visitors to have to connect to Twitter directly!
-$filename = "recent.html";
+$filename = "recent.txt";
 $initTweets = file($filename);
 
 
 $outTweets = array();
-$numTweets = 2; // how many tweets to load, max about 15
+$numTweets = 3; // how many tweets to load, max about 15
 
 // trim metadata from last 5 of input array, send to output array
 for($i=count($initTweets); $i>=count($initTweets)-$numTweets; $i--){
@@ -103,7 +103,7 @@ foreach ($outTweets as $tweet) {
 	echo "<div class=\"tweetitem\">";
 
 	// retweet icon
-	$RTicon = "<img class=\"rticon\" src=\"rticon.png\" />";
+	$RTicon = "<img class=\"rticon\" src=\"images/rticon.png\" />";
 	$isRT = substr($tweet,0,2)=="RT";
 	if($isRT){
 		//$tweet = substr($tweet,3);
