@@ -60,6 +60,7 @@ CryptoPartyATX.org To-Do list
 	{UPDATE: Privacy Plug-ins}
 	-	NoScript
 	-	Ghostery
+	- 	Privacy Badger
 	
 	{UPDATE: Choosing Secure Passwords}
 	-	KeePass (or other) for OS X
