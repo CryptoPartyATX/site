@@ -62,10 +62,6 @@ if($os != "osx" && $os !="lnx"){$os="win";}
 
         <a href="?page=0&os=<?php echo $os; ?>"><div class="logo">&nbsp;</div></a>
       
-      
-      	<?php include "warnings.php"; ?>
-      
-      
         <div class="list-group">
             <a href="?page=0&os=<?php echo $os; ?>" class="list-group-item<?php $inactive=false; if($pageid==0||$pageid==3||$pageid==4||$pageid==5||$pageid==6)echo ' active'; else $inactive=true; ?>">About CryptoParty ATX</a>
 				<a href="?page=3&os=<?php echo $os; ?>" class="list-group-item sub-item<?php if($pageid==3)echo ' subactive'; if($inactive) echo ' hideme'; ?>">Upcoming Events</a>
@@ -92,6 +88,9 @@ if($os != "osx" && $os !="lnx"){$os="win";}
         	Subscribe to the <a href="https://cryptoglass.us/mailman/listinfo/rt4atx-list">RT4ATX email list</a><br />
         	BTC: <span class="btc">12Wb817YGmhA9qZnfBVaP4WCE3r5dFxUZr</span>
         </div>
+        
+        <?php include "tweets.php"; ?>
+
     </div>
     
     
