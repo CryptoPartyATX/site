@@ -13,9 +13,6 @@ CryptoPartyATX.org To-Do list
 -	printsite.php: would return a printable page with all guides/info
 
 [Main Pages]
-	{index.php}
-	-	Twitter box
-
 	{Crypto Info and How-To Guides}
 	-	Why Crypto Matters
 		:write a page and collect links re why to encrypt

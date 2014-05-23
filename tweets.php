@@ -1,6 +1,3 @@
-<html>
-
-
 <style>
 
 .atxcrypto {
@@ -36,6 +33,7 @@
 	font-weight: 300;
 	font-size: 9pt;
 	float:right;
+	margin-right:.1em;
 }
 .tweetHTTPS {
 	color:#338833;
@@ -51,6 +49,9 @@
 	padding:.2em .4em .2em .4em;
 	margin:auto;
 	margin-bottom:-1px;
+	margin-top:1em;
+	font-weight:400;
+	color:#333333;
 }
 .follow a {
 	color:white;
@@ -66,21 +67,22 @@
 
 TODO List
 
-loop for urls
-RT icon
 link @'s and #'s
-formatting
 
 */
 
 
-
+// Why are we reading from a file? 
+// Because we don't want our visitors to have to connect to Twitter directly!
 $filename = "recent.html";
 $initTweets = file($filename);
+
+
 $outTweets = array();
+$numTweets = 2; // how many tweets to load, max about 15
 
 // trim metadata from last 5 of input array, send to output array
-for($i=count($initTweets); $i>=count($initTweets)-5; $i--){
+for($i=count($initTweets); $i>=count($initTweets)-$numTweets; $i--){
 
 	// init temp var
 	$curTweet = $initTweets[$i];
@@ -94,7 +96,7 @@ for($i=count($initTweets); $i>=count($initTweets)-5; $i--){
 }
 
 // add follow div
-echo "<div class=\"follow\">Follow <a href=\"https://twitter.com/atxcrypto\">@ATXCrypto</a> on Twitter</div>";
+echo "<div class=\"follow\"><a href=\"https://twitter.com/atxcrypto\">@ATXCrypto</a> Recent Tweets</div>";
 
 // format tweet and display
 foreach ($outTweets as $tweet) {
@@ -108,32 +110,40 @@ foreach ($outTweets as $tweet) {
 		echo $RTicon;
 	}
 
+	echo "<span class=\"atxcrypto\"><a href=\"https://twitter.com/atxcrypto\">@ATXCrypto</a>:</span> "; // account name
+
+	$linklist = "<br>";
+	
 	// extract links
-	$firstHTTP = strpos($tweet,"http");
-	$extracted = "";
-	$url="";
-	$isHTTPS = false;
-	if(strpos($tweet,"http:")===$firstHTTP || strpos($tweet,"https:")===$firstHTTP && $firstHTTP !== FALSE){
-		$isHTTPS = strpos($tweet,"https:")===$firstHTTP;
-		$url = substr($tweet,$firstHTTP,strpos("$tweet "," ",$firstHTTP));
-		$tweet = substr($tweet,0,$firstHTTP) . substr($tweet,strpos("$tweet "," ",$firstHTTP));
+	while(strpos($tweet,"http:")||strpos($tweet,"https:")){
+		$firstHTTP = strpos($tweet,"http");
+		$extracted = "";
+		$url="";
+		$isHTTPS = false;
+		if(strpos($tweet,"http:")===$firstHTTP || strpos($tweet,"https:")===$firstHTTP && $firstHTTP !== FALSE){
+			$isHTTPS = strpos($tweet,"https:")===$firstHTTP;
+			$url = substr($tweet,$firstHTTP,strpos("$tweet "," ",$firstHTTP));
+			$tweet = substr($tweet,0,$firstHTTP) . substr($tweet,strpos($tweet." "," ",$firstHTTP));
+			
+			
+	
+			if($isHTTPS){
+				$linklist .= "<a class=\"tweetHTTPS\" href=\"$url\">[ HTTPS Link ]</a> \n";
+			}
+			else {
+				$linklist .= "<a class=\"tweetHTTP\" href=\"$url\">[ HTTP Link ]</a> \n";
+			}
+		}
 	}
+	
 
-	echo "<span class=\"atxcrypto\">@ATXCrypto:</span> "; // account name
 
-	echo "<span class=\"tweet\">$tweet</span>\n"; // actual text
+	echo "<span class=\"tweet\">$tweet</span>\n"; // actual text (minus links)
 
-	// links included in text
-	if($isHTTPS){
-		echo "<br><a class=\"tweetHTTPS\" href=\"$url\">[ HTTPS Link ]</a>\n";
-	}
-	else {
-		echo "<br><a class=\"tweetHTTP\" href=\"$url\">[ HTTP Link ]</a>\n";
-	}
+	// include links after tweet
+	echo $linklist;
 	
 	echo "</div>";
 }
 
 ?>
-
-</html>

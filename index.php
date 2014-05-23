@@ -84,7 +84,7 @@ if($os != "osx" && $os !="lnx"){$os="win";}
                 <a href="?page=2.5&os=<?php echo $os; ?>" class="list-group-item sub-item<?php if($pageid==2.5)echo ' subactive'; if($inactive) echo ' hideme'; ?>">Throw a CryptoParty</a>
         </div>
         <div>
-        	Follow <a href="https://twitter.com/atxcrypto">@ATXCrypto on Twitter</a><br />
+        	<!--Follow <a href="https://twitter.com/atxcrypto">@ATXCrypto on Twitter</a><br />-->
         	Subscribe to the <a href="https://cryptoglass.us/mailman/listinfo/rt4atx-list">RT4ATX email list</a><br />
         	BTC: <span class="btc">12Wb817YGmhA9qZnfBVaP4WCE3r5dFxUZr</span>
         </div>
