@@ -9,9 +9,13 @@ CryptoPartyATX.org To-Do list
 
 [General/Code]
 -	Re-tab most pages
--	Update pageid to page name
+-	Update GET parameters to parameter list
+-	printsite.php: would return a printable page with all guides/info
 
 [Main Pages]
+	{index.php}
+	-	Twitter box
+
 	{Crypto Info and How-To Guides}
 	-	Why Crypto Matters
 		:write a page and collect links re why to encrypt
@@ -39,7 +43,7 @@ CryptoPartyATX.org To-Do list
 		-	New screenshots
 		-	Registration feature 
 			:sends messages over data connection instead of SMS
-	-	Why not wickr
+	-	Why not wickr.
 			
 	{UPDATE: IM Encryption}
 	-	Android and iOS guides (ChatSecure)
@@ -48,8 +52,11 @@ CryptoPartyATX.org To-Do list
 	:finally figured that out
 	:caveat about storing private keys on a mobile device
 
+	{NEW: encfs for linux}
+	:alternative/combination with true crypt, full disk
 
-#Privacy
+
+# Privacy
 	{UPDATE: Privacy Plug-ins}
 	-	NoScript
 	-	Ghostery
