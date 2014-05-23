@@ -10,7 +10,10 @@ CryptoPartyATX.org To-Do list
 [General/Code]
 -	Re-tab most pages
 -	Update GET parameters to parameter list
--	printsite.php: would return a printable page with all guides/info
+-	printsite.php: would return a printable page with all guides/info for archive and physical distribution
+-	split (via param) js vs. non-js modes
+	-	js: jquery, sprites, adjust twitter
+	-	non-js: non-js contact form
 
 [Main Pages]
 	{Crypto Info and How-To Guides}
@@ -33,7 +36,7 @@ CryptoPartyATX.org To-Do list
 	-	Review/update powerpoint
 	-	Incorporate more info from ppt re what email encryption does and does not do
 	-	Update for Enigmail config changes
-		:Enigmail now has setup walkthrough thing, what does it do exactly? do we still need key manager?
+		:Enigmail now has setup walkthrough thing, but this does not generate the strongest possible keys. recommend separate key manager for this reason and for compatibility with other GPG uses
 
 	{UPDATE: SMS Encryption}
 	-	Latest version of Textsecure
