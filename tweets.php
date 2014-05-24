@@ -6,6 +6,10 @@
 	font-weight:300;
 	color: blue;
 }
+.tweetbox {
+	max-height:350px;
+	overflow:scroll;
+}
 .tweetitem {
 	display:block;
 	background:#FFFFFF;
@@ -79,7 +83,7 @@ $initTweets = file($filename);
 
 
 $outTweets = array();
-$numTweets = 3; // how many tweets to load, max about 15
+$numTweets = 16; // how many tweets to load, max about 16
 
 // trim metadata from last 5 of input array, send to output array
 for($i=count($initTweets); $i>=count($initTweets)-$numTweets; $i--){
@@ -94,11 +98,13 @@ for($i=count($initTweets); $i>=count($initTweets)-$numTweets; $i--){
 	if(strlen($curTweet)>0){array_push($outTweets,$curTweet);}
 
 }
-
 // add follow div
 echo "<div class=\"follow\"><a href=\"https://twitter.com/atxcrypto\">@ATXCrypto</a> Recent Tweets</div>";
 
-// format tweet and display
+// box in for scroll
+echo "<div class=\"tweetbox\">";
+
+// format and print tweets
 foreach ($outTweets as $tweet) {
 	echo "<div class=\"tweetitem\">";
 
@@ -145,5 +151,5 @@ foreach ($outTweets as $tweet) {
 	
 	echo "</div>";
 }
-
+echo "</div>";
 ?>
