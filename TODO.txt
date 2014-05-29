@@ -21,11 +21,13 @@ CryptoPartyATX.org To-Do list
 		:write a page and collect links re why to encrypt
 	-	How Crypto Works
 		:collect links re how crypto works, possibly write page
+	-	Privacy Policy
+		:all the shit we DONT collect, why we dont use cookies (transparency), A+ rated https, encrypted contact form, etc
 	
 [How-to Pages]
 -	Add Linux screens for remaining pages (FILE, WEB)
 -	Video tutorials?
--	Difficulty meter (eventually setting)
+-	Difficulty meter (to be a setting eventually)
 -	Time estimate
 -	Update <strong> to <span clickItem> for HT-DELETE
 -	Link how to verify checksums, encourage on more pages
@@ -42,8 +44,8 @@ CryptoPartyATX.org To-Do list
 	-	Latest version of Textsecure
 		-	New screenshots
 		-	Registration feature 
-			:sends messages over data connection instead of SMS
-	-	Why not wickr.
+			:sends messages over data connection instead of SMS (blue vs green)
+	-	Why not wickr. (not open source)
 			
 	{UPDATE: IM Encryption}
 	-	Android and iOS guides (ChatSecure)
@@ -74,13 +76,16 @@ CryptoPartyATX.org To-Do list
 	-	KeePass (or other) for OS X
 	-	KeePass advanced Options
 	-	Two-factor Authentication
+	-	Revise/clarify password suggestions
 	
 	{UPDATE: Secure Delete}
 	-	Add Linux guide, better option than shred?
+	-	Graphics to explain?
 	-	DBAN
-	-	Can anyone recover the data?
+	-	Can anyone recover the data? (probably somebody somewhere can)
 	
 	{NEW: Dual-booting Linux & OS}
+	-	Like I'll ever have time to get to this one...
 			
 	{NEW: VPNs}
 	-	Add page for using VPNs
