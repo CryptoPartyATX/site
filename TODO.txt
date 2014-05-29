@@ -54,6 +54,14 @@ CryptoPartyATX.org To-Do list
 
 	{NEW: encfs for linux}
 	:alternative/combination with true crypt, full disk
+	
+	{UPDATE: FILE Encryption}
+	-	re-do page selection for new Unix option (for both osx+lnx)
+	-	remaining screenshots
+		-	OS X all
+		-	Win all
+		-	linux decrypt
+	-	latest info on TrueCrypt
 
 
 # Privacy

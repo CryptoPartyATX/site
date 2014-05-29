@@ -9,152 +9,264 @@
 		clear:right;
 		background:url("/images/files-selected.png");
 }
+
 </style>
 	   <div class="page-icon">&nbsp;</div>
 	   
 <!-- Include OS Selection buttons -->
 <?php include "os_select.html"; ?>
 	   
-       <h1>File and Folder Encryption with TrueCrypt</h1>
-          <h3><i>A guide to encrypting, files, folders, and drives using TrueCrypt</i></h3>
-          <p><strong>Purpose:</strong> This guide attempts to explain how to install and use the application TrueCrypt to create encrypted file containers to password-protect sensitive data.</p>
+       <h1>File and Folder Encryption with GPG</h1>
+          <h3><i>A guide to encrypting, files, folders, and drives using GPG</i></h3>
+          <p><strong>Purpose:</strong> This guide attempts to explain how to use GPG to encrypt files instead of (or in addition to) using TrueCrypt.</p>
 
-          <p><strong>Software:</strong> The only software needed is TrueCrypt. It is available on the creators' website. For security reasons, we recommend downloading the software from its official website and verifying the checksum.</p>
+          <p><strong>Software:</strong> The only software needed is the GPG application for your OS:</p>
 
           <div class="list-group">
-            <a target="_blank" href="http://truecrypt.org" class="list-group-item">
-              <h3 class="list-group-item-heading">TrueCrypt</h3>
-              <p class="list-group-item-text">Open-source program to encrypt and password-protect files and storage devices.</p>
-            </a>
+            <span class="HideOSX"><a target="_blank" href="https://gpgtools.org/" class="list-group-item">
+              <h3 class="list-group-item-heading">GPG Suite (OS X)</h3>
+              <p class="list-group-item-text">Open-source GPG key manager for Mac OS X computers</p>
+            </a></span>
+            <span class="HideWin"><a target="_blank" href="http://www.gpg4win.org/" class="list-group-item">
+              <h3 class="list-group-item-heading">Gpg4Win (Windows)</h3>
+              <p class="list-group-item-text">Open-source GPG key manager for Windows computers</p>
+            </a></span>
+            <span class="HideLnx">Linux Mint has built-in support.</span>
           </div>
+
+<span class="HideOSX">Please note that the screenshots provided are from Linux, but all of the commands are identical.</span>
+<span class="HideWin">Please note that the screenshots provided are from Linux, but all of the commands are identical.</span>
 
           <h2>Nutshell</h2>
           <p><ol>
-			<li>First, we are going to install TrueCrypt. TrueCrypt will allow you to create an encrypted file container, or encrypt an entire disk drive. The containers act just like password-protected folders, keeping your private data safe from prying eyes.</li>
-			<li>Second, we will create an encrypted file container.</li>
-			<li>Third, we will test our container by opening the container, adding a file, and closing it. Then we will open it again to verify it works properly.</li>
-			<li>Last, we will discuss a few advanced options, like keyfiles, whole drive encryption, and hidden volumes.</li>
-			<li>For further information, we recommend consulting TrueCrypt's official tutorial, located at: <a target="_blank" href="http://www.truecrypt.org/docs/tutorial">http://www.truecrypt.org/docs/tutorial</a></li>
+			<li>First, we are going to talk about how this works, and why we no longer use TrueCrypt.</li>
+			<li>Second, we will explain the command and encrypt a file.</li>
+			<li>Third, we will test our encrypted file by decrypting it.</li>
+			<li>Last, we will discuss practical uses for this method.</li>
 		  </ol></p>
 		  
-          <h2>Part I: Install TrueCrypt</h2>
-          <ol>
-            <li>
-              Obtain the TrueCrypt installation file from the creators' website: <a target="_blank" href="http://www.truecrypt.org/">http://www.truecrypt.org/</a>
-            </li>
-            <li>
-              Install TrueCrypt
-              <ul>
-                <span class="HideOSX"><li>Double-click <span class="clickItem">TrueCrypt 7.1a.dmg</span> in your downloads folder, then double-click <span class="clickItem">TrueCrypt 7.1a.mpkg</span> in the window that opens. Click <span class="clickItem">Continue</span> twice and then <span class="clickItem">Install</span>. Enter your password to allow the program to install.</li></span>
-                <span class="HideWin"><li>Double-click <span class="clickItem">TrueCrypt Setup 7.1a.exe</span>. Allow the program to run, choose to accept the license, and then click <span class="clickItem">Next</span> until the installation completes. You can customize the options if you wish, but the default options are okay.</li></span>
-                <span class="HideLnx">
-                	<li>Extract <span class="clickItem">truecrypt-7.1a-setup-x64</span> from the downloaded package, double-click it, and select <span class="clickItem">Run</span>.</li>
-                	<li>Type "1" and press Enter to begin the installation. Review the license (press space to scroll down) and type "Yes" to accept.</li>
-                	<li>Type your password when prompted to allow the program installation. After it is completed, it will be available under the Linux Mint <span class="clickItem">Menu &gt; Accessories &gt; TrueCrypt</span></li>
-                </span>
-              
-              </ul>
-            </li>
-          </ol>
-          
-		  <h2>Part II: Create an Encrypted File Container</h2>
-          <ol>
-            <li>
-              	<span class="HideOSX">Double-click <span class="clickItem">TrueCrypt</span> in your <span class="clickItem">Applications</span> folder.<br /></span>
-				<span class="HideWin">Click <span class="clickItem">Start &gt; Programs &gt; TrueCrypt &gt; TrueCrypt</span></span>
- 				<span class="HideLnx">Click the Linux Mint <span class="clickItem">Menu &gt; Accessories &gt; TrueCrypt</span></span>
-           
-            </li>
-            <li>
-              	Click the <span class="clickItem">Create Volume</span> button in the main TrueCrypt window. (Windows and Linux TrueCrypt should be nearly identical in content and format to the OS X screenshots here, but with a different style.)
-            </li>
-            <div class="sshot-wide"><a href="/content/screenshots/HT-FILE-CreateVolume.jpg" data-lightbox="HT-FILE-CreateVolume" title="Create a New Volume in TrueCrypt"><img class='sshot-wd' src="/content/screenshots/HT-FILE-CreateVolume.jpg"/></a></div>
-            <li>
-            	Choose “Create an encrypted file container” and press <span class="clickItem">Next &gt;</span>
-            </li>
-            <li>
-            	Choose “Standard TrueCrypt volume” and press <span class="clickItem">Next &gt;</span>
-            </li>
-            <div class="sshot-wide"><a href="/content/screenshots/HT-FILE-VolumeLoc.jpg" data-lightbox="HT-FILE-VolumeLoc" title="Create a New Volume in TrueCrypt"><img class='sshot-wd' src="/content/screenshots/HT-FILE-VolumeLoc.jpg"/></a></div>
-            <li>
-            	Choose a location and filename for this container. You can save it wherever you want, and use whatever filename and extension you want. If you use the extension “.tc”, the file will automatically open in TrueCrypt on Windows. Click <span class="clickItem">Next &gt;</span>
-            </li>
-            <div class="sshot-wide"><a href="/content/screenshots/HT-FILE-EncOptions.jpg" data-lightbox="HT-FILE-EncOptions" title="Select Encryption Options, or Just Click Next"><img class='sshot-wd' src="/content/screenshots/HT-FILE-EncOptions.jpg"/></a></div>
-            <li>
-            	For our first container, we will keep it simple. Just click <span class="clickItem">Next &gt;</span> on the Encryption Options screen. The default provides a good level of security while remaining very efficient. 
-            </li>
-            <div class="sshot-wide"><a href="/content/screenshots/HT-FILE-VolumeSize.jpg" data-lightbox="HT-FILE-VolumeSize" title="Choose a Size for Your Volume"><img class='sshot-wd' src="/content/screenshots/HT-FILE-VolumeSize.jpg"/></a></div>
-            <li>
-            	Select a size for your volume. Make sure it is big enough to hold whatever files you want to encrypt. For now, pick a small size, like 10MB. Click <span class="clickItem">Next &gt;</span>
-            </li>
-            <div class="sshot-wide"><a href="/content/screenshots/HT-FILE-VolumePass.jpg" data-lightbox="HT-FILE-VolumePass" title="Choose a Password for Your Volume"><img class='sshot-wd' src="/content/screenshots/HT-FILE-VolumePass.jpg"/></a></div>
-            <li>
-            	Choose a password for your volume. This is the password you will use every time you open up the container. If you forget this password, any data stored in the container will be lost (that is, stuck in its encrypted form). We recommend you choose the longest and most complex password you can possibly tolerate typing every time you need to access the encrypted files. Alternatively, we recommend using keyfiles, which are discussed below in Part III. Type the password twice to confirm and press <span class="clickItem">Next &gt;</span>
-            </li>
-            <div class="sshot-wide"><a href="/content/screenshots/HT-FILE-VolumeFormat.jpg" data-lightbox="HT-FILE-VolumeFormat" title="Choose a Format for Your Volume (FAT Recommended)"><img class='sshot-wd' src="/content/screenshots/HT-FILE-VolumeFormat.jpg"/></a></div>
-            <li>
-            	On the Format Options screen, just click <span class="clickItem">Next &gt;</span>. For best compatibility with various operating systems, we recommend using FAT. The only notable limitation is that FAT does not allow you to have files larger than 4GB each. (Your container can still be virtually as big as you want, but no file inside it can be larger than 4GB.)
-            </li>
-            <li>
-            	<strong>This is the most important step.</strong> When you get to the Volume Format screen, read the IMPORTANT paragraph near the bottom. Spend as long as you can stand randomly moving your mouse around in this window. The longer you do it, and the more random the movements are, the stronger your encryption key will be. You only have to do this once, and you never have to deal with your encryption key directly, so spend a few minutes and make it count. Once you have moved your mouse around for as long as you could stand, click <span class="clickItem">Format</span>.
-            </li>
-            <div class="sshot-wide"><a href="/content/screenshots/HT-FILE-Success.jpg" data-lightbox="HT-FILE-Success" title="You Have Successfully Created a Truecrypt Volume"><img class='sshot-wd' src="/content/screenshots/HT-FILE-Success.jpg"/></a></div>
-            <li>
-            	That's it, you have now created your first encrypted file container with TrueCrypt! Now let's test it out so you can get used to using TrueCrypt containers.
-            </li>
-          </ol>
-          
-          <h2>Part III: Test Your TrueCrypt File Container</h2>
-          <ol>
-          	<li>
-          		Open <span class="clickItem">TrueCrypt</span>
-          	</li>
-          	<div class="sshot-wide"><a href="/content/screenshots/HT-FILE-SelectVolume.jpg" data-lightbox="HT-FILE-SelectVolume" title="Select a Drive Letter or Number to Mount a Volume in Truecrypt"><img class='sshot-wd' src="/content/screenshots/HT-FILE-SelectVolume.jpg"/></a></div>
-          	<li>
-          		Click a drive letter or slot number, then click <span class="clickItem">Select File...</span>
-          	</li>
-          	<div class="sshot-wide"><a href="/content/screenshots/HT-FILE-Browse.jpg" data-lightbox="HT-FILE-Browse" title="Browse for the Volume You Want to Mount"><img class='sshot-wd' src="/content/screenshots/HT-FILE-Browse.jpg"/></a></div>
-          	<li>
-          		Select the file container you created in the steps above. Click <span class="clickItem">Open</span>
-          	</li>
-          	<div class="sshot-wide"><a href="/content/screenshots/HT-FILE-EnterPass.jpg" data-lightbox="HT-FILE-EnterPass" title="Enter the Password for the Truecrypt Volume You Want to Mount"><img class='sshot-wd' src="/content/screenshots/HT-FILE-EnterPass.jpg"/></a></div>
-          	<li>
-          		Click <span class="clickItem">Mount</span> in the main TrueCrypt window, then enter the password you created in the steps above. Click <span class="clickItem">OK</span>
-          	</li>
-          	<div class="sshot-wide"><a href="/content/screenshots/HT-FILE-VolumeOpen.jpg" data-lightbox="HT-FILE-VolumeOpen" title="You Have Successfully Opened the Truecrypt Volume"><img class='sshot-wd' src="/content/screenshots/HT-FILE-VolumeOpen.jpg"/></a></div>
-          	<li>
-          		If you typed your password correctly, the volume should appear in the slot you selected. To access the encrypted volume:<br />
-				<span class="HideWin">Go to <span class="clickItem">My Computer</span> and open the drive letter that you selected. <br /></span>
-				<span class="HideOSX">Find the volume in the Finder under Devices, or on the Desktop</span>
-				<span class="HideLnx">Find the volume in the file browser under <span class="clickItem">Devices</span> or in the <span class="clickItem">Computer</span> location.</span>
+          <h2>Part I: GPG - How and why?</h2>
+          <p>GPG works by using a public and private key to encrypt and decrypt files. This is particularly useful when sending files to someone else. If you encrypt the file with your contact's public key before sending it, only your contact will be able to open it as long as they are the only person with the paired public key. If you encrypt a file with your own public key, only you will be able to decrypt it.</p>
+          <p>Please keep in mind that GPG makes an encrypted copy of the original file. This means the original unencrypted file will still be there. Be sure to securely delete this original if you do not want to store an unencrypted copy.</p>
+          <p>A notice was posted on <a target="_blank" href="http://truecrypt.sourceforge.net/">TrueCrypt's main webpage</a> stating that TrueCrypt is not secure and development has ceased. While this information has not been officially confirmed at this time, we recommend using GPG to encrypt your TrueCrypt volumes at least until the matter is resolved. You can use GPG in combination with TrueCrypt volumes, or you can encrypt your files with GPG alone. We recommend using GPG for sensitive files rather than relying solely on closed-source software like BitLocker.</p>
+		  
+		  
+		  <span class="HideLnx"><div class="sshot-wide"><a href="/content/screenshots/HT-FILE-LNXBefore.jpg" data-lightbox="HT-FILE-LNX" title="Start with a secret file and type the command..."><img class='sshot-wd' src="/content/screenshots/HT-FILE-LNXBefore.jpg"/></a></div></span>
+		  <span class="HideOSX"><div class="sshot-wide"><a href="/content/screenshots/HT-FILE-LNXBefore.jpg" data-lightbox="HT-FILE-LNX" title="Start with a secret file and type the command..."><img class='sshot-wd' src="/content/screenshots/HT-FILE-LNXBefore.jpg"/></a></div></span>
+		  <span class="HideWin"><div class="sshot-wide"><a href="/content/screenshots/HT-FILE-LNXBefore.jpg" data-lightbox="HT-FILE-LNX" title="Start with a secret file and type the command..."><img class='sshot-wd' src="/content/screenshots/HT-FILE-LNXBefore.jpg"/></a></div></span>
 
-          	</li>
-          	<li>
-          		Now, add a file to your container. Since we are just practicing, you can use any file. Simply drag the file into the container; it works like any other folder. This will copy the file, not move it, so when you use this with actual private data, you may want to delete the unencrypted original file after you have verified that the encrypted copy works.
-          	</li>
-          	<li>
-          		After you have added the file(s) and you are done using them, you will want to dismount the volume. To dismount the volume, select the drive letter or slot number in the main TrueCrypt window, and click Dismount. This makes sure that anyone who wants to access the files will need the password. If you do not dismount the volume, anyone with access to your computer can simply open up the container and view the contents. Think of mounting and dismounting as unlocking and locking, respectively. You mount (or unlock) the file container using your password so you can add files or use the files that are already there. When you're done, dismount (or lock) the container so your files are secure.<br /><br />
-          		<span class="HideOSX">
-          			<div class="sshot-right"><a href="/content/screenshots/HT-FILE-Dismount.jpg" data-lightbox="HT-FILE-Dismount" title="Dismount the Volume in TrueCrypt"><img class='sshot-sm' src="/content/screenshots/HT-FILE-Dismount.jpg"/></a></div>	
-					<strong>OS X WARNING</strong>: <em>Never, ever, click the Eject symbol</em> next to the name of the file container volume or click Eject in the right-click menu for the volume. This can cause TrueCrypt to freeze, and could possibly result in data loss. Always use the <span class="clickItem">Dismount</span> button in the main TrueCrypt window. <em>Always</em>.
-				</span>
-          	</li>
-          	<li>
-          		Now, let's try it out. Repeat steps 2 through 4 and see if your file is there in your encrypted container. If you see the file you added, you're done. Don't forget to <span class="clickItem">Dismount</span> your volume. Now you can use TrueCrypt to securely store any private documents or files you want. For fun, try typing your password wrong when you mount the volume so you can see what will happen. For more advanced fun, open the TrueCrypt volume file with a Hex or Text editor to view the beautiful randomness inside (but don't change anything!).
-          	</li>
+<span class="HideOSX">
+		  <h2>Part II: Encrypt a File with Your Public Key</h2>
+          <ol><p><strong>If you do not have GPG installed, please see Part II of <a href="?page=1.1<?php echo "&os=$os"; ?>">our Email Encryption tutorial</a>.</strong><br> Be sure to create your own public/private key pair.</p>
+            <li>
+              	Double-click <span class="clickItem">Terminal</span> in your <span class="clickItem">Applications</span> folder.<br />
+            </li>
+            
+            <li>The following basic command is used to encrypt a file with GPG:<br>
+              	<div class="code">gpg -e -r "Recipient" filename</div>
+              	<span class="clickItem">gpg</span> is the name of the command (program) we are running<br>
+              	<span class="clickItem">-e</span> tells the program to encrypt a file<br>
+              	<span class="clickItem">-r "Recipient"</span> tells the program who should be able to decrypt the file<br> 
+              	(i.e., <span class="clickItem">-r "Recipient"</span> specifies which public key to encrypt the file with)<br>
+              	<span class="clickItem">filename</span> specifies the name (and path) of the file to encrypt<br>
+            </li>
+
+            <div class="sshot-wide"><a href="/content/screenshots/HT-FILE-LNXConfirm.jpg" data-lightbox="HT-FILE-LNX" title="Type and run the command, and type 'y' to confirm (as needed)"><img class='sshot-wd' src="/content/screenshots/HT-FILE-LNXConfirm.jpg"/></a></div>
+            <li>Type the command into the Terminal, substituting your own values, and press Enter to run it. This will create an encrypted <strong>copy</strong> of the original file at the same location, but with the extension <span class="clickItem">.gpg</span>. You may be asked to verify the fingerprint before continuing. Type the letter 'y' and press Enter to confirm. See <a href="?page=2.2<?php echo "&os=$os"; ?>">our guide on Keys</a> for more information on fingerprints.<br>
+				<br>Here are some examples of what I might run (my own email is plexiglass@riseup.net):<br>
+            
+				<strong>Encrypt <em>secrets.txt</em> so that only I can decrypt it (with my private key):</strong><br>
+				<div class="code">gpg -e -r "plexiglass@riseup.net" secrets.txt</div><br>
+			
+				<strong>Encrypt <em>secrets.txt</em> so that only <em>person@email.com</em> can decrypt it (with their own private key):</strong><br>
+				<div class="code">gpg -e -r "person@email.com" secrets.txt</div><br>           
+			
+            </li>
+        	<!--<div class="sshot-wide"><a href="/content/screenshots/HT-FILE-CreateVolume.jpg" data-lightbox="HT-FILE-CreateVolume" title="Create a New Volume in TrueCrypt"><img class='sshot-wd' src="/content/screenshots/HT-FILE-CreateVolume.jpg"/></a></div>-->
+            <li>To Encrypt <strong>and</strong> Sign:<br> <em>You will be asked to enter your passphrase in order to sign a file </em><br>
+            	<div class="code">gpg -se -u "Sender" -r "Recipient" filename</div>
+            	<span class="clickItem">-u "Sender"</span> tells the program who is encrypting the file. Use with -se or -s.<br>
+            	<span class="clickItem">-se</span> sign and encrypt (replace the -e in the original command)<br>
+            	<span class="clickItem">-s</span> sign only, do not encrypt (replace the -e in the original command)<br>
+				<br>Here are some examples of what I might run (my own email is plexiglass@riseup.net):<br>
+				<strong>Encrypt <em>secrets.txt</em> so that only <em>person@email.com</em> can decrypt it, and sign the file with my own key:</strong><br>
+				<div class="code">gpg -se -u "plexiglass@riseup.net" -r "person@email.com" secrets.txt</div><br>    
+
+				<strong>Sign <em>secrets.txt</em> with my own key so anyone can verify it came from me:</strong><br>
+				<div class="code">gpg -s -u "plexiglass@riseup.net" secrets.txt</div><br>    
+			</li>
+			
+            <div class="sshot-wide"><a href="/content/screenshots/HT-FILE-LNXComplete.jpg" data-lightbox="HT-FILE-LNX" title="Your encrypted file, next to your original"><img class='sshot-wd' src="/content/screenshots/HT-FILE-LNXComplete.jpg"/></a></div>			
+			<li>You should now end up with a new file ending in .gpg, which contains the encrypted copy of the original file. All of the examples above result in a new file called <span class="clickItem">secrets.txt.gpg</span></li>
+
+            
           </ol>
           
-          <h2>Part IV: Advanced Options</h2>
-          	<h3>Keyfiles</h3>
-          	<p>One way to increase the security of your TrueCrypt container is by using keyfiles instead of, or in addition to, the password. Create a container normally, but when you get to the password selection screen, check the box next to “Use Keyfiles”. Then, click the <span class="clickItem">Keyfiles...</span> button to select the files and/or folders you want to use. Key files work just like passwords, but instead of typing a password you select a file on your computer. Since the contents of the file are used like the password, <strong>it is absolutely imperative</strong> that your keyfile(s) is not modified. You must use identical files to unlock the volume as the ones used when it was created.</p>
-          	<p>For more information on keyfiles, please consult TrueCrypt's documentation: <a target="_blank" href="http://www.truecrypt.org/docs/keyfiles">http://www.truecrypt.org/docs/keyfiles</a></p>
+          <h2>Part III: Decrypt a File with Your Private Key</h2>
+          
+          <h3>Option 1: Using the Finder</h3>
+          <ol>
+          	<li>Locate and double-click the encrypted <span class="clickItem">.gpg</span> file in the Finder.</li>
+          	<li>Enter your passphrase when prompted.</li>
+          	<li>The decrypted <strong>copy</strong> will be placed in the same folder as the original.</li>
+          </ol>
+          <h3>Option 2: Terminal Command</h3>
+
+          <ol>
+          	<li>The following command is used to decrypt a file with GPG:<br>
+              	This will create an decrypted <strong>copy</strong> of the original file at the same location, but with the original extension instead of <span class="clickItem">.gpg</span>. 
+              	<div class="code">gpg -d filename</div>
+              	<span class="clickItem">gpg</span> is the name of the command (program) we are running<br>
+              	<span class="clickItem">-d</span> tells the program to encrypt a file<br>
+              	<span class="clickItem">filename</span> tells the program which file to decrypt<br>
+          	</li>
+          	<li>Type the command into the Terminal, substituting your own values, and press Enter to run it.<br>
+          	The program will only decrypt the file if the correct private key is in your keyring. If it is, you will be asked for the passphrase to decrypt the file. Here is an example of what I might run:<br>
+          		<strong>Decrypt <em>secrets.txt.pgp</em> (from the previous example):</strong><br>
+				<div class="code">gpg -d secrets.txt.pgp</div><br>   
+          	</li>
+          	
+          	<!--<div class="sshot-wide"><a href="/content/screenshots/HT-FILE-Browse.jpg" data-lightbox="HT-FILE-Browse" title="Browse for the Volume You Want to Mount"><img class='sshot-wd' src="/content/screenshots/HT-FILE-Browse.jpg"/></a></div>-->
+          </ol>
+</span>
+
+<span class="HideLnx">
+		  <h2>Part II: Encrypt a File with Your Public Key</h2>
+          <ol><p><strong>If you do not have GPG installed, please see Part II of <a href="?page=1.1<?php echo "&os=$os"; ?>">our Email Encryption tutorial</a>.</strong><br> Be sure to create your own public/private key pair.</p>
+            <li>
+ 				Click the Linux Mint <span class="clickItem">Menu &gt; Accessories &gt; Terminal</span>
+            </li>
+            <li>The following basic command is used to encrypt a file with GPG:<br>
+              	<div class="code">gpg -e -r "Recipient" filename</div>
+              	<span class="clickItem">gpg</span> is the name of the command (program) we are running<br>
+              	<span class="clickItem">-e</span> tells the program to encrypt a file<br>
+              	<span class="clickItem">-r "Recipient"</span> tells the program who should be able to decrypt the file<br> 
+              	(i.e., <span class="clickItem">-r "Recipient"</span> specifies which public key to encrypt the file with)<br>
+              	<span class="clickItem">filename</span> specifies the name (and path) of the file to encrypt<br>
+            </li>
+
+            <div class="sshot-wide"><a href="/content/screenshots/HT-FILE-LNXConfirm.jpg" data-lightbox="HT-FILE-LNX" title="Type and run the command, and type 'y' to confirm (as needed)"><img class='sshot-wd' src="/content/screenshots/HT-FILE-LNXConfirm.jpg"/></a></div>
+            <li>Type the command into the Terminal, substituting your own values, and press Enter to run it. This will create an encrypted <strong>copy</strong> of the original file at the same location, but with the extension <span class="clickItem">.gpg</span>. You may be asked to verify the fingerprint before continuing. Type the letter 'y' and press Enter to confirm. See <a href="?page=2.2<?php echo "&os=$os"; ?>">our guide on Keys</a> for more information on fingerprints.<br>
+				<br>Here are some examples of what I might run (my own email is plexiglass@riseup.net):<br>
+            
+				<strong>Encrypt <em>secrets.txt</em> so that only I can decrypt it (with my private key):</strong><br>
+				<div class="code">gpg -e -r "plexiglass@riseup.net" secrets.txt</div><br>
 			
-			<h3>Encrypting Entire Drives</h3>
-			<p>If you want to encrypt an entire USB drive or a non-system partition on your computer, click <span class="clickItem">Create Volume</span> and select the “Encrypt entire drive/partition” option in Windows, or the “Create a volume within a partition/drive” option on OS X. Proceed normally until you get to the Volume Location screen. Select the drive you want to encrypt, and click next. <strong>This WILL NOT encrypt data that is already on the drive. This will FORMAT the selected drive and DELETE all files currently on it.</strong> Click <span class="clickItem">Next &gt;</span> and proceed with the rest of the installation as normal.</p>
-			<p><strong>NOTE</strong>: Windows and OS X may both give you warnings about the drive not being readable when you connect it later. Click Ignore, cancel, or anything except for Format. You will need to open TrueCrypt and choose “Select Device” instead of “Select File...”</p>
+				<strong>Encrypt <em>secrets.txt</em> so that only <em>person@email.com</em> can decrypt it (with their own private key):</strong><br>
+				<div class="code">gpg -e -r "person@email.com" secrets.txt</div><br>           
 			
-			<h3>Hidden TrueCrypt Options</h3>
-			<p>You can create TrueCrypt volumes that are virtually impossible to verify even exist without having the password. This works by creating an outer volume and an inner volume. The outer volume acts as a decoy. You can fill it with slightly sensitive but not highly important data, so that way it looks legitimately private. The inner volume can be used to contain more highly sensitive data.</p>
-			<p>The outer layer and the inner layer have different passwords. If you enter the password for the outer layer, TrueCrypt will mount the volume and all you will see is the decoy contents of the outer layer. If you enter the password for the inner layer, TrueCrypt will mount the volume containing only your more highly sensitive data.</p>
-			<p>The basic idea is that this way, if someone else gets their hands on your encrypted drive, and they also have some way to force you to give up the password, you can give up the password to the outer volume. They will only be able to see the decoy files, and they have no way of determining if there is a hidden volume.</p>
+            </li>
+        	<!--<div class="sshot-wide"><a href="/content/screenshots/HT-FILE-CreateVolume.jpg" data-lightbox="HT-FILE-CreateVolume" title="Create a New Volume in TrueCrypt"><img class='sshot-wd' src="/content/screenshots/HT-FILE-CreateVolume.jpg"/></a></div>-->
+            <li>To Encrypt <strong>and</strong> Sign:<br> <em>You will be asked to enter your passphrase in order to sign a file </em><br>
+            	<div class="code">gpg -se -u "Sender" -r "Recipient" filename</div>
+            	<span class="clickItem">-u "Sender"</span> tells the program who is encrypting the file. Use with -se or -s.<br>
+            	<span class="clickItem">-se</span> sign and encrypt (replace the -e in the original command)<br>
+            	<span class="clickItem">-s</span> sign only, do not encrypt (replace the -e in the original command)<br>
+            	<br>Here are some examples of what I might run (my own email is plexiglass@riseup.net):<br>
+				<strong>Encrypt <em>secrets.txt</em> so that only <em>person@email.com</em> can decrypt it, and sign the file with my own key:</strong><br>
+				<div class="code">gpg -se -u "plexiglass@riseup.net" -r "person@email.com" secrets.txt</div><br>    
+
+				<strong>Sign <em>secrets.txt</em> with my own key so anyone can verify it came from me:</strong><br>
+				<div class="code">gpg -s -u "plexiglass@riseup.net" secrets.txt</div><br>    
+			</li>
+			<div class="sshot-wide"><a href="/content/screenshots/HT-FILE-LNXComplete.jpg" data-lightbox="HT-FILE-LNX" title="Your encrypted file, next to your original"><img class='sshot-wd' src="/content/screenshots/HT-FILE-LNXComplete.jpg"/></a></div>			
+			<li>You should now end up with a new file ending in .gpg, which contains the encrypted copy of the original file. All of the examples above result in a new file called <span class="clickItem">secrets.txt.gpg</span></li>
+
+            
+          </ol>
+          
+          <h2>Part III: Decrypt a File with Your Private Key</h2>
+          <ol>
+          	<li>The following command is used to decrypt a file with GPG:<br>
+              	This will create an decrypted <strong>copy</strong> of the original file at the same location, but with the original extension instead of <span class="clickItem">.gpg</span>. 
+              	<div class="code">gpg -d filename</div>
+              	<span class="clickItem">gpg</span> is the name of the command (program) we are running<br>
+              	<span class="clickItem">-d</span> tells the program to encrypt a file<br>
+              	<span class="clickItem">filename</span> tells the program which file to decrypt<br>
+          	</li>
+          	<li>Type the command into the Terminal, substituting your own values, and press Enter to run it.<br>
+          	The program will only decrypt the file if the correct private key is in your keyring. If it is, you will be asked for the passphrase to decrypt the file. Here is an example of what I might run:<br>
+          		<strong>Decrypt <em>secrets.txt.pgp</em> (from the previous example):</strong><br>
+				<div class="code">gpg -d secrets.txt.pgp</div><br>   
+          	</li>
+          	
+          	<!--<div class="sshot-wide"><a href="/content/screenshots/HT-FILE-Browse.jpg" data-lightbox="HT-FILE-Browse" title="Browse for the Volume You Want to Mount"><img class='sshot-wd' src="/content/screenshots/HT-FILE-Browse.jpg"/></a></div>-->
+          </ol>
+</span>
+
+<span class="HideWin">
+		  <h2>Part II: Encrypt a File with Your Public Key</h2>
+          <ol><p><strong>If you do not have GPG installed, please see Part II of <a href="?page=1.1<?php echo "&os=$os"; ?>">our Email Encryption tutorial</a>.</strong><br> Be sure to create your own public/private key pair.</p>
+            <li>
+ 				Click the <span class="clickItem">Start Menu &gt; Programs &gt; Accessories &gt; Command Prompt</span>
+            </li>
+            <li>The following basic command is used to encrypt a file with GPG:<br>
+              	<div class="code">gpg -e -r "Recipient" filename</div>
+              	<span class="clickItem">gpg</span> is the name of the command (program) we are running<br>
+              	<span class="clickItem">-e</span> tells the program to encrypt a file<br>
+              	<span class="clickItem">-r "Recipient"</span> tells the program who should be able to decrypt the file<br> 
+              	(i.e., <span class="clickItem">-r "Recipient"</span> specifies which public key to encrypt the file with)<br>
+              	<span class="clickItem">filename</span> specifies the name (and path) of the file to encrypt<br>
+            </li>
+
+            <div class="sshot-wide"><a href="/content/screenshots/HT-FILE-LNXConfirm.jpg" data-lightbox="HT-FILE-LNX" title="Type and run the command, and type 'y' to confirm (as needed)"><img class='sshot-wd' src="/content/screenshots/HT-FILE-LNXConfirm.jpg"/></a></div>
+            <li>Type the command into the Command Prompt, substituting your own values, and press Enter to run it. This will create an encrypted <strong>copy</strong> of the original file at the same location, but with the extension <span class="clickItem">.gpg</span>. You may be asked to verify the fingerprint before continuing. Type the letter 'y' and press Enter to confirm. See <a href="?page=2.2<?php echo "&os=$os"; ?>">our guide on Keys</a> for more information on fingerprints.<br>
+				<br>Here are some examples of what I might run (my own email is plexiglass@riseup.net):<br>
+            
+				<strong>Encrypt <em>secrets.txt</em> so that only I can decrypt it (with my private key):</strong><br>
+				<div class="code">gpg -e -r "plexiglass@riseup.net" secrets.txt</div><br>
 			
+				<strong>Encrypt <em>secrets.txt</em> so that only <em>person@email.com</em> can decrypt it (with their own private key):</strong><br>
+				<div class="code">gpg -e -r "person@email.com" secrets.txt</div><br>           
+			
+            </li>
+        	<!--<div class="sshot-wide"><a href="/content/screenshots/HT-FILE-CreateVolume.jpg" data-lightbox="HT-FILE-CreateVolume" title="Create a New Volume in TrueCrypt"><img class='sshot-wd' src="/content/screenshots/HT-FILE-CreateVolume.jpg"/></a></div>-->
+            <li>To Encrypt <strong>and</strong> Sign:<br> <em>You will be asked to enter your passphrase in order to sign a file </em><br>
+            	<div class="code">gpg -se -u "Sender" -r "Recipient" filename</div>
+            	<span class="clickItem">-u "Sender"</span> tells the program who is encrypting the file. Use with -se or -s.<br>
+            	<span class="clickItem">-se</span> sign and encrypt (replace the -e in the original command)<br>
+            	<span class="clickItem">-s</span> sign only, do not encrypt (replace the -e in the original command)<br>
+            	<br>Here are some examples of what I might run (my own email is plexiglass@riseup.net):<br>
+				<strong>Encrypt <em>secrets.txt</em> so that only <em>person@email.com</em> can decrypt it, and sign the file with my own key:</strong><br>
+				<div class="code">gpg -se -u "plexiglass@riseup.net" -r "person@email.com" secrets.txt</div><br>    
+
+				<strong>Sign <em>secrets.txt</em> with my own key so anyone can verify it came from me:</strong><br>
+				<div class="code">gpg -s -u "plexiglass@riseup.net" secrets.txt</div><br>    
+			</li>
+			<div class="sshot-wide"><a href="/content/screenshots/HT-FILE-LNXComplete.jpg" data-lightbox="HT-FILE-LNX" title="Your encrypted file, next to your original"><img class='sshot-wd' src="/content/screenshots/HT-FILE-LNXComplete.jpg"/></a></div>			
+			<li>You should now end up with a new file ending in .gpg, which contains the encrypted copy of the original file. All of the examples above result in a new file called <span class="clickItem">secrets.txt.gpg</span></li>
+
+            
+          </ol>
+          
+          <h2>Part III: Decrypt a File with Your Private Key</h2>
+          <ol>
+          	<li>The following command is used to decrypt a file with GPG:<br>
+              	This will create an decrypted <strong>copy</strong> of the original file at the same location, but with the original extension instead of <span class="clickItem">.gpg</span>. 
+              	<div class="code">gpg -d filename</div>
+              	<span class="clickItem">gpg</span> is the name of the command (program) we are running<br>
+              	<span class="clickItem">-d</span> tells the program to encrypt a file<br>
+              	<span class="clickItem">filename</span> tells the program which file to decrypt<br>
+          	</li>
+          	<li>Type the command into the Terminal, substituting your own values, and press Enter to run it.<br>
+          	The program will only decrypt the file if the correct private key is in your keyring. If it is, you will be asked for the passphrase to decrypt the file. Here is an example of what I might run:<br>
+          		<strong>Decrypt <em>secrets.txt.pgp</em> (from the previous example):</strong><br>
+				<div class="code">gpg -d secrets.txt.pgp</div><br>   
+          	</li>
+          	
+          	<!--<div class="sshot-wide"><a href="/content/screenshots/HT-FILE-Browse.jpg" data-lightbox="HT-FILE-Browse" title="Browse for the Volume You Want to Mount"><img class='sshot-wd' src="/content/screenshots/HT-FILE-Browse.jpg"/></a></div>-->
+          </ol>
+</span>
+          
+          <h2>Part IV: Possible Uses</h2>
+          	<h3>Transition TrueCrypt files</h3>
+			<p>The latest version of TrueCrypt will no longer allow you to create encrypted Volumes, but it will allow you to continue using them if they exist. TrueCrypt volumes are not to be trusted on their own at this time.</p>
+			<p>To continue safely using these volumes, use the commands above to encrypt the TrueCrypt volume (with yourself as the "Recipient"). Then, securely delete the original TrueCrypt volume.</p>	
+			<p>When you need to access the volume, first decrypt it. Then, you can mount the decrypted copy in TrueCrypt like normal. When you are finished, Dismount the TrueCrypt volume.</p>
+			<p>After dismounting the volume, use the commands above to encrypt the volume with GPG again.</p>
+			<p>We recommend that you use this method immediately to encrypt any existing TrueCrypt volumes. When you have time, decrypt the volumes and copy the files into a new folder. Compress or zip that folder, then encrypt it using the commands above.</p>
+			<p>After the transition, you will access your files by first decrypting the zip file with GPG, then unzipping it.</p>
+			<p><strong>Please remember to securely delete</strong> any extra file or folder created in this process. When you start or end, you should only have one file and it should end in .gpg (i.e., the encrypted file).</p>
+
+			<h3>Encrypt Files to Share</h3>
+			<p>If you share files through email, Dropbox, or any other means, you can use these commands to encrypt them first. Just be sure to import your contact's public key into your key manager first, then use their name as the "Recipient" for the encryption command. If you use an auto-syncing service like Dropbox, be sure to move the .gpg file out of your shared folder before decrypting it. Otherwise the decrypted copy will get synced to your account.</p>

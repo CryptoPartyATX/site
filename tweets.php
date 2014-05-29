@@ -85,7 +85,7 @@ $initTweets = file($filename);
 $outTweets = array();
 $numTweets = 16; // how many tweets to load, max about 16
 
-// trim metadata from last 5 of input array, send to output array
+// from last 5 of input array, trim metadata and send to output array
 for($i=count($initTweets); $i>=count($initTweets)-$numTweets; $i--){
 
 	// init temp var

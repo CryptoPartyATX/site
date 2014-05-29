@@ -75,6 +75,16 @@ div.warning {
 	color:black;
 }
 
+div.code {
+	background:#E0E0E0;
+	border:1px dashed #CCCCCC;
+	font-family: "Courier","Monotype","Consolas";
+	padding-left:1em;
+	padding-right:1em;
+	padding-top:.5em;
+	padding-bottom:.5em;
+}
+
 
 /* Screenshots */
 div.sshot-right, div.sshot-wide, div.sshot-split, div.sshot-triple {
