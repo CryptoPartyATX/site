@@ -54,8 +54,8 @@ CryptoPartyATX.org To-Do list
 	:finally figured that out
 	:caveat about storing private keys on a mobile device
 
-	{NEW: encfs for linux}
-	:alternative/combination with true crypt, full disk
+	{NEW:  encfs  and/or  dm-crypt/LUKS  for linux}
+	:what's the best option?, what's the best option for our target audience?
 	
 	{UPDATE: FILE Encryption}
 	-	re-do page selection for new Unix option (for both osx+lnx)
