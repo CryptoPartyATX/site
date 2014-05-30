@@ -10,6 +10,7 @@
 		background:url("/images/files-selected.png");
 }
 
+
 </style>
 	   <div class="page-icon">&nbsp;</div>
 	   
@@ -64,11 +65,13 @@
             
             <li>The following basic command is used to encrypt a file with GPG:<br>
               	<div class="code">gpg -e -r "Recipient" filename</div>
-              	<span class="clickItem">gpg</span> is the name of the command (program) we are running<br>
-              	<span class="clickItem">-e</span> tells the program to encrypt a file<br>
-              	<span class="clickItem">-r "Recipient"</span> tells the program who should be able to decrypt the file<br> 
-              	(i.e., <span class="clickItem">-r "Recipient"</span> specifies which public key to encrypt the file with)<br>
-              	<span class="clickItem">filename</span> specifies the name (and path) of the file to encrypt<br>
+              	<div class="codeDesc">
+					<span class="clickItem">gpg</span> is the name of the command (program) we are running<br>
+					<span class="clickItem">-e</span> tells the program to encrypt a file<br>
+					<span class="clickItem">-r "Recipient"</span> tells the program who should be able to decrypt the file<br> 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(i.e., <span class="clickItem">-r "Recipient"</span> specifies which public key to encrypt the file with)<br>
+					<span class="clickItem">filename</span> specifies the name (and path) of the file to encrypt<br>
+				</div>
             </li>
 
             <div class="sshot-wide"><a href="/content/screenshots/HT-FILE-LNXConfirm.jpg" data-lightbox="HT-FILE-LNX" title="Type and run the command, and type 'y' to confirm (as needed)"><img class='sshot-wd' src="/content/screenshots/HT-FILE-LNXConfirm.jpg"/></a></div>
@@ -85,9 +88,11 @@
         	<!--<div class="sshot-wide"><a href="/content/screenshots/HT-FILE-CreateVolume.jpg" data-lightbox="HT-FILE-CreateVolume" title="Create a New Volume in TrueCrypt"><img class='sshot-wd' src="/content/screenshots/HT-FILE-CreateVolume.jpg"/></a></div>-->
             <li>To Encrypt <strong>and</strong> Sign:<br> <em>You will be asked to enter your passphrase in order to sign a file </em><br>
             	<div class="code">gpg -se -u "Sender" -r "Recipient" filename</div>
-            	<span class="clickItem">-u "Sender"</span> tells the program who is encrypting the file. Use with -se or -s.<br>
-            	<span class="clickItem">-se</span> sign and encrypt (replace the -e in the original command)<br>
-            	<span class="clickItem">-s</span> sign only, do not encrypt (replace the -e in the original command)<br>
+            	<div class="codeDesc">
+					<span class="clickItem">-u "Sender"</span> tells the program who is encrypting the file. Use with -se or -s.<br>
+					<span class="clickItem">-se</span> sign and encrypt (replace the -e in the original command)<br>
+					<span class="clickItem">-s</span> sign only, do not encrypt (replace the -e in the original command)<br>
+				</div>
 				<br>Here are some examples of what I might run (my own email is plexiglass@riseup.net):<br>
 				<strong>Encrypt <em>secrets.txt</em> so that only <em>person@email.com</em> can decrypt it, and sign the file with my own key:</strong><br>
 				<div class="code">gpg -se -u "plexiglass@riseup.net" -r "person@email.com" secrets.txt</div><br>    
@@ -115,15 +120,18 @@
           <ol>
           	<li>The following command is used to decrypt a file with GPG:<br>
               	This will create an decrypted <strong>copy</strong> of the original file at the same location, but with the original extension instead of <span class="clickItem">.gpg</span>. 
-              	<div class="code">gpg -d filename</div>
-              	<span class="clickItem">gpg</span> is the name of the command (program) we are running<br>
-              	<span class="clickItem">-d</span> tells the program to encrypt a file<br>
-              	<span class="clickItem">filename</span> tells the program which file to decrypt<br>
+              	<div class="code">gpg -d filename &gt; outputFile</div>
+              	<div class="codeDesc">
+					<span class="clickItem">gpg</span> is the name of the command (program) we are running<br>
+					<span class="clickItem">-d</span> tells the program to decrypt a file<br>
+					<span class="clickItem">filename</span> tells the program which file to decrypt<br>
+					<span class="clickItem">&gt; outputFile</span> tells the program where to send the decrypted data<br>
+              	</div>
           	</li>
           	<li>Type the command into the Terminal, substituting your own values, and press Enter to run it.<br>
           	The program will only decrypt the file if the correct private key is in your keyring. If it is, you will be asked for the passphrase to decrypt the file. Here is an example of what I might run:<br>
           		<strong>Decrypt <em>secrets.txt.pgp</em> (from the previous example):</strong><br>
-				<div class="code">gpg -d secrets.txt.pgp</div><br>   
+				<div class="code">gpg -d secrets.txt.pgp &gt; secrets.txt</div><br>   
           	</li>
           	
           	<!--<div class="sshot-wide"><a href="/content/screenshots/HT-FILE-Browse.jpg" data-lightbox="HT-FILE-Browse" title="Browse for the Volume You Want to Mount"><img class='sshot-wd' src="/content/screenshots/HT-FILE-Browse.jpg"/></a></div>-->
@@ -138,11 +146,13 @@
             </li>
             <li>The following basic command is used to encrypt a file with GPG:<br>
               	<div class="code">gpg -e -r "Recipient" filename</div>
-              	<span class="clickItem">gpg</span> is the name of the command (program) we are running<br>
-              	<span class="clickItem">-e</span> tells the program to encrypt a file<br>
-              	<span class="clickItem">-r "Recipient"</span> tells the program who should be able to decrypt the file<br> 
-              	(i.e., <span class="clickItem">-r "Recipient"</span> specifies which public key to encrypt the file with)<br>
-              	<span class="clickItem">filename</span> specifies the name (and path) of the file to encrypt<br>
+              	<div class="codeDesc">
+					<span class="clickItem">gpg</span> is the name of the command (program) we are running<br>
+					<span class="clickItem">-e</span> tells the program to encrypt a file<br>
+					<span class="clickItem">-r "Recipient"</span> tells the program who should be able to decrypt the file<br> 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(i.e., <span class="clickItem">-r "Recipient"</span> specifies which public key to encrypt the file with)<br>
+					<span class="clickItem">filename</span> specifies the name (and path) of the file to encrypt<br>
+				</div>
             </li>
 
             <div class="sshot-wide"><a href="/content/screenshots/HT-FILE-LNXConfirm.jpg" data-lightbox="HT-FILE-LNX" title="Type and run the command, and type 'y' to confirm (as needed)"><img class='sshot-wd' src="/content/screenshots/HT-FILE-LNXConfirm.jpg"/></a></div>
@@ -159,10 +169,11 @@
         	<!--<div class="sshot-wide"><a href="/content/screenshots/HT-FILE-CreateVolume.jpg" data-lightbox="HT-FILE-CreateVolume" title="Create a New Volume in TrueCrypt"><img class='sshot-wd' src="/content/screenshots/HT-FILE-CreateVolume.jpg"/></a></div>-->
             <li>To Encrypt <strong>and</strong> Sign:<br> <em>You will be asked to enter your passphrase in order to sign a file </em><br>
             	<div class="code">gpg -se -u "Sender" -r "Recipient" filename</div>
-            	<span class="clickItem">-u "Sender"</span> tells the program who is encrypting the file. Use with -se or -s.<br>
-            	<span class="clickItem">-se</span> sign and encrypt (replace the -e in the original command)<br>
-            	<span class="clickItem">-s</span> sign only, do not encrypt (replace the -e in the original command)<br>
-            	<br>Here are some examples of what I might run (my own email is plexiglass@riseup.net):<br>
+            	<div class="codeDesc">
+					<span class="clickItem">-u "Sender"</span> tells the program who is encrypting the file. Use with -se or -s.<br>
+					<span class="clickItem">-se</span> sign and encrypt (replace the -e in the original command)<br>
+					<span class="clickItem">-s</span> sign only, do not encrypt (replace the -e in the original command)<br>
+				</div>            	<br>Here are some examples of what I might run (my own email is plexiglass@riseup.net):<br>
 				<strong>Encrypt <em>secrets.txt</em> so that only <em>person@email.com</em> can decrypt it, and sign the file with my own key:</strong><br>
 				<div class="code">gpg -se -u "plexiglass@riseup.net" -r "person@email.com" secrets.txt</div><br>    
 
@@ -179,15 +190,18 @@
           <ol>
           	<li>The following command is used to decrypt a file with GPG:<br>
               	This will create an decrypted <strong>copy</strong> of the original file at the same location, but with the original extension instead of <span class="clickItem">.gpg</span>. 
-              	<div class="code">gpg -d filename</div>
-              	<span class="clickItem">gpg</span> is the name of the command (program) we are running<br>
-              	<span class="clickItem">-d</span> tells the program to encrypt a file<br>
-              	<span class="clickItem">filename</span> tells the program which file to decrypt<br>
+              	<div class="code">gpg -d filename &gt; outputFile</div>
+              	<div class="codeDesc">
+					<span class="clickItem">gpg</span> is the name of the command (program) we are running<br>
+					<span class="clickItem">-d</span> tells the program to decrypt a file<br>
+					<span class="clickItem">filename</span> tells the program which file to decrypt<br>
+					<span class="clickItem">&gt; outputFile</span> tells the program where to send the decrypted data<br>
+              	</div>
           	</li>
           	<li>Type the command into the Terminal, substituting your own values, and press Enter to run it.<br>
           	The program will only decrypt the file if the correct private key is in your keyring. If it is, you will be asked for the passphrase to decrypt the file. Here is an example of what I might run:<br>
           		<strong>Decrypt <em>secrets.txt.pgp</em> (from the previous example):</strong><br>
-				<div class="code">gpg -d secrets.txt.pgp</div><br>   
+				<div class="code">gpg -d secrets.txt.pgp &gt; secrets.txt</div><br>   
           	</li>
           	
           	<!--<div class="sshot-wide"><a href="/content/screenshots/HT-FILE-Browse.jpg" data-lightbox="HT-FILE-Browse" title="Browse for the Volume You Want to Mount"><img class='sshot-wd' src="/content/screenshots/HT-FILE-Browse.jpg"/></a></div>-->
@@ -202,11 +216,13 @@
             </li>
             <li>The following basic command is used to encrypt a file with GPG:<br>
               	<div class="code">gpg -e -r "Recipient" filename</div>
-              	<span class="clickItem">gpg</span> is the name of the command (program) we are running<br>
-              	<span class="clickItem">-e</span> tells the program to encrypt a file<br>
-              	<span class="clickItem">-r "Recipient"</span> tells the program who should be able to decrypt the file<br> 
-              	(i.e., <span class="clickItem">-r "Recipient"</span> specifies which public key to encrypt the file with)<br>
-              	<span class="clickItem">filename</span> specifies the name (and path) of the file to encrypt<br>
+              	<div class="codeDesc">
+					<span class="clickItem">gpg</span> is the name of the command (program) we are running<br>
+					<span class="clickItem">-e</span> tells the program to encrypt a file<br>
+					<span class="clickItem">-r "Recipient"</span> tells the program who should be able to decrypt the file<br> 
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(i.e., <span class="clickItem">-r "Recipient"</span> specifies which public key to encrypt the file with)<br>
+					<span class="clickItem">filename</span> specifies the name (and path) of the file to encrypt<br>
+				</div>
             </li>
 
             <div class="sshot-wide"><a href="/content/screenshots/HT-FILE-LNXConfirm.jpg" data-lightbox="HT-FILE-LNX" title="Type and run the command, and type 'y' to confirm (as needed)"><img class='sshot-wd' src="/content/screenshots/HT-FILE-LNXConfirm.jpg"/></a></div>
@@ -223,10 +239,11 @@
         	<!--<div class="sshot-wide"><a href="/content/screenshots/HT-FILE-CreateVolume.jpg" data-lightbox="HT-FILE-CreateVolume" title="Create a New Volume in TrueCrypt"><img class='sshot-wd' src="/content/screenshots/HT-FILE-CreateVolume.jpg"/></a></div>-->
             <li>To Encrypt <strong>and</strong> Sign:<br> <em>You will be asked to enter your passphrase in order to sign a file </em><br>
             	<div class="code">gpg -se -u "Sender" -r "Recipient" filename</div>
-            	<span class="clickItem">-u "Sender"</span> tells the program who is encrypting the file. Use with -se or -s.<br>
-            	<span class="clickItem">-se</span> sign and encrypt (replace the -e in the original command)<br>
-            	<span class="clickItem">-s</span> sign only, do not encrypt (replace the -e in the original command)<br>
-            	<br>Here are some examples of what I might run (my own email is plexiglass@riseup.net):<br>
+            	<div class="codeDesc">
+					<span class="clickItem">-u "Sender"</span> tells the program who is encrypting the file. Use with -se or -s.<br>
+					<span class="clickItem">-se</span> sign and encrypt (replace the -e in the original command)<br>
+					<span class="clickItem">-s</span> sign only, do not encrypt (replace the -e in the original command)<br>
+				</div>            	<br>Here are some examples of what I might run (my own email is plexiglass@riseup.net):<br>
 				<strong>Encrypt <em>secrets.txt</em> so that only <em>person@email.com</em> can decrypt it, and sign the file with my own key:</strong><br>
 				<div class="code">gpg -se -u "plexiglass@riseup.net" -r "person@email.com" secrets.txt</div><br>    
 
@@ -243,15 +260,18 @@
           <ol>
           	<li>The following command is used to decrypt a file with GPG:<br>
               	This will create an decrypted <strong>copy</strong> of the original file at the same location, but with the original extension instead of <span class="clickItem">.gpg</span>. 
-              	<div class="code">gpg -d filename</div>
-              	<span class="clickItem">gpg</span> is the name of the command (program) we are running<br>
-              	<span class="clickItem">-d</span> tells the program to encrypt a file<br>
-              	<span class="clickItem">filename</span> tells the program which file to decrypt<br>
+              	<div class="code">gpg -d filename &gt; outputFile</div>
+              	<div class="codeDesc">
+					<span class="clickItem">gpg</span> is the name of the command (program) we are running<br>
+					<span class="clickItem">-d</span> tells the program to decrypt a file<br>
+					<span class="clickItem">filename</span> tells the program which file to decrypt<br>
+					<span class="clickItem">&gt; outputFile</span> tells the program where to send the decrypted data<br>
+              	</div>
           	</li>
           	<li>Type the command into the Terminal, substituting your own values, and press Enter to run it.<br>
           	The program will only decrypt the file if the correct private key is in your keyring. If it is, you will be asked for the passphrase to decrypt the file. Here is an example of what I might run:<br>
           		<strong>Decrypt <em>secrets.txt.pgp</em> (from the previous example):</strong><br>
-				<div class="code">gpg -d secrets.txt.pgp</div><br>   
+				<div class="code">gpg -d secrets.txt.pgp &gt; secrets.txt</div><br>   
           	</li>
           	
           	<!--<div class="sshot-wide"><a href="/content/screenshots/HT-FILE-Browse.jpg" data-lightbox="HT-FILE-Browse" title="Browse for the Volume You Want to Mount"><img class='sshot-wd' src="/content/screenshots/HT-FILE-Browse.jpg"/></a></div>-->
@@ -260,13 +280,13 @@
           
           <h2>Part IV: Possible Uses</h2>
           	<h3>Transition TrueCrypt files</h3>
-			<p>The latest version of TrueCrypt will no longer allow you to create encrypted Volumes, but it will allow you to continue using them if they exist. TrueCrypt volumes are not to be trusted on their own at this time.</p>
-			<p>To continue safely using these volumes, use the commands above to encrypt the TrueCrypt volume (with yourself as the "Recipient"). Then, securely delete the original TrueCrypt volume.</p>	
-			<p>When you need to access the volume, first decrypt it. Then, you can mount the decrypted copy in TrueCrypt like normal. When you are finished, Dismount the TrueCrypt volume.</p>
-			<p>After dismounting the volume, use the commands above to encrypt the volume with GPG again.</p>
-			<p>We recommend that you use this method immediately to encrypt any existing TrueCrypt volumes. When you have time, decrypt the volumes and copy the files into a new folder. Compress or zip that folder, then encrypt it using the commands above.</p>
-			<p>After the transition, you will access your files by first decrypting the zip file with GPG, then unzipping it.</p>
-			<p><strong>Please remember to securely delete</strong> any extra file or folder created in this process. When you start or end, you should only have one file and it should end in .gpg (i.e., the encrypted file).</p>
+			<p>The latest version of TrueCrypt, which you should not download because it may not be trustworthy, will no longer allow you to create encrypted Volumes, but it will allow you to continue using them if they exist. TrueCrypt volumes are not to be trusted on their own at this time.<br><br>
+			To continue safely using these volumes, use the commands above to encrypt the TrueCrypt volume (with yourself as the "Recipient"). Then, securely delete the original TrueCrypt volume.<br><br>	
+			When you need to access the volume, first decrypt it. Then, you can mount the decrypted copy in TrueCrypt like normal. When you are finished, Dismount the TrueCrypt volume.<br><br>
+			After dismounting the volume, use the commands above to encrypt the volume with GPG again.<br><br>
+			We recommend that you use this method immediately to encrypt any existing TrueCrypt volumes. When you have time, decrypt the volumes and copy the files into a new folder. Compress or zip that folder, then encrypt it using the commands above.<br><br>
+			After the transition, you will access your files by first decrypting the zip file with GPG, then unzipping it.</p>
+			<p><strong>Please remember to securely delete</strong> any extra file or folder created in this process. When you start or end, you should only have one file and it should end in .gpg (i.e., the encrypted file).<br><br>
 
 			<h3>Encrypt Files to Share</h3>
 			<p>If you share files through email, Dropbox, or any other means, you can use these commands to encrypt them first. Just be sure to import your contact's public key into your key manager first, then use their name as the "Recipient" for the encryption command. If you use an auto-syncing service like Dropbox, be sure to move the .gpg file out of your shared folder before decrypting it. Otherwise the decrypted copy will get synced to your account.</p>
