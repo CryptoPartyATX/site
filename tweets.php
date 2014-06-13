@@ -121,7 +121,7 @@ foreach ($outTweets as $tweet) {
 	$linklist = "<br>";
 	
 	// extract links
-	while(strpos($tweet,"http:")||strpos($tweet,"https:")){
+	while(strpos($tweet,"http:")!==FALSE||strpos($tweet,"https:")!==FALSE){
 		$firstHTTP = strpos($tweet,"http");
 		$extracted = "";
 		$url="";
@@ -142,7 +142,7 @@ foreach ($outTweets as $tweet) {
 		}
 	}
 	
-
+	if(trim($tweet) === ""){ $tweet = " [Link only] "; }
 
 	echo "<span class=\"tweet\">$tweet</span>\n"; // actual text (minus links)
 
