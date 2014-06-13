@@ -7,15 +7,24 @@ margin:0px;
 float:left;
 }
 
-#osWin:hover {
-background:url("/images/win_hover.png");
+#osWin, #osOSX, #osLnx {
+	text-align:center;
+	padding:.3em;
+	color:#AAAAAA;
+	background-image: linear-gradient(to bottom, #13125B 0px, #2A2872 100%);
 }
-#osOSX:hover {
-background:url("/images/osx_hover.png");
+
+#osWin:hover, #osLnx:hover, #osOSX:hover{
+	background-image: linear-gradient(to bottom, #D7661D 0px, #E37229 100%);
 }
-#osLnx:hover {
-background:url("/images/lnx_hover.png");
+
+
+#osWin.osActive, #osOSX.osActive, #osLnx.osActive {
+	color:black;
+	font-weight:bold;
+	background-image: linear-gradient(to bottom, #FB8A41 0px, #E4732A 100%);
 }
+
 </style>
 <?php
 
@@ -26,19 +35,19 @@ if($os != "lnx" && $os != "osx"){$os="win";}
 
 
 if($os=="win"){
-echo "<style>.HideOSX {display:none;} \n #osWin {background:url('/images/win_selected.png');} \n #osOSX {background:url('/images/osx_unselected.png');}\n #osLnx {background:url('/images/lnx_unselected.png');}</style>\n";
+echo "<style>.HideOSX {display:none;}</style>\n";
 echo "<style>.HideLnx {display:none;}</style>\n";
-echo "<div class=\"osSelect\">Select Your OS: <br /><div id=\"osWin\">&nbsp;</div><a href=\"?page=$pageid&os=osx\"><div id=\"osOSX\">&nbsp;</div></a><a href=\"?page=$pageid&os=lnx\"><div id=\"osLnx\">&nbsp;</div></a></div>\n";
+echo "<div class=\"osSelect\">Select Your OS: <br /><div class=\"osActive\" id=\"osWin\">Windows</div><a href=\"?page=$pageid&os=osx\"><div id=\"osOSX\">Mac OS X</div></a><a href=\"?page=$pageid&os=lnx\"><div id=\"osLnx\">Linux</div></a></div>\n";
 }
 else if ($os=="osx") {
-echo "<style>.HideWin {display:none;} \n#osWin {background:url('/images/win_unselected.png');} \n#osOSX {background:url('/images/osx_selected.png');}\n#osLnx {background:url('/images/lnx_unselected.png');}</style>\n";
+echo "<style>.HideWin {display:none;}</style>\n";
 echo "<style>.HideLnx {display:none;}</style>\n";
-echo "<div class=\"osSelect\">Select Your OS: <br /><a href=\"?page=$pageid&os=win\"><div id=\"osWin\">&nbsp;</div></a><div id=\"osOSX\">&nbsp;</div><a href=\"?page=$pageid&os=lnx\"><div id=\"osLnx\">&nbsp;</div></a></div>\n";
+echo "<div class=\"osSelect\">Select Your OS: <br /><a href=\"?page=$pageid&os=win\"><div id=\"osWin\">Windows</div></a><div class=\"osActive\" id=\"osOSX\">Mac OS X</div><a href=\"?page=$pageid&os=lnx\"><div id=\"osLnx\">Linux</div></a></div>\n";
 }
 else {
-echo "<style>.HideWin {display:none;} \n#osWin {background:url('/images/win_unselected.png');} \n#osOSX {background:url('/images/osx_unselected.png');}\n#osLnx {background:url('/images/lnx_selected.png');}</style>\n";
+echo "<style>.HideWin {display:none;}</style>\n";
 echo "<style>.HideOSX {display:none;}</style>\n";
-echo "<div class=\"osSelect\">Select Your OS: <br /><a href=\"?page=$pageid&os=win\"><div id=\"osWin\">&nbsp;</div></a><a href=\"?page=$pageid&os=osx\"><div id=\"osOSX\">&nbsp;</div></a><div id=\"osLnx\">&nbsp;</div></div>\n";
+echo "<div class=\"osSelect\">Select Your OS: <br /><a href=\"?page=$pageid&os=win\"><div id=\"osWin\">Windows</div></a><a href=\"?page=$pageid&os=osx\"><div id=\"osOSX\">Mac OS X</div></a><div class=\"osActive\" id=\"osLnx\">Linux</div></div>\n";
 
 }
 ?>
