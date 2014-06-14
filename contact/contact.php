@@ -122,6 +122,11 @@ the form below to send an encrypted email.
 </p>
 
 <h2>Submit an Encrypted Email</h2>
+<?php
+	if ($js!="yes"&&$js!="auto-yes"){
+	echo "<strong>WARNING: This form requires Javascript, which is currently disabled. Please enable Javascript to use this form.</strong>\n";
+	}
+?>
 <p>
 	This form will allow you to send us an encrypted email message without installing any
 	additional software on your computer. The message will first be encrypted in your 

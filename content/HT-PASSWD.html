@@ -68,12 +68,14 @@ function genNewPasswd() {
 			<li>Finally, we talk about two-factor authentication and the limits of KeePass.</li>
 		</ol></p>
 
-
-		<h2>Generate a Password</h2>
-		<p>Want to get straight to the point and just generate a strong password right here? Click <strong>Generate Password</strong> below to generate a 20-character password using upper- and lower-case characters, digits, and special characters. This password is generated in your browser and is never stored or sent across the Internet.</p>
-		<input type="text" id="passTxt" value="No Password Generated" size=30 autocomplete="off">
-		<button onclick="genNewPasswd()">Generate Password</button>
-
+<?php
+if ($js=="yes"||$js=="auto-yes"){
+	echo "		<h2>Generate a Password</h2>";
+	echo "		<p>Want to get straight to the point and just generate a strong password right here? Click <strong>Generate Password</strong> below to generate a 20-character password using upper- and lower-case characters, digits, and special characters. This password is generated in your browser and is never stored or sent across the Internet.</p>";
+	echo "		<input type=\"text\" id=\"passTxt\" value=\"No Password Generated\" size=30 autocomplete=\"off\">";
+	echo "		<button onclick=\"genNewPasswd()\">Generate Password</button>";
+}
+?>
 
 
         <h2>Part I: Strong Passwords</h2>

@@ -21,11 +21,11 @@ if($os != "win" && $os != "osx"){$os="win";} /* temporary, for compatibility unt
 
 if($os=="win"){
 	echo "<style>.HideOSX {display:none;}</style>";
-	echo "<a href=\"?page=$pageid&os=osx\"><div class=\"osSelect\">Select Your OS: <br /><img src=\"/images/os_button_win.png\" /></div></a>\n";
+	echo "<a href=\"?page=$pageid&os=osx&js=$js\"><div class=\"osSelect\">Select Your OS: <br /><img src=\"/images/os_button_win.png\" /></div></a>\n";
 }
 else {
 	echo "<style>.HideWin {display:none;}</style>";
-	echo "<a href=\"?page=$pageid&os=win\"><div class=\"osSelect\">Select Your OS: <br /><img src=\"/images/os_button_osx.png\" /></div></a>\n";
+	echo "<a href=\"?page=$pageid&os=win&js=$js\"><div class=\"osSelect\">Select Your OS: <br /><img src=\"/images/os_button_osx.png\" /></div></a>\n";
 }
 ?>
 	   

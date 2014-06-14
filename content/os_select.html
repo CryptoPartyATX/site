@@ -37,17 +37,17 @@ if($os != "lnx" && $os != "osx"){$os="win";}
 if($os=="win"){
 echo "<style>.HideOSX {display:none;}</style>\n";
 echo "<style>.HideLnx {display:none;}</style>\n";
-echo "<div class=\"osSelect\">Select Your OS: <br /><div class=\"osActive\" id=\"osWin\">Windows</div><a href=\"?page=$pageid&os=osx\"><div id=\"osOSX\">Mac OS X</div></a><a href=\"?page=$pageid&os=lnx\"><div id=\"osLnx\">Linux</div></a></div>\n";
+echo "<div class=\"osSelect\">Select Your OS: <br /><div class=\"osActive\" id=\"osWin\">Windows</div><a href=\"?page=$pageid&os=osx&js=$js\"><div id=\"osOSX\">Mac OS X</div></a><a href=\"?page=$pageid&os=lnx&js=$js\"><div id=\"osLnx\">Linux</div></a></div>\n";
 }
 else if ($os=="osx") {
 echo "<style>.HideWin {display:none;}</style>\n";
 echo "<style>.HideLnx {display:none;}</style>\n";
-echo "<div class=\"osSelect\">Select Your OS: <br /><a href=\"?page=$pageid&os=win\"><div id=\"osWin\">Windows</div></a><div class=\"osActive\" id=\"osOSX\">Mac OS X</div><a href=\"?page=$pageid&os=lnx\"><div id=\"osLnx\">Linux</div></a></div>\n";
+echo "<div class=\"osSelect\">Select Your OS: <br /><a href=\"?page=$pageid&os=win&js=$js\"><div id=\"osWin\">Windows</div></a><div class=\"osActive\" id=\"osOSX\">Mac OS X</div><a href=\"?page=$pageid&os=lnx&js=$js\"><div id=\"osLnx\">Linux</div></a></div>\n";
 }
 else {
 echo "<style>.HideWin {display:none;}</style>\n";
 echo "<style>.HideOSX {display:none;}</style>\n";
-echo "<div class=\"osSelect\">Select Your OS: <br /><a href=\"?page=$pageid&os=win\"><div id=\"osWin\">Windows</div></a><a href=\"?page=$pageid&os=osx\"><div id=\"osOSX\">Mac OS X</div></a><div class=\"osActive\" id=\"osLnx\">Linux</div></div>\n";
+echo "<div class=\"osSelect\">Select Your OS: <br /><a href=\"?page=$pageid&os=win&js=$js\"><div id=\"osWin\">Windows</div></a><a href=\"?page=$pageid&os=osx&js=$js\"><div id=\"osOSX\">Mac OS X</div></a><div class=\"osActive\" id=\"osLnx\">Linux</div></div>\n";
 
 }
 ?>
