@@ -14,6 +14,7 @@ CryptoPartyATX.org To-Do list
 -	update js vs. non-js modes
 	-	js: jquery, sprites, twitter collapse/resize
 	-	non-js: non-js contact form
+-	switch to php filtering instead of div display:none for os select
 
 [Main Pages]
 	{Crypto Info and How-To Guides}

@@ -65,6 +65,14 @@
 }
 </style>
 
+<script>
+$(document).ready(function(){
+    $("div.follow").click(function(){
+        $(".tweetitem").fadeToggle(400,"swing"); 
+    });
+});
+</script>
+
 <?php
 
 /*
@@ -158,7 +166,7 @@ else{
 	echo "<div class=\"follow\"><a href=\"https://twitter.com/atxcrypto\">@ATXCrypto</a> Recent Tweets</div>\n";
 	// box in for scroll
 	echo "<div class=\"tweetbox\">\n";
-	echo "<span class=\"tweet\">An error occured. Tweets were not loaded.</span>\n";
+	echo "<div class=\"tweetitem\">An error occured. Tweets were not loaded.</div>\n";
 	echo "</div>\n";
 	
 }
