@@ -10,41 +10,6 @@
 		background:url("/images/passwd-selected.png");
 }
 </style>
-
-<script type="text/javascript">
-/* 
-Password script written by plexiglass for CryptoPartyATX.org; 
-Unlicensed/Public Domain 
-*/
-
-function genNewPasswd() {
-	var newPass = "";
-	var charset = new Array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','0','1','2','3','4','5','6','7','8','9','0','!','@','#','$','%','^','&','*','(',')','[',']','{','}','<','>','/','?',',','.',':',';','`','~')
-
-	for(var i=0; i<20; i++){
-		// Get some pseudo-random input numbers
-		var randArray = new Uint32Array(1);
-		window.crypto.getRandomValues(randArray);
-		var curRand = randArray[0];
-		
-		// Scale random to charset length
-		var decVal = curRand / 4294967295;
-		var curCharNum = Math.floor(decVal * charset.length);
-				
-		// Get char from charset
-		var curChar = charset[curCharNum];
-
-		// Add char to password
-		newPass += curChar;
-
-	}
-	
-	// Output new password
-	document.getElementById('passTxt').value = newPass;
-}
-</script>
-
-
        <div class="page-icon">&nbsp;</div>
        <h1>Choosing Secure Passwords</h1>
           <h3><i>Possibly the most important step in keeping your data private</i></h3>

@@ -12,7 +12,7 @@ CryptoPartyATX.org To-Do list
 -	printsite.php: would return a printable page with all guides/info for archive and physical distribution
 	: possibly include link to (static/manual) zip of all referenced install files to go with printsite.php
 -	update js vs. non-js modes
-	-	js: jquery, sprites, twitter collapse/resize
+	-	js: jquery, sprites
 	-	non-js: non-js contact form
 -	switch to php filtering instead of div display:none for os select
 

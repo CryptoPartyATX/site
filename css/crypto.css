@@ -182,7 +182,7 @@ div.sshot-right, div.sshot-wide, div.sshot-split, div.sshot-triple {
 	display:block;
 	background-image: linear-gradient(to bottom, #428BCA 0px, #3278B3 100%);
 	border-radius:5px 5px 0px 0px;
-	border: 1px solid #DDD;
+	border: 1px solid #3278B3;
 	padding:.2em .4em .2em .4em;
 	margin:auto;
 	margin-bottom:-1px;
