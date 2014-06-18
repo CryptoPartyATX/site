@@ -70,6 +70,9 @@ if($js=="yes"||$js=="auto-yes"){
 	echo "    <script src=\"/js/jquery-1.10.2.min.js\"></script>\n";
 	echo "    <script src=\"/js/lightbox-2.6.min.js\"></script>\n";
 	echo "    <script src=\"/js/vendor/modernizr-2.6.2.min.js\"></script>\n";
+	echo "\n";
+	echo "    <!-- Custom site scripts -->\n";
+	echo "    <script src=\"/js/cryptosite.js\"></script>\n";
 }
 ?>
 </head>

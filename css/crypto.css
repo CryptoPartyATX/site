@@ -129,3 +129,84 @@ div.sshot-right, div.sshot-wide, div.sshot-split, div.sshot-triple {
 	width:30%;
 	margin:0 .5em 0 .5em;
 }
+
+
+/* Twitter */
+.atxcrypto {
+	font-family: "Lato";
+	font-size:8pt;
+	font-weight:300;
+	color: blue;
+}
+.tweetbox {
+	max-height:25em;
+	overflow:scroll;
+	border-bottom: 1px solid #DDD;
+}
+.tweetitem {
+	display:block;
+	background:#FFFFFF;
+	border: 1px solid #DDD;
+	padding:.4em .6em 1.4em .6em;
+	/*width:250px;*/
+	margin:auto;
+	margin-bottom:-1px;
+	text-align:justify;
+}
+.tweet {
+	font-family: "Lato";
+  	font-weight: 300;
+	font-size:9pt;
+
+}
+.rticon {
+	height:.6em;
+	padding-right:.2em;
+}
+.tweetHTTP, .tweetHTTPS {
+	text-decoration:none;
+	color:#333388;
+	font-family: "Lato";
+	font-weight: 300;
+	font-size: 9pt;
+	float:right;
+	margin-right:.1em;
+}
+.tweetHTTPS {
+	color:#338833;
+}
+.tweetHTTP:hover, .tweetHTTPS:hover {
+	text-decoration:underline;
+}
+.follow {
+	display:block;
+	background-image: linear-gradient(to bottom, #428BCA 0px, #3278B3 100%);
+	border-radius:5px 5px 0px 0px;
+	border: 1px solid #DDD;
+	padding:.2em .4em .2em .4em;
+	margin:auto;
+	margin-bottom:-1px;
+	margin-top:1em;
+	font-weight:400;
+	color:#333333;
+}
+.follow a {
+	color:white;
+}
+.follow a:hover {
+	text-decoration:underline;
+}
+#twitterShrink {
+	float:right;
+	font-weight:bold;
+	margin-right:5px;
+	/*border:1px dotted #3D88D3;*/
+	padding-left:5px;
+	padding-right:5px;
+	
+}
+#twitterShrink:hover{
+	cursor:pointer;
+	text-decoration:none;
+	color:white;
+}

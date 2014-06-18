@@ -1,78 +1,3 @@
-<style>
-
-.atxcrypto {
-	font-family: "Lato";
-	font-size:8pt;
-	font-weight:300;
-	color: blue;
-}
-.tweetbox {
-	max-height:350px;
-	overflow:scroll;
-}
-.tweetitem {
-	display:block;
-	background:#FFFFFF;
-	border: 1px solid #DDD;
-	padding:.4em .6em 1.4em .6em;
-	/*width:250px;*/
-	margin:auto;
-	margin-bottom:-1px;
-	text-align:justify;
-}
-.tweet {
-	font-family: "Lato";
-  	font-weight: 300;
-	font-size:9pt;
-
-}
-.rticon {
-	height:.6em;
-	padding-right:.2em;
-}
-.tweetHTTP, .tweetHTTPS {
-	text-decoration:none;
-	color:#333388;
-	font-family: "Lato";
-	font-weight: 300;
-	font-size: 9pt;
-	float:right;
-	margin-right:.1em;
-}
-.tweetHTTPS {
-	color:#338833;
-}
-.tweetHTTP:hover, .tweetHTTPS:hover {
-	text-decoration:underline;
-}
-.follow {
-	display:block;
-	background-image: linear-gradient(to bottom, #428BCA 0px, #3278B3 100%);
-	border-radius:5px 5px 0px 0px;
-	border: 1px solid #DDD;
-	padding:.2em .4em .2em .4em;
-	margin:auto;
-	margin-bottom:-1px;
-	margin-top:1em;
-	font-weight:400;
-	color:#333333;
-}
-.follow a {
-	color:white;
-}
-.follow a:hover {
-	text-decoration:underline;
-}
-</style>
-
-<script>
-$(document).ready(function(){
-    $("div.follow").click(function(){
-        $(".tweetitem").fadeToggle(400,"swing"); 
-    });
-});
-</script>
-
 <?php
 
 /*
@@ -88,6 +13,10 @@ link @'s and #'s
 // Because we don't want our visitors to have to connect to Twitter directly!
 $filename = "recent.txt";
 $initTweets = @file($filename);
+
+// add follow div
+echo "<div class=\"follow\"><a target=\"_blank\" href=\"https://twitter.com/atxcrypto\">@ATXCrypto</a> Recent Tweets <span id=\"twitterShrink\">_</span></div>\n";
+
 
 if($initTweets !== FALSE){
 
@@ -107,8 +36,6 @@ if($initTweets !== FALSE){
 		if(strlen($curTweet)>0){array_push($outTweets,$curTweet);}
 
 	}
-	// add follow div
-	echo "<div class=\"follow\"><a href=\"https://twitter.com/atxcrypto\">@ATXCrypto</a> Recent Tweets</div>\n";
 
 	// box in for scroll
 	echo "<div class=\"tweetbox\">\n";
@@ -125,7 +52,7 @@ if($initTweets !== FALSE){
 			echo $RTicon;
 		}
 
-		echo "<span class=\"atxcrypto\"><a href=\"https://twitter.com/atxcrypto\">@ATXCrypto</a>:</span> "; // account name
+		echo "<span class=\"atxcrypto\"><a target=\"_blank\" href=\"https://twitter.com/atxcrypto\">@ATXCrypto</a>:</span> "; // account name
 
 		$linklist = "<br>";
 	
@@ -143,10 +70,10 @@ if($initTweets !== FALSE){
 			
 	
 				if($isHTTPS){
-					$linklist .= "<a class=\"tweetHTTPS\" href=\"$url\">[ HTTPS Link ]</a> \n";
+					$linklist .= "<a target=\"_blank\" class=\"tweetHTTPS\" href=\"$url\">[ HTTPS Link ]</a> \n";
 				}
 				else {
-					$linklist .= "<a class=\"tweetHTTP\" href=\"$url\">[ HTTP Link ]</a> \n";
+					$linklist .= "<a target=\"_blank\" class=\"tweetHTTP\" href=\"$url\">[ HTTP Link ]</a> \n";
 				}
 			}
 		}
@@ -163,7 +90,6 @@ if($initTweets !== FALSE){
 	echo "</div>\n";
 }
 else{
-	echo "<div class=\"follow\"><a href=\"https://twitter.com/atxcrypto\">@ATXCrypto</a> Recent Tweets</div>\n";
 	// box in for scroll
 	echo "<div class=\"tweetbox\">\n";
 	echo "<div class=\"tweetitem\">An error occured. Tweets were not loaded.</div>\n";
