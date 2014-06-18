@@ -187,7 +187,7 @@ div.sshot-right, div.sshot-wide, div.sshot-split, div.sshot-triple {
 	margin:auto;
 	margin-bottom:-1px;
 	margin-top:1em;
-	font-weight:400;
+	font-weight:400; 
 	color:#333333;
 }
 .follow a {
