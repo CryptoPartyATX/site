@@ -37,13 +37,17 @@ div.sshot-right, div.sshot-wide {
               <h3 class="list-group-item-heading">HTTPS Everywhere</h3>
               <p class="list-group-item-text">Makes secure connections to any supported website that you visit.<br /><em>https://www.eff.org/https-everywhere</em></p>
             </a>
-            <a target="_blank" href="https://adblockplus.org/" class="list-group-item">
+            <a target="_blank" href="https://adblockplus.org" class="list-group-item">
               <h3 class="list-group-item-heading">Adblock Plus</h3>
-              <p class="list-group-item-text">Blocks advertisements from most pages, reducing annoyance and tracking.<br /><em>https://adblockplus.org/</em></p>
+              <p class="list-group-item-text">Blocks advertisements from most pages, reducing annoyance and tracking.<br /><em>https://adblockplus.org</em></p>
             </a>
             <a target="_blank" href="https://disconnect.me" class="list-group-item">
               <h3 class="list-group-item-heading">Disconnect</h3>
               <p class="list-group-item-text">Blocks third-party tracking by Facebook, Twitter, Google, and others.<br /><em>https://disconnect.me</em></p>
+            </a>
+            <a target="_blank" href="https://www.ghostery.com" class="list-group-item">
+              <h3 class="list-group-item-heading">Ghostery</h3>
+              <p class="list-group-item-text">Blocks third-party tracking by various sites.<br /><em>https://www.ghostery.com</em></p>
             </a>
             <a target="_blank" href="https://startpage.com/eng/download-startpage-plugin.html" class="list-group-item">
               <h3 class="list-group-item-heading">StartPage Search</h3>
@@ -72,25 +76,29 @@ div.sshot-right, div.sshot-wide {
 		  <p>With all of this data about your habits at their fingertips, your privacy is at risk because you do not have any control over where this information goes. It could be sold to advertisers, given to partner companies, pilfered from company servers, or handed over to government agencies.
 
           <h3>How do these plug-ins help?</h3>
-		  <p><span class="clickItem">Adblock Plus</span> and <span class="clickItem">Disconnect</span> block certain parts of webpages from loading. This prevents advertisers and other third parties from collecting data about you when you do not visit them directly. For example, this will not prevent Facebook from tracking your activity on their website, but it will prevent them from tracking what you do on other websites that have a Facebook plug-in.</p>
-		  <p><span class="clickItem">HTTPS Everywhere</span> ensures that you use an encrypted connection as often as possible, which helps prevent your ISP or anyone else monitoring your connection from determining what you are looking at. It will still be possible for them to see what sites you are in contact with, but they will not be able to determine what pages you load on those sites.</p>
+		  <p><span class="clickItem">Adblock Plus</span>, <span class="clickItem">Disconnect</span>, and <span class="clickItem">Ghostery</span> block certain parts of webpages from loading. This prevents advertisers and other third parties from collecting data about you when you do not visit them directly. For example, this will not prevent Facebook from tracking your activity on their website, but it will prevent them from tracking what you do on other websites that have a Facebook plug-in.</p>
+		  <p><span class="clickItem">HTTPS Everywhere</span> ensures that you use an encrypted connection as often as possible, which helps prevent your ISP or anyone else monitoring your connection from determining what you are looking at. With an <span class="clickItem">https://</span> connection it will still be possible for them to see what sites you are in contact with, but they will not be able to determine what pages you load on those sites.</p>
 		  <p><span class="clickItem">StartPage Search</span> provides indirect Google search results over HTTPS. This means that Google cannot see who is making the original request, so they cannot associate those searches with your profile. Also, it allows you to optionally view a search result by proxy, so you do not connect to that website directly.</p>
 		  <p><span class="clickItem">Cryptocat</span> provides online chatrooms, similar to IRC, but the connection and content are encrypted. This means that only the people in that room will be able to read the messages, not anyone's ISP or other connection snoops. In addition, it allows the sending of private messages to users, providing roughly the equivalent privacy of encrypted IM chats (although you must ensure the person you are talking to is who they say they are).</p>
 
 
         <h2>Part II: Installing the Plug-ins</h2>
-		  <h3>Before you begin</h3>
-		  <p>Before you install the plug-ins, you will need to ensure you have a browser that supports them. 
-			  <ul>
-				  <li>We recommend <a target="_blank" href="https://www.mozilla.org/en-US/firefox/new/">Firefox</a> because it is open-source and not created by Google. </li>
-				  <li><a target="_blank" href="https://www.google.com/chrome/">Chrome</a> is also open-source, but is made by a company that makes its money by selling your data to advertisers... </li>
-				  <li>Plug-ins for Internet Explorer or Safari have not and will not be researched or recommended.</li>
-			  </ul>
-		  </p>
-		  
-		  <h3>Installation</h3>
-		  <p>To install any of the plug-ins, click the links above and click the clearly marked download button on each page. Your browser will ask you to confirm you want to install the plug-in, and will notify you if you need to restart the browser before you can use it.</p>
-		  
-		  <h3>Configuration</h3>
-		  <p>Most of the software does not need to be configured. HTTPS Everywhere and Adblock Plus may ask you a few questions, but all of the default options are okay. You may need to edit your toolbars to hide or show icons for these plug-ins.</p>
-		  
+			<h3>Before you begin</h3>
+			<p>Before you install the plug-ins, you will need to ensure you have a browser that supports them. 
+				<ul>
+					<li>We recommend <a target="_blank" href="https://www.mozilla.org/en-US/firefox/new/">Firefox</a> because it is open-source and not created by Google. </li>
+					<li><a target="_blank" href="https://www.google.com/chrome/">Chrome</a> is also open-source, but is made by a company that makes its money by selling your data to advertisers... </li>
+					<li>Plug-ins for Internet Explorer or Safari have not and will not be researched or recommended.</li>
+				</ul>
+			</p>
+
+			<h3>Installation</h3>
+			<p>To install any of the plug-ins, click the links above and click the clearly marked download button on each page. Your browser will ask you to confirm you want to install the plug-in, and will notify you if you need to restart the browser before you can use it.</li>
+
+			<h3>Configuration</h3>
+			<ul>
+				<li>Most of the software does not need to be configured. </li>
+				<li>HTTPS Everywhere and Adblock Plus may ask you a few questions, but all of the default options are okay. </li>
+				<li>When installing Ghostery, proceed through the setup wizard and be sure to click "Select all" on both the Trackers tab and the Cookies tab on the Blocking page.</li>
+				<li>You may need to edit your toolbars to hide or show the icons for these plug-ins.</li>
+			<ul>

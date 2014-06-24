@@ -73,7 +73,6 @@ CryptoPartyATX.org To-Do list
 # Privacy
 	{UPDATE: Privacy Plug-ins}
 	-	NoScript
-	-	Ghostery
 	- 	Privacy Badger
 	
 	{UPDATE: Choosing Secure Passwords}
