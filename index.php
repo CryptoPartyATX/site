@@ -6,7 +6,8 @@
 <?php
 
 /* Page selection - default 0 (main page) */
-$pageid = htmlspecialchars($_GET['page']);
+$pageid=0;
+if(isset($_GET['page']))$pageid = htmlspecialchars($_GET['page']);
 if (!$pageid || $pageid>6 || $pageid<0){
 $pageid=0;
 }
@@ -16,7 +17,8 @@ if($pageid==1.7){$pageid=2.2;}
 if($pageid==1.8){$pageid=2.3;}
 
 /* OS Selection - default to Windows */
-$os = htmlspecialchars($_GET['os']);
+$os="win";
+if(isset($_GET['os']))$os = htmlspecialchars($_GET['os']);
 if(!$os){$os="win";}
 if($os != "osx" && $os !="lnx"){$os="win";}
 
@@ -28,7 +30,8 @@ if($os != "osx" && $os !="lnx"){$os="win";}
 				if specified "no", does not insert any scripts
 				if specified "yes", inserts all scripts except redirect
 */
-$js = htmlspecialchars($_GET['js']);
+$js="auto-no";
+if(isset($_GET['js']))$js = htmlspecialchars($_GET['js']);
 if($js!="no"){
 	if($js=="auto-no"||!$js){
 		echo "<script>window.location = \"/?page=$pageid&os=$os&js=auto-yes\";</script>\n";
