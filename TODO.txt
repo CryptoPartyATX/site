@@ -34,6 +34,10 @@ CryptoPartyATX.org To-Do list
 -	Link how to verify checksums, encourage on more pages
 !	Check all links and version numbers
 
+# NEW: All-in-one
+- 	See: http://pastebin.com/6EGZm25G for inspiration
+	:run everything in a VM, route everything through tor, etc
+
 # Encryption
 	{UPDATE: Email Encryption}
 	-	Review/update powerpoint
@@ -65,7 +69,6 @@ CryptoPartyATX.org To-Do list
 		-	Win all
 		-	linux decrypt
 	-	latest info on TrueCrypt
-
 
 # Privacy
 	{UPDATE: Privacy Plug-ins}
