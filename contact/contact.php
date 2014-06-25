@@ -1,7 +1,11 @@
 
 <?php
 	if ($js=="yes"||$js=="auto-yes"){
+		// loads pgp functions
   		echo "<script src=\"/contact/openpgp.min.js\" type=\"text/javascript\"></script>\n";
+
+		// NOTE: see    /js/cryptosite.js   for form implementation
+
   	}
 ?>
 <h1>Contact Us</h1>
@@ -14,54 +18,75 @@
 <p>
 Email us at <a href="mailto:plexiglass@riseup.net">plexiglass@riseup.net</a>. We encourage 
 you to encrypt the email with <a href="/content/FE0E7924.asc">this public key</a>, or use 
-the form below to send an encrypted email.
+the form below to send us a message.
 </p>
 
-<h2>Submit an Encrypted Email</h2>
+
 <?php
 	if ($js!="yes"&&$js!="auto-yes"){
-	echo "<strong>WARNING: This form requires Javascript, which is currently disabled. Please enable Javascript to use this form.</strong>\n";
+		echo "
+<h2>Submit a Message</h2>		
+		<em>Please enable Javascript to use the encrypted version of this message form.</em>
+		
+		<form name=\"contact\" method=\"post\" action=\"/contact/send_form.php\">
+			<input type=\"hidden\" name=\"os\" value=\"$os\">
+			<input type=\"hidden\" name=\"js\" value=\"$js\">
+			<input type=\"hidden\" id=\"plaintext\" name=\"plaintext\" value=\"yes\">	
+		
+		<textarea  id=\"message\" name=\"message\" cols=\"70\" rows=\"8\">Name/Email:
+Subject:
+Message:
+</textarea><br />
+			<input type=\"checkbox\" id=\"thecheckbox\" name=\"thecheckbox\" checked=1  />&nbsp;&nbsp;Un-check this box if you are human.<br />
+			<input type=\"submit\" value=\"Send Email\">
+		</form><br />
+			
+		";
+		
 	}
-?>
-<p>
-	This form will allow you to send us an encrypted email message without installing any
-	additional software on your computer. The message will first be encrypted in your 
-	browser using <a href="http://openpgpjs.org/">OpenPGP.js</a> before being sent via an 
-	encrypted SSL/TLS connection through CryptoPartyATX.org.<br /><br />
-	Please optionally include a name, reply email address, or subject in the box below.
-</p>
+	else{
+		echo "
+<h2>Submit an Encrypted Message</h2>		
+	<p>
+		This form will allow you to send us an encrypted email message without installing any
+		additional software on your computer. The message will first be encrypted in your 
+		browser using <a href=\"http://openpgpjs.org/\">OpenPGP.js</a> before being sent via an 
+		encrypted SSL/TLS connection through CryptoPartyATX.org.<br /><br />
+		Please optionally include a name, reply email address, or subject in the box below.
+	</p>
 
-<form name="contact" method="post" action="/contact/send_form.php" onsubmit="return encrypt();">
+<form name=\"contact\" method=\"post\" action=\"/contact/send_form.php\" onsubmit=\"return encrypt();\">
+	<input type=\"hidden\" name=\"os\" value=\"$os\">
+	<input type=\"hidden\" name=\"js\" value=\"$js\">
+		";	
+	
 
-
-<?php	
 	// initialize random values for decoy messages
 	for($i=0; $i<100; $i++){$rand1 .= mt_rand();}
 	for($i=0; $i<100; $i++){$rand2 .= mt_rand();}
 	for($i=0; $i<100; $i++){$rand3 .= mt_rand();}
 	for($i=0; $i<100; $i++){$rand4 .= mt_rand();}
 
-	echo "<input type=\"hidden\" id=\"message1\" name=\"message1\" value=\"$rand1\">\n";
-	echo "<input type=\"hidden\" id=\"message2\" name=\"message2\" value=\"$rand2\">\n";
-	echo "<input type=\"hidden\" id=\"message3\" name=\"message3\" value=\"$rand3\">\n";
-	echo "<input type=\"hidden\" id=\"message4\" name=\"message4\" value=\"$rand4\">\n";
+	echo "
+	<input type=\"hidden\" id=\"message1\" name=\"message1\" value=\"$rand1\">
+	<input type=\"hidden\" id=\"message2\" name=\"message2\" value=\"$rand2\">
+	<input type=\"hidden\" id=\"message3\" name=\"message3\" value=\"$rand3\">
+	<input type=\"hidden\" id=\"message4\" name=\"message4\" value=\"$rand4\">
 	
-?>
-
-
-
-				<textarea  id="message" name="message" cols="70" rows="8">Name/Email:
+	
+	
+					<textarea  id=\"message\" name=\"message\" cols=\"70\" rows=\"8\">Name/Email:
 Subject:
 Message:</textarea><br />
-			<input type="checkbox" id="thecheckbox" name="thecheckbox" checked=1  />&nbsp;&nbsp;Un-check this box if you are human.<br />
-			<input type="submit" value="Send Email" onclick="return checkparams();">
+			<input type=\"checkbox\" id=\"thecheckbox\" name=\"thecheckbox\" checked=1  />&nbsp;&nbsp;Un-check this box if you are human.<br />
+			<input type=\"submit\" value=\"Send Email\" onclick=\"return checkparams();\">
 </form><br />
-This form is based on <a href="https://encrypt.to">Encrypt.to</a>'s
-	<a href="https://github.com/encrypt-to/secure.contactform.php">secure contact form</a>.
+This form is based on <a href=\"https://encrypt.to\">Encrypt.to</a>'s
+	<a href=\"https://github.com/encrypt-to/secure.contactform.php\">secure contact form</a>.
 
-<!-- your pgp public key -->
+<!-- pgp public key for plexiglass@riseup.net -->
 
-<div id="pubkey" hidden="true">
+<div id=\"pubkey\" hidden=\"true\">
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: SKS 1.1.3
 
@@ -151,3 +176,10 @@ R1+xY/r51A==
 =MzPG
 -----END PGP PUBLIC KEY BLOCK-----
 </div>
+";
+}
+?>
+
+
+
+
