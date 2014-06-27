@@ -39,10 +39,6 @@
               <h3 class="list-group-item-heading">Gpg4Win (Windows)</h3>
               <p class="list-group-item-text">Open-source GPG key manager for Windows computers</p>
             </a></span>
-            <a target="_blank" href="http://www.truecrypt.org/" class="list-group-item">
-              <h3 class="list-group-item-heading">TrueCrypt</h3>
-              <p class="list-group-item-text">TrueCrypt is not necessary for email encryption, but it allows you to create encrypted “containers” that work like password-protected folders. You can fill these containers with the files you want to encrypt, and send them as email attachments as one way to encrypt attachments. You can also use them to keep your keys and personal data more secure on your own computer.</p>
-            </a>
           </div>
 
           <h2>Nutshell</h2>
@@ -50,8 +46,8 @@
 			  <li>First, we are going to install Thunderbird. This will be your new way to access your existing email account (or you can create a new account if you'd like). If you have used an email program like Outlook, you should know what to expect.</li>
 			  <li>Second, we install a GPG key manager. GPG is an open source implementation of PGP encryption. This program will allow you to keep track of your Private Keys and all of your contacts' Public Keys. It will also allow you to create a key pair if you do not have one yet.</li>
 			  <li>Third, we will install Enigmail, an Add-On for Thunderbird that encrypts your emails using your keys. It works sort of like a bridge between Thunderbird and the key manager.</li>
-			  <li>Finally, we test it to make sure it works. I'll also outline how to use TrueCrypt to securely backup your private key and briefly mention a few other relevant topics.</li>
-			  <li>The Appendix has some general information on keys, keysigning, keyservers, and how TrueCrypt can come into play, as well as some suggestions for further reading.</li>
+			  <li>Finally, we test it to make sure it works. I'll also briefly mention a few other relevant topics.</li>
+			  <li>The Appendix has some general information on keys, keysigning, and keyservers, as well as some suggestions for further reading.</li>
 		  </ol></p>
 
           <h2>Part I: Install Thunderbird</h2>
@@ -172,7 +168,7 @@
                 <li><strong>IMPORTANT:</strong> See Appendix for general information about key pairs and how the whole process works. This won't make much sense otherwise.</li>
                 <li>Click <span class="clickItem">Start</span>, then <span class="clickItem">Programs</span>, then <span class="clickItem">Gpg4win</span>, and run <span class="clickItem">GPA</span>. This is your key manager program.</li>
                 <li>GPA should prompt you to create a key the first time you run it, if you do not see the prompt, you can create a key by clicking the <span class="clickItem">Keys</span> menu, then <span class="clickItem">New Key...</span>, or by pressing <span class="clickItem">Control + N</span>.</li>
-                <li>Enter your name and the email address you will be using with this key. Create a backup copy later, unless you already have a safe location to store it. Storing private keys can be one use for TrueCrypt, see Appendix for more information.</li>
+                <li>Enter your name and the email address you will be using with this key. Create a backup copy later, unless you already have a safe (encrypted) location to store it.</li>
                 <li>Enter a password. This is what you will type whenever you want to sign a message you are sending, or when you want to decrypt a message sent to you. You should now see your key on the list in the GPA window.</li>
                 <li><em>[Optional]</em> Now that you have created this key, it is a good time to upload your public key to the keyserver. You can do this by clicking the key you created, then the <span class="clickItem">Server</span> menu, then <span class="clickItem">Send Keys...</span>. For more information on why keyservers are used, see Appendix.</li>
               </ul>
@@ -265,14 +261,8 @@
           <h3><strong>What is keysigning, and why does it matter? What is a keyserver?</strong></h3>
 		  <p>Please see our <a href="?page=2.2<?php echo $extraparams; ?>">guide to Keysigning and Keyservers</a> for more information.</p>
 
-          <h3><strong>How do I use TrueCrypt? Why?</strong></h3>
-          <p>Please see <a href="?page=1.2<?php echo $extraparams; ?>">our TrueCrypt guide</a> for information on how to setup and use TrueCrypt. For more information, TrueCrypt has an informative guide on their website: <a target="_blank" href="http://www.truecrypt.org/docs/tutorial">http://www.truecrypt.org/docs/tutorial</a>.</p>
-          <p>Why use TrueCrypt? You private key is very important to keep private. Keeping it private has two parts, the first of which is keeping it. Since your private key is the only way to decrypt messages sent using your public key, your emails will be gone forever if you lose your private key. After following this guide, you will have your private key stored on your computer by the keymanager program (GPA or GPGKeychainAccess). But if your computer hard drive fails then you have lost your private key. There will be no way to recreate it, and anything you could previously use it to decrypt will now be forever lost to the winds of randomness. Long story short, you absolutely need to create a backup. You should use an external device like a USB thumb drive that you can store in a safe and secure location.</p>
-          <p>To make sure you keep it private, you should use TrueCrypt to encrypt the backup copy. If you have a spare flash drive that you can use for just this and other private files you want to keep (the keys will only take a few KB of space), I recommend selecting the “Create a volume within a partition/drive” option and using the whole USB drive. Then you can mount the drive using TrueCrypt and make your backup copy there. I also recommend the “Hidden TrueCrypt volume” option if you don't mind the hassle. You may want to keep more than one backup copy in a separate location. You could give one to your friend or your mother or anyone who won't lose it, they won't be able to read anything on it without your password.</p>
-          
           <h3>Suggested links for further information</h3>
           <ul>
             <li><a target="_blank" href="http://arstechnica.com/security/2013/06/encrypted-e-mail-how-much-annoyance-will-you-tolerate-to-">Ars Technica Email Encryption Guide</a></li>
-            <li><a target="_blank" href="http://www.truecrypt.org/docs/tutorial">TrueCrypt Tutorial (Official)</a></li>
           </ul>
 
