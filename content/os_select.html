@@ -28,8 +28,8 @@ float:left;
 </style>
 <?php
 
-$pageid = htmlspecialchars($_GET['page']);
-$os = htmlspecialchars($_GET['os']);
+if(isset($_GET['page']))$pageid = htmlspecialchars($_GET['page']);
+if(isset($_GET['os']))$os = htmlspecialchars($_GET['os']);
 if(!$os){$os="win";}
 if($os != "lnx" && $os != "osx"){$os="win";}
 
