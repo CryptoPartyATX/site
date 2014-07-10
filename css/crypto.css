@@ -13,9 +13,14 @@ body {
 .copyleft {
 	font-size:.8em;
 }
+.options {
+	font-weight:600;
+	color:#ED9E65;
+}
 .clickItem {
 	font-weight:600;
-	color:#606060;
+	/*color:#606060;*/
+	color:#2171B6;
 }
 .btc {
 	font-size:.8em;

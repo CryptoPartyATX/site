@@ -12,7 +12,6 @@ CryptoPartyATX.org To-Do list
 -	printsite.php: would return a printable page with all guides/info for archive and physical distribution
 	: possibly include link to (static/manual) zip of all referenced install files to go with printsite.php
 -	update js vs. non-js modes
-	-	button/option
 	-	js: jquery, sprites
 -	switch to php filtering instead of div display:none for os select
 
@@ -37,6 +36,7 @@ CryptoPartyATX.org To-Do list
 # NEW: All-in-one
 - 	See: http://pastebin.com/6EGZm25G for inspiration
 	:run everything in a VM, route everything through tor, etc
+	:tails, not ubuntu...
 
 # Encryption
 	{UPDATE: Email Encryption}
@@ -58,12 +58,13 @@ CryptoPartyATX.org To-Do list
 	{NEW: Android Email Enc}
 	:finally figured that out
 	:caveat about storing private keys on a mobile device
+	:option of separate mobile private key for less-trusted secure comm.
 
 	{NEW:  encfs  and/or  dm-crypt/LUKS  for linux}
 	:what's the best option?, what's the best option for our target audience?
 	
 	{UPDATE: FILE Encryption}
-	-	re-do page selection for new Unix option (for both osx+lnx)
+	-	context menu option
 	-	remaining screenshots
 		-	OS X all
 		-	Win all
@@ -86,12 +87,20 @@ CryptoPartyATX.org To-Do list
 	-	Graphics to explain?
 	-	DBAN
 	-	Can anyone recover the data? (probably somebody somewhere can)
+	-	Destruction, flash memory worries
+
+	{UPDATE: Keysigning}
+	-	Webs of trust
+	-	More links, graphics
 	
 	{NEW: Dual-booting Linux & OS}
 	-	Like I'll ever have time to get to this one...
 			
 	{NEW: VPNs}
 	-	Add page for using VPNs
+	
+	{NEW: Virtual Machines}
+	-	Add page for using VMs for security, privacy, and exploration
 	
 # NEW: Using Linux
 	{MOVE: Installing Linux}
@@ -102,6 +111,7 @@ CryptoPartyATX.org To-Do list
 	{NEW: Using Linux}
 	-	"Start menu", folder structure
 	-	Software Manager, Update Manager
+	-	apt-get
 	
 	{NEW: Using the Command Line}
-	-	In general, common commands
+	-	In general, common commands, getting around
