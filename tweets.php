@@ -22,7 +22,8 @@ if($initTweets !== FALSE){
 
 	$outTweets = array();
 	$numTweets = 16; // how many tweets to load, max about 16
-
+	if(count($initTweets)<$numTweets)$numTweets=count($initTweets);
+	
 	// from last 5 of input array, trim metadata and send to output array
 	for($i=count($initTweets)-1; $i>=count($initTweets)-$numTweets; $i--){
 

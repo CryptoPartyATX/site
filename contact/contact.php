@@ -62,10 +62,10 @@ Message:
 	
 
 	// initialize random values for decoy messages
-	for($i=0; $i<100; $i++){$rand1 .= mt_rand();}
-	for($i=0; $i<100; $i++){$rand2 .= mt_rand();}
-	for($i=0; $i<100; $i++){$rand3 .= mt_rand();}
-	for($i=0; $i<100; $i++){$rand4 .= mt_rand();}
+	for($i=0; $i<100; $i++){$rand1 = mt_rand();}
+	for($i=0; $i<100; $i++){$rand2 = mt_rand();}
+	for($i=0; $i<100; $i++){$rand3 = mt_rand();}
+	for($i=0; $i<100; $i++){$rand4 = mt_rand();}
 
 	echo "
 	<input type=\"hidden\" id=\"message1\" name=\"message1\" value=\"$rand1\">
