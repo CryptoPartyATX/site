@@ -1,7 +1,7 @@
 CryptoPartyATX.org To-Do list
 
 [General/Style]
--	Overall site style?
+-	Overall site style
 -	Print layout css
 
 [General/Content]

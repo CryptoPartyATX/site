@@ -112,11 +112,7 @@ if($js=="yes"||$js=="auto-yes"){
 		<a href="?page=2.3<?php echo $extraparams; ?>" class="list-group-item sub-item<?php if($pageid==2.3)echo ' subactive'; if($inactive) echo ' hideme'; ?>">Securely Erasing Data</a>
 		<a href="?page=2.5<?php echo $extraparams; ?>" class="list-group-item sub-item<?php if($pageid==2.5)echo ' subactive'; if($inactive) echo ' hideme'; ?>">Throw a CryptoParty</a>
 	</div>
-	<div>
-		<!--Follow <a href="https://twitter.com/atxcrypto">@ATXCrypto on Twitter</a><br />-->
-		Subscribe to the <a href="https://cryptoglass.us/mailman/listinfo/rt4atx-list">RT4ATX email list</a><br />
-		BTC: <span class="btc">12Wb817YGmhA9qZnfBVaP4WCE3r5dFxUZr</span>
-	</div>
+
 	
 	<?php include "tweets.php"; ?>
 
@@ -194,22 +190,26 @@ if($js=="yes"||$js=="auto-yes"){
 	<!-- END page-specific content -->
 	<hr>
 	<!-- Contact info -->
-	<p><strong>Contact Us!</strong> If you need any help, find problems with the site, or have improvements or suggestions, please contribute to the <a href="https://github.com/CryptoPartyATX/site">git repo</a> or email me at <a href="mailto:plexiglass@riseup.net">plexiglass@riseup.net</a>.</p>
+	<p class="contactUs"><strong>Contact Us!</strong> If you need any help, find problems with the site, or have improvements or suggestions, please contribute to the <a href="https://github.com/CryptoPartyATX/site">git repo</a> or email <a href="mailto:plexiglass@riseup.net">plexiglass@riseup.net</a>.</p>
 	
 	<!-- BEGIN copyright notice and option -->
+	<div class="optionPane">
+		<span class="options">
+<?php 
+			if($js=="auto-no"){echo "Javascript is auto-disabled. <a href=\"?page=$pageid&os=$os&js=yes\">Enable Javascript</a>";}
+			else if($js=="no"){echo "Javascript is manually disabled. <a href=\"?page=$pageid&os=$os&js=yes\">Enable Javascript</a>";}
+			else if ($js=="yes"){echo "Javascript is manually enabled. <a href=\"?page=$pageid&os=$os&js=no\">Disable Javascript</a>";}
+			else if ($js=="auto-yes"){echo "Javascript is auto-enabled. <a href=\"?page=$pageid&os=$os&js=no\">Disable Javascript</a>";}
+?>		</span>	 | 
+		<span class="options">Subscribe to the </span><a href="https://cryptoglass.us/mailman/listinfo/rt4atx-list">RT4ATX email list</a> | 
+		<span class="options">BTC: </span><a target="_blank" href="https://blockchain.info/qr?data=12Wb817YGmhA9qZnfBVaP4WCE3r5dFxUZr&size=500">12Wb817YGmhA9qZnfBVaP4WCE3r5dFxUZr</a>
+	</div>
+	
 	<p class="copyleft" xmlns:dct="http://purl.org/dc/terms/" xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#">
 	<a rel="license" href="http://creativecommons.org/publicdomain/zero/1.0/"><img src="/images/cc0.png" style="border-style: none;" alt="CC0" /></a>
 	&nbsp;To the extent possible under law, <a rel="dct:publisher" href="https://cryptopartyatx.org">CryptoPartyATX.org</a> has waived all copyright and related or neighboring rights to <span property="dct:title">CryptoPartyATX.org</span>. We have no affiliation with any linked site unless otherwise noted.<br> 
-	<!-- it was so wordy... -->
-	<span class="options">
-<?php 
-if($js=="auto-no"){echo "Javascript is auto-disabled. <a href=\"?page=$pageid&os=$os&js=yes\">Enable Javascript</a>";}
-else if($js=="no"){echo "Javascript is manually disabled. <a href=\"?page=$pageid&os=$os&js=yes\">Enable Javascript</a>";}
-else if ($js=="yes"){echo "Javascript is manually enabled. <a href=\"?page=$pageid&os=$os&js=no\">Disable Javascript</a>";}
-else if ($js=="auto-yes"){echo "Javascript is auto-enabled. <a href=\"?page=$pageid&os=$os&js=no\">Disable Javascript</a>";}
-?>	
-	</span>
 	</p>
+	<!-- it was so wordy... -->
 	<!-- END copyright notice and option -->
 	
 	</div> <!-- /col-lg-8 -->

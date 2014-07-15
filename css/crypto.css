@@ -10,19 +10,25 @@ body {
 	width:325px;
 	height:44px;
 }
+.contactUs {
+	margin-bottom:1rem;
+}
 .copyleft {
+	margin-top:2rem;
 	font-size:.8em;
 }
 .options {
 	font-weight:600;
 	color:#ED9E65;
 }
+div.optionPane {
+	font-size:.9em;
+	text-align:center;
+	margin-bottom:1rem;
+}
 .clickItem {
 	font-weight:600;
 	color:#6E95B9;
-}
-.btc {
-	font-size:.8em;
 }
 
 div.nextMeetingTitle, div.nextMeetingDesc {
