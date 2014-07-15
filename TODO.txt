@@ -64,7 +64,7 @@ CryptoPartyATX.org To-Do list
 	:what's the best option?, what's the best option for our target audience?
 	
 	{UPDATE: FILE Encryption}
-	-	context menu option
+	-	GUI/context menu option
 	-	remaining screenshots
 		-	OS X all
 		-	Win all

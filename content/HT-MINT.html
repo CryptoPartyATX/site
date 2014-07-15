@@ -59,16 +59,33 @@ if(!$os){$os="win";}
 
 <h2>Part II: Installing Linux Mint</h2>
 
-<h3>Download and Burn to DVD</h3><ol>
+<h3>Download the .iso</h3><ol>
 	<li>First, go to the Linux Mint <a target="_blank" href="http://www.linuxmint.com/download.php">download page</a>.</li>
 	<li>Select either the <span class="clickItem">32-bit</span> or <span class="clickItem">64-bit</span> download link next to Cinnamon.
 	If you aren't sure which one, start with the 64-bit version and try the 32-bit version if that does not work. Most new computers
 	will support the 64-bit version.</li>
 	<li>On the next page, select a link from under the <span class="clickItem">MIRROR</span> column, or use the Torrent link near the top of the page.</li>
-	<li>Once you have saved the <span class="clickItem">.iso</span> file to your computer, burn it to a DVD using a DVD-burning program or <a target="_blank" href="http://www.wikihow.com/Burn-ISO-Files-to-DVD">one of the methods described here</a>.</li>
 </ol>
 
-<h3>Boot Your Computer from the DVD</h3><ol>
+<h3>Option 1: Install on a Virtual Machine</h3><ol>
+	<p>This option is better because it allows you to use your current OS and windowed or full-screen Linux Mint at the same time. Everything on your computer will work just like normal, but it will be a bit slower when both are running.</p>
+	<li>Get a free, open source program like <a target="_blank" href="https://www.virtualbox.org/">VirtualBox</a>.</li>
+	<li>Create a Virtual Machine and be sure to note these settings:
+		<ul>
+			<li>Match the architecture to the version you downloaded (i.e., 32-bit or 64-bit).</li>
+			<li>When selecting from available OS options, prefer Mint, then Ubuntu, and thirdly Debian.</li>
+			<li>Choose medium performance settings to begin with, you can always adjust them later.</li>
+		</ul>
+	</li>
+	<li>Mount the .iso image and start the virtual machine.</li>
+	<br>
+	<strong>NOTE:</strong> For more detailed instructions, check out VirtualBox's guides on 
+	<a target="_blank" href="https://www.virtualbox.org/manual/ch02.html">Installing VirtualBox</a> and 
+	<a target="_blank" href="https://www.virtualbox.org/manual/ch01.html#idp52043488">Getting Started</a>.
+</ol>
+
+<h3>Option 2: Burn to DVD and Reboot Your Computer</h3><ol>
+	<li>Once you have saved the <span class="clickItem">.iso</span> file to your computer, burn it to a DVD using a DVD-burning program or <a target="_blank" href="http://www.wikihow.com/Burn-ISO-Files-to-DVD">one of the methods described here</a>.</li>
 	<li>While the computer is still turned on, insert the DVD in to the drive.</li>
 	<li>Shut down the computer completely.</li>
 	<li>If you have an Apple computer, turn the computer on and hold the <span class="clickItem">option</span> key from the time you hear the sound to the point where you see an image of a hard drive and a CD on the screen. Use the arrow keys to select the CD and press <span class="clickItem">enter</span>.</li>
