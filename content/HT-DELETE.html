@@ -14,9 +14,8 @@
 	   
 <?php
 
-$pageid = htmlspecialchars($_GET['page']);
-$os = htmlspecialchars($_GET['os']);
-if(!$os){$os="win";}
+if(!empty($_GET['page']))$pageid = htmlspecialchars($_GET['page']);
+if(!empty($_GET['os']))$os = htmlspecialchars($_GET['os']);if(!$os){$os="win";}
 if($os != "win" && $os != "osx"){$os="win";} /* temporary, for compatibility until all pages have linux guides */
 
 if($os=="win"){
