@@ -35,7 +35,7 @@
             <span class="HideLnx">Linux Mint has built-in support.</span>
           </div>
 
-<span class="HideOSX">Please note that the screenshots provided are from Linux, but all of the commands are identical.</span>
+<span class="HideOSX">Please note that many of the screenshots provided are from Linux, but all of the commands are identical.</span>
 <span class="HideWin">Please note that the screenshots provided are from Linux, but all of the commands are identical.</span>
 
           <h2>Nutshell</h2>
@@ -47,22 +47,32 @@
 		  </ol></p>
 		  
           <h2>Part I: GPG - How and why?</h2>
-          <p>GPG works by using a public and private key to encrypt and decrypt files. This is particularly useful when sending files to someone else. If you encrypt the file with your contact's public key before sending it, only your contact will be able to open it as long as they are the only person with the paired public key. If you encrypt a file with your own public key, only you will be able to decrypt it.</p>
+          <p>GPG works by using a public and private key to encrypt and decrypt files. This is particularly useful when sending files to someone else. If you encrypt the file with your contact's public key before sending it, only your contact will be able to open it as long as they are the only person with the paired public key. If you encrypt a file with your own public key, only you will be able to decrypt it. You can optionally use a single password to encrypt and decrypt a file, but this offers less protection.</p>
           <p>Please keep in mind that GPG makes an encrypted copy of the original file. This means the original unencrypted file will still be there. Be sure to securely delete this original if you do not want to store an unencrypted copy.</p>
           <p>A notice was posted on <a target="_blank" href="http://truecrypt.sourceforge.net/">TrueCrypt's main webpage</a> stating that TrueCrypt is not secure and development has ceased. While this information has not been officially confirmed at this time, we recommend using GPG to encrypt your TrueCrypt volumes at least until the matter is resolved. You can use GPG in combination with TrueCrypt volumes, or you can encrypt your files with GPG alone. We recommend using GPG for sensitive files rather than relying solely on closed-source software like BitLocker.</p>
 		  
 		  
 		  <span class="HideLnx"><div class="sshot-wide"><a href="/content/screenshots/HT-FILE-LNXBefore.jpg" data-lightbox="HT-FILE-LNX" title="Start with a secret file and type the command..."><img class='sshot-wd' src="/content/screenshots/HT-FILE-LNXBefore.jpg"/></a></div></span>
-		  <span class="HideOSX"><div class="sshot-wide"><a href="/content/screenshots/HT-FILE-LNXBefore.jpg" data-lightbox="HT-FILE-LNX" title="Start with a secret file and type the command..."><img class='sshot-wd' src="/content/screenshots/HT-FILE-LNXBefore.jpg"/></a></div></span>
 		  <span class="HideWin"><div class="sshot-wide"><a href="/content/screenshots/HT-FILE-LNXBefore.jpg" data-lightbox="HT-FILE-LNX" title="Start with a secret file and type the command..."><img class='sshot-wd' src="/content/screenshots/HT-FILE-LNXBefore.jpg"/></a></div></span>
 
 <span class="HideOSX">
 		  <h2>Part II: Encrypt a File with Your Public Key</h2>
-          <ol><p><strong>If you do not have GPG installed, please see Part II of <a href="?page=1.1<?php echo $extraparams; ?>">our Email Encryption tutorial</a>.</strong><br> Be sure to create your own public/private key pair.</p>
-            <li>
-              	Double-click <span class="clickItem">Terminal</span> in your <span class="clickItem">Applications</span> folder.<br />
-            </li>
-            
+          <p><strong>If you do not have GPG installed, please see Part II of <a href="?page=1.1<?php echo $extraparams; ?>">our Email Encryption tutorial</a>.</strong><br> Be sure to create your own public/private key pair in order to use the signing and recipient features.</p>
+		<ol><h3>Option 1: Context Menu</h3>
+			<div class="sshot-wide"><a href="/content/screenshots/HT-FILE-OSXContext.jpg" data-lightbox="HT-FILE-OSX" title="Right-click the file and select OpenPGP:Encrypt File under Services..."><img class='sshot-wd' src="/content/screenshots/HT-FILE-OSXContext.jpg"/></a></div>
+			<li>Locate the file or folder you want to encrypt using the <span class="clickItem">Finder</span></li>
+			<li>Right-click the item to display the context menu and hover your cursor over <span class="clickItem">Services</span></li>
+			<li>Select <span class="clickItem">OpenPGP: Encrypt File</span> to open the options.</li>
+			<div class="sshot-wide"><a href="/content/screenshots/HT-FILE-OSXRecip.jpg" data-lightbox="HT-FILE-OSX" title="Choose your recipient(s) and select Sign..."><img class='sshot-wd' src="/content/screenshots/HT-FILE-OSXRecip.jpg"/></a></div>
+			<li>Check the box next to the recipient(s) who should be allowed to decrypt it. (You might just want to choose yourself.)</li>
+			<li>The <span class="clickItem">Secret Key</span> line will allow you to sign the file to show it hasn't changed and/or add yourself as someone who can decrypt it. If you do not select a Secret Key, you will need to un-check <span class="clickItem">Add to Recipients</span> or else you will get an error.</li> 
+			<li>Click <span class="clickItem">OK</span> to begin encrypting. If you checked the <span class="clickItem">Sign</span> checkbox, you will also be prompted for your passphrase.</li>
+			<li>If you do not want to keep the original unencrypted file, you should first test the encrypted copy, and then <a href="?page=2.3<?php echo $extraparams; ?>">securely delete</a> the original.</li>
+		</ol>
+		<ol>
+            <h3>Option 2: Command Line</h3>
+		  	<div class="sshot-wide"><a href="/content/screenshots/HT-FILE-LNXBefore.jpg" data-lightbox="HT-FILE-LNX" title="Start with a secret file and type the command..."><img class='sshot-wd' src="/content/screenshots/HT-FILE-LNXBefore.jpg"/></a></div>
+            <li>Double-click <span class="clickItem">Terminal</span> in your <span class="clickItem">Applications</span> folder.</li>
             <li>The following basic command is used to encrypt a file with GPG:<br>
               	<div class="code">gpg -e -r "Recipient" filename</div>
               	<div class="codeDesc">

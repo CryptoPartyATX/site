@@ -152,9 +152,9 @@ div.codeDesc {
 
 /* Screenshots */
 div.sshot-right, div.sshot-wide, div.sshot-split, div.sshot-triple {
-	border: 1px solid #3071A9;
-	background-image: linear-gradient(to bottom, #CCCCDD 0%, #ffdec3 80%);
-	padding: .5em;
+	/*border: 1px solid #3071A9;*/
+	background-image: linear-gradient(to bottom, #CCCCDD 0%, #FFF0E4 80%);
+	padding: .3em;
 	margin:auto;
 	margin-top:1.8em;
 	margin-bottom:.6em;
@@ -195,7 +195,7 @@ div.sshot-right, div.sshot-wide, div.sshot-split, div.sshot-triple {
 	color: blue;
 }
 .tweetbox {
-	max-height:25em;
+	max-height:16em;
 	overflow:scroll;
 	border-bottom: 1px solid #DDD;
 }
@@ -204,10 +204,10 @@ div.sshot-right, div.sshot-wide, div.sshot-split, div.sshot-triple {
 	background:#FFFFFF;
 	border: 1px solid #DDD;
 	padding:.4em .6em 1.4em .6em;
-	/*width:250px;*/
 	margin:auto;
 	margin-bottom:-1px;
 	text-align:justify;
+	line-height:10pt;
 }
 .tweet {
 	font-family: "Lato";
