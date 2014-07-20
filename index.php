@@ -192,7 +192,7 @@ if($js=="yes"||$js=="auto-yes"){
 	<!-- Contact info -->
 	<p class="contactUs"><strong>Contact Us!</strong> If you need any help, find problems with the site, or have improvements or suggestions, please contribute to the <a href="https://github.com/CryptoPartyATX/site">git repo</a> or email <a href="mailto:plexiglass@riseup.net">plexiglass@riseup.net</a>.</p>
 	
-	<!-- BEGIN copyright notice and option -->
+	<!-- BEGIN option and copyleft notice -->
 	<div class="optionPane">
 		<span class="options">
 <?php 

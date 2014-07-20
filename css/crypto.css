@@ -25,6 +25,7 @@ div.optionPane {
 	font-size:.9em;
 	text-align:center;
 	margin-bottom:1rem;
+	margin-top:2rem;
 }
 .clickItem {
 	font-weight:600;
@@ -148,6 +149,14 @@ div.codeDesc {
 	padding-right:1em;
 	padding-top:.5em;
 	padding-bottom:.5em;
+}
+
+/* Software links lists */
+a.https {
+	background-color:#F2FFF2;
+}
+a.https:hover{
+	background-color:#E8FFE8;
 }
 
 /* Screenshots */
