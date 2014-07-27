@@ -14,8 +14,8 @@
 	   
 <?php
 
-$pageid = htmlspecialchars($_GET['page']);
-$os = htmlspecialchars($_GET['os']);
+if(!empty($_GET['page']))$pageid = htmlspecialchars($_GET['page']);
+if(!empty($_GET['os']))$os = htmlspecialchars($_GET['os']);
 if(!$os){$os="win";}
 
 ?>
