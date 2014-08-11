@@ -30,16 +30,24 @@
 
         <h2>Nutshell</h2>
         <p><ol>
-			<li>First, we install TorBrowser.</li>
+			<li>First, we visualize what Tor does and read the warnings.</li>
+			<li>Next, we download and extract TorBrowser.</li>
 			<li>Second, we open up TorBrowser to see if it worked. That's it, this is a quick one!</li>
 			<li>Finally, we talk about safe browsing habits and the limitations of TOR.</li>
 		</ol></p>
 
-        <h2>Part I: Install TorBrowser</h2>
+		<h2>Part I: Get Informed</h2>
+		<ol>
+			<li>For a visual representation of how Tor works, check out <a target="_blank" href="https://www.eff.org/pages/tor-and-https">an interactive version</a> of the graphic below, courtesy of EFF. This graphic represents your connection when you don't use Tor or HTTPS:</li>
+			<img src="/images/eff/tor-https-0.png">
+			<li>Before you use TorBrowser, you should read the section <a target="_blank" href="https://www.torproject.org/download/download-easy.html.en#warning">Want Tor to really work?</a> on the Tor Project download page. Seriously, <strong>read that section</strong>.</li>
+		</ol>
+		
+        <h2>Part II: Install TorBrowser</h2>
           <ol>
-			<li>Obtain TorBrowser from the <a target="_blank" href="https://www.torproject.org/download/download">TorProject download page</a> We always recommend downloading the latest copy of the installation file from the website and verifying the checksum.</li>
+			<li>Obtain TorBrowser from the <a target="_blank" href="https://www.torproject.org/download/download-easy.html.en">TorProject download page</a> We always recommend downloading the latest copy of the installation file from the website and verifying the checksum.</li>
 <span class="HideLnx">
-			<li>Extract TorBrowser by double-clicking the downloaded installation file. Drag the <span class="clickItem">tor-browser_en-US</span> folder to any location on your computer. TorBrowser is self-contained, so there is no further installation. It is ready to go.</li>
+			<li>Extract TorBrowser by double-clicking the downloaded file. Drag the <span class="clickItem">tor-browser_en-US</span> folder to any location on your computer. TorBrowser is self-contained, so there is no further installation. It is ready to go.</li>
 			<li>Any time you need to run TorBrowser, you run it from this folder by double-clicking <span class="clickItem">start-tor-browser</span> and pressing <span class="clickItem">Run</span>. You can move this folder any time when TorBrowser isn't running, and you may want to create a shortcut on your start menu, toolbar, or desktop.</li>
 </span>	
 <span class="HideWin">
@@ -50,59 +58,77 @@
 			<li>Extract TorBrowser by double-clicking the downloaded installation zip file. After it finishes, you should see the <span class="clickItem">TorBrowser_en-US</span> application. Drag it to your Applications or any other folder if you would like.</li>
 </span>
           </ol>
-
-
-		<h2>Part II: Test TorBrowser</h2>
+          
+<span class="HideWin">
+		<div class="sshot-right"><a href="/images/screenshots/web/win_connect.jpg" data-lightbox="HT-WEB-WinConnect" title="Connect to the Tor network and open the browser"><img class="sshot-sm" src="/images/screenshots/web/win_connect.jpg"/></a></div>
+</span>
+<span class="HideLnx">
+		<div class="sshot-right"><a href="/images/screenshots/web/lnx_connect.jpg" data-lightbox="HT-WEB-LnxConnect" title="Connect to the Tor network and open the browser"><img class="sshot-sm" src="/images/screenshots/web/lnx_connect.jpg"/></a></div>
+</span>
+<span class="HideOSX">
+		<div class="sshot-right"><a href="/images/screenshots/web/lnx_connect.jpg" data-lightbox="HT-WEB-OSXConnect" title="Connect to the Tor network and open the browser"><img class="sshot-sm" src="/images/screenshots/web/lnx_connect.jpg"/></a></div>
+</span>
+		<h2>Part III: Test TorBrowser</h2>
 		  <ol>
-			<li>Open TorBrowser by navigating to the location you downloaded it (Windows/Linux), or your Applications folder (OS X).</li>
-			<li>You should see the Vidalia window pop up. Vidalia does all the work of connecting to the Tor Network, and should be left running while you use TorBrowser.</li>
-			<li>After Vidalia connects, you should see a TorBrowser window that looks similar to Firefox (because it is a version of Firefox). That window should start on the TorCheck page: (https://check.torproject.org/?lang=en-US). If everything is working properly, you should see the following screen:</li>
-		  	<div class="sshot-wide"><a href="/content/screenshots/HT-WEB-TorSuccess.jpg" data-lightbox="HT-WEB-TorSuccess" title="You Are Successfully Using TorBrowser"><img class="sshot-wd" src="/content/screenshots/HT-WEB-TorSuccess.jpg"/></a></div>
+			<li>Launch TorBrowser by navigating to the location you saved it and double-clicking the application.</li>
+			<li>You should see the <span class="clickItem">Tor Network Settings</span> window pop up. Click <span class="clickItem">Connect</span> to connect to the Tor network and open the browser. This should work for most people, but if you cannot connect you may want to click <span class="clickItem">Configure</span> to change any settings.</li>
+			<li>After connecting, you should see a TorBrowser window that looks similar to Firefox (because it is a version of Firefox). That window should automatically start on a page like the following:</li>
+
+<span class="HideWin">
+			<div class="sshot-wide"><a href="/images/screenshots/web/win_success.jpg" data-lightbox="HT-WEB-WinSuccess" title="You Are Successfully Using TorBrowser"><img class="sshot-wd" src="/images/screenshots/web/win_success.jpg"/></a></div>
+</span>
+<span class="HideLnx">
+			<div class="sshot-wide"><a href="/images/screenshots/web/lnx_success.jpg" data-lightbox="HT-WEB-LnxSuccess" title="You Are Successfully Using TorBrowser"><img class="sshot-wd" src="/images/screenshots/web/lnx_success.jpg"/></a></div>
+</span>
+<span class="HideOSX">
+			<div class="sshot-wide"><a href="/images/screenshots/web/lnx_success.jpg" data-lightbox="HT-WEB-OSXSuccess" title="You Are Successfully Using TorBrowser"><img class="sshot-wd" src="/images/screenshots/web/lnx_success.jpg"/></a></div>
+</span>
+			<li><strong>NOTE:</strong> If you start TorBrowser and see a page that says it is out of date, you should download and extract a copy of the latest version with the instructions above.</li>
 		  </ol>
 		  
 		  
-		<h2>Part III: Browsing habits and the limits of TorBrowser and Tor</h2>
+		<h2>Part IV: Browsing habits and the limits of TorBrowser and Tor</h2>
 			<p>The purpose of TorBrowser is to encrypt the transmission of your internet requests. This hides the actual connections you are making from your ISP or anyone monitoring your connection. TorBrowser hides your actual IP address from the websites you visit so it is virtually impossible for them to be certain where you are actually connecting from.</p>
 			<p><strong>THIS DOES NOT MEAN EVERYTHING YOU DO WHILE USING TOR IS PRIVATE<strong></p>
-			<p>If you open up TorBrowser, and then log into Facebook, Facebook knows who you are, even though they can't tell your actual IP address. You still had to log in, so Facebook still knows it is you. They often even notice that you have connected from an unusual IP address and may ask for further verification of your identity. So if you want to use TorBrowser to send private Facebook messages, tweets, or instaphotosnapgramterests, you're out of luck.</p>
-			<p>Some of the best uses for TorBrowser is researching topics you aren't willing to share with your ISP or government, or logging into non-identifying websites privately (e.g. a “throw-away” reddit account).</p>
-			<p>Always keep in mind that any information you transmit directly to a website can still be read by that website (otherwise web browsing wouldn't work). TorBrowser only protects it while it is being transmitted. The site you connect to can store and share information about what IP address connected, what account they logged into, and what the user did on the website. As long as you are masking your IP with TorBrowser and using a throw-away account, it can be difficult to track back to you.</p>
-			<p>Data mining techniques could allow people with powerful enough computers and access to enough data to find correlations between your throw-away account and your actual account. For this reason, it is recommended that you change throw-away accounts regularly and <strong>absolutely do not post anything remotely identifying when using TorBrowser</strong>. Your worst enemy is yourself on this. TorBrowser keeps it safe in transit, but it is up to you to make sure you don't leave a trail on the websites you visit.</p>
+			<p>If you open up TorBrowser, and then log into Facebook, Facebook knows who you are, even though they can't tell your actual IP address. You still had to log in, so Facebook still knows it is you. They often even notice that you have connected from an unusual IP address and may ask for further verification of your identity. So if you want to use TorBrowser to send private Facebook messages, tweets, or instaphotosnapgramterests from your own account, you're out of luck.</p>
+			<p>Some of the best uses for TorBrowser are researching topics such as medical conditions, laws, political parties, or anything else you aren't willing to share with your ISP or government. If you need to log in to access any of the information you are looking for, you should create "throw-away" accounts that you only use while on Tor.</p>
+			<p>Always keep in mind that any information you transmit directly to a website can still be read by that website (otherwise web browsing wouldn't work). TorBrowser only protects it while it is being transmitted between your computer and the final link in the Tor chain. The site you connect to can store and share information about what IP address connected, what account they logged into, and what the user did on the website.</p>
+			<p>As long as you are masking your IP with TorBrowser and using a throw-away account, it can be difficult to track back to you. But data mining techniques could allow people with powerful enough computers and access to enough data to find correlations between your throw-away account and your actual account. For this reason, it is recommended that you change throw-away accounts regularly and <strong>absolutely do not post anything remotely identifying when using TorBrowser</strong>. Your worst enemy is yourself on this. TorBrowser keeps it safe through most of the transit, but it is up to you to make sure you don't leave a trail on the websites you visit.</p>
 			
 			<p>For futher information on installing TorBrowser and using it safely, we recommend reading the warnings listed on the download page, and referring to the links below:</p>
 			
 		  <div class="list-group">
 <span class="HideWin">
-            <a target="_blank" href="http://www.torproject.org/docs/tor-doc-windows.html.en" class="list-group-item">
+            <a target="_blank" href="https://www.torproject.org/docs/tor-doc-windows.html.en" class="list-group-item https">
               <h3 class="list-group-item-heading">Tor Install Guide for Windows [Official]</h3>
-              <p class="list-group-item-text"><em>http://www.torproject.org/docs/tor-doc-windows.html.en</em></p>
+              <p class="list-group-item-text"><em>https://www.torproject.org/docs/tor-doc-windows.html.en</em></p>
             </a>
 </span>
 <span class="HideOSX">
-            <a target="_blank" href="https://www.torproject.org/docs/tor-doc-osx.html.en" class="list-group-item">
+            <a target="_blank" href="https://www.torproject.org/docs/tor-doc-osx.html.en" class="list-group-item https">
               <h3 class="list-group-item-heading">Tor Install Guide for OS X [Official]</h3>
               <p class="list-group-item-text"><em>https://www.torproject.org/docs/tor-doc-osx.html.en</em></p>
             </a>
 </span>
 <span class="HideLnx">
-            <a target="_blank" href="https://www.torproject.org/docs/tor-doc-unix.html.en" class="list-group-item">
+            <a target="_blank" href="https://www.torproject.org/docs/tor-doc-unix.html.en" class="list-group-item https">
               <h3 class="list-group-item-heading">Tor Install Guide for Linux [Official]</h3>
               <p class="list-group-item-text"><em>https://www.torproject.org/docs/tor-doc-unix.html.en</em></p>
             </a>
 </span>
 
 
-            <a target="_blank" href="https://www.torproject.org/dist/manual/short-user-manual_en.xhtml" class="list-group-item">
+            <a target="_blank" href="https://www.torproject.org/dist/manual/short-user-manual_en.xhtml" class="list-group-item https">
               <h3 class="list-group-item-heading">Tor Short User Manual [Official]</h3>
               <p class="list-group-item-text"><em>https://www.torproject.org/dist/manual/short-user-manual_en.xhtml</em></p>
             </a>
-            <a target="_blank" href="https://www.eff.org/document/tor-myths-and-facts" class="list-group-item">
+            <a target="_blank" href="https://www.eff.org/document/tor-myths-and-facts" class="list-group-item https">
               <h3 class="list-group-item-heading">Tor: Myths and Facts [via EFF]</h3>
               <p class="list-group-item-text"><em>https://www.eff.org/document/tor-myths-and-facts</em></p>
             </a>
 
 
-            <a target="_blank" href="https://www.youtube.com/watch?v=B38zx7TPDC4" class="list-group-item">
+            <a target="_blank" href="https://www.youtube.com/watch?v=B38zx7TPDC4" class="list-group-item https">
               <h3 class="list-group-item-heading">Freedom House Video Tutorial</h3>
               <p class="list-group-item-text"><em>https://www.youtube.com/watch?v=B38zx7TPDC4</em></p>
             </a>
