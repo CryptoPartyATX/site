@@ -16,17 +16,27 @@ if($pageid==1.6){$pageid=2.1;}
 if($pageid==1.7){$pageid=2.2;}
 if($pageid==1.8){$pageid=2.3;}
 
-/* OS Selection - default to Windows */
+/* OS Selection - auto-detect if unspecified, default Windows */
 $os="win";
-if(!empty($_GET['os']))$os = htmlspecialchars($_GET['os']);
-if(!$os){$os="win";}
+if(!empty($_GET['os'])){
+	$os = htmlspecialchars($_GET['os']);
+}
+else{
+	$agnt = $_SERVER['HTTP_USER_AGENT'];
+	if (strpos($agnt,"Linux")!==FALSE && strpos($agnt,"Android")===FALSE){
+		$os = "lnx";
+	}
+	else if (strpos($agnt,"Mac")!==FALSE && strpos($agnt,"iPhone")===FALSE){
+		$os = "osx";
+	}
+}
 if($os != "osx" && $os !="lnx"){$os="win";}
 
 /* JavaScript detection 
 	By default,
 				adds javascript redirect to "auto-yes" setting if JS is enabled
 				sets value to "auto-no" and loads page w/o JS if JS is disabled
-	User specified [future]
+	User specified
 				if specified "no", does not insert any scripts
 				if specified "yes", inserts all scripts except redirect
 */
