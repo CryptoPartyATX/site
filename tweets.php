@@ -78,7 +78,7 @@ if($initTweets !== FALSE){
 				}
 			}
 		}
-	
+		$tweet = str_replace("\\n","<br>",$tweet);
 		if(trim($tweet) === ""){ $tweet = " [Link only] "; }
 
 		echo "<span class=\"tweet\">$tweet</span>\n"; // actual text (minus links)

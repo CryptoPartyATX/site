@@ -24,6 +24,15 @@ CryptoPartyATX.org To-Do list
 	-	Privacy Policy
 		:all the shit we DONT collect, why we dont use cookies (transparency), A+ rated https, encrypted contact form, etc
 	
+<< GUIDE UPDATE PRIORITY LIST >>
+1. Email
+2. SMS
+3. File
+4. Web
+5. Mint
+6. OTR
+<< END PRIORITY LIST >>
+
 [How-to Pages]
 -	Add Linux screens for remaining pages (FILE, WEB)
 -	Video tutorials?
