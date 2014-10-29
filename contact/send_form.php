@@ -9,6 +9,9 @@ $js = "auto-yes";
 if(isset($_POST['js']))$js = htmlspecialchars($_POST['js']);
 $extraparams = "&os=$os&js=$js";
 
+if(isset($_POST['thecheckbox']))$allowSend=false;
+
+
 /*
  * ][ Maelstrom ][
  * This code has been modified by plexiglass for cryptopartyatx.org and cryptoglass.us
@@ -84,9 +87,9 @@ if ($plaintext!=="yes"){
  }
 // if not encrypting... :(
 else {
-	if(strlen($message) < 1) { died('An error occured. The message you entered does not appear to be valid.<br />'); } 
+	if(strlen($message) < 1 || $allowSend===false) { died('An error occured. The message you entered does not appear to be valid.<br />'); }
 	$header = 'From: ' . $email_from . "\r\n" . 'X-Mailer: PHP/' . phpversion();
-	@mail($email_to, "[CryptoParty Contact Form]", $curmessage, $header);
+	@mail($email_to, "[CryptoParty Contact Form]", $message, $header);
 }
  
 ?>
